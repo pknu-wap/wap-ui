@@ -9,6 +9,7 @@ export const CheckboxText = styled.span`
 `;
 
 export const CheckboxMask = styled.span`
+  box-sizing: border-box;
   position: relative;
   width: 24px;
   height: 24px;
