@@ -8,6 +8,8 @@ export const StyledButton = styled.button<{
   color: NormalColorType;
   shadow: boolean;
 }>`
+  box-sizing: border-box;
+  border: none;
   background: ${({ color }) => palette[color]};
   color: #fff;
   border-radius: 0.7rem;
