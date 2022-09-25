@@ -1,5 +1,7 @@
 // components
 
+export { Button } from './components/Button';
+
 // layouts
 
 // theme
