@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "module": "ESNext",
+    "declaration": true, // *.d.ts 타입 파일 생성 여부
+    "declarationDir": "./dist", // *.d.ts 타입 파일 생성 경로
+    "sourceMap": false,
+    "outDir": "./dist", // 빌드 결과물이 저장될 경로
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
+    "removeComments": true
+  },
+  "include": ["./packages"],
+  "exclude": ["./dist", "./node_modules"]
+}
