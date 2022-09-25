@@ -1,5 +1,4 @@
 import { ThemeProvider } from '@emotion/react';
-import GlobalStyle from '../packages/theme/global-style';
 import lightTheme from '../packages/theme/light-theme';
 
 export const parameters = {
@@ -15,7 +14,6 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <ThemeProvider theme={lightTheme}>
-      <GlobalStyle />
       <Story />
     </ThemeProvider>
   ),
