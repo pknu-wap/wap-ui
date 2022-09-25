@@ -28,18 +28,27 @@ export const StyledButton = styled.button<{
       font-size: 13px;
     `}
   ${({ size }) =>
+    size === 'md' &&
+    css`
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      width: 100px
+      line-height: 16px;
+      font-size: 16px;
+    `}
+  ${({ size }) =>
     size === 'lg' &&
     css`
       width: 150px;
       line-height: 25px;
       font-size: 20px;
     `}
-    ${({ size }) =>
+  ${({ size }) =>
     size === 'auto' &&
     css`
       width: 100%;
     `}
-    ${({ shadow, color }) =>
+  ${({ shadow, color }) =>
     shadow &&
     css`
       box-shadow: 0 4px 14px 0 ${palette[color]};
