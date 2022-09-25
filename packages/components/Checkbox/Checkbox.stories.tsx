@@ -4,7 +4,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { useState } from 'react';
 import { Checkbox, Props } from './Checkbox';
 import React from 'react';
-import { Spacer } from '../../layouts/Spacer';
 
 export default {
   title: 'Components/Checkbox',
@@ -43,7 +42,6 @@ const Template: ComponentStory<typeof Checkbox> = (args: Props) => {
             // 3️⃣ 체크표시 & 해제를 시키는 로직. 배열에 data가 있으면 true, 없으면 false
             checked={selected.includes(checkbox.data) ? true : false}
           />
-          <Spacer />
         </>
       ))}
       <div>Selected : {selected.join(', ')}</div>
