@@ -1,6 +1,6 @@
 # <div align="center">🌊 WAP-UI 💦</div>
 
-# <div align="center">Awesome React Component Libraray</div>
+# <div align="center">Awesome React Component Library</div>
 
 ## `Installing WAP-UI`
 
