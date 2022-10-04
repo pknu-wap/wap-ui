@@ -12,7 +12,8 @@
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "format": "prettier --write 'packages/**/*.{ts, tsx}' --config ./.prettierrc"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
@@ -35,6 +36,7 @@
     "@types/react-dom": "^18.0.6",
     "babel-loader": "^8.2.5",
     "framer-motion": "^7.3.6",
+    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.79.0",
