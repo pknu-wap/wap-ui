@@ -13,10 +13,10 @@
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "prepare": "husky install",
     "format": "prettier --write 'packages/**/*.{ts, tsx}' --config ./.prettierrc",
     "lint": "eslint 'packages/**/*.{ts, tsx}'",
-    "lint:fix": "eslint --fix 'packages/**/*.{ts, tsx}'",
-    "prepare": "husky install"
+    "lint:fix": "eslint --fix 'packages/**/*.{ts, tsx}'"
   },
   "lint-staged": {
     "packages/**/*.{ts,tsx}": [
