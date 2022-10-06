@@ -1,9 +1,8 @@
 import { NormalColorType } from '../../theme/types';
 import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Checkbox, Props } from './Checkbox';
-import React from 'react';
 import { Spacer } from '../../layouts/Spacer';
 
 export default {
@@ -11,7 +10,8 @@ export default {
   component: Checkbox,
 } as ComponentMeta<typeof Checkbox>;
 
-const Template: ComponentStory<typeof Checkbox> = (args: Props) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Template: ComponentStory<typeof Checkbox> = (_: Props) => {
   const CHECKBOX_LIST: { id: number; data: NormalColorType }[] = [
     { id: 1, data: 'primary' },
     { id: 2, data: 'success' },
@@ -20,6 +20,7 @@ const Template: ComponentStory<typeof Checkbox> = (args: Props) => {
     { id: 5, data: 'error' },
   ];
   const [selected, setSelected] = useState<NormalColorType[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onCheckedElement = (checked: any, item: any) => {
     if (checked) {
       setSelected([...selected, item]);

@@ -1,7 +1,6 @@
 import { NormalColorType } from '../../theme/types';
-import { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import * as S from './Button.styles';
-import React from 'react';
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg' | 'auto';

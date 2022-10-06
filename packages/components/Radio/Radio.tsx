@@ -1,7 +1,6 @@
 import { NormalColorType } from '../../theme/types';
-import { forwardRef, InputHTMLAttributes } from 'react';
+import React, { forwardRef, InputHTMLAttributes } from 'react';
 import * as S from './Radio.styles';
-import React from 'react';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   labelText?: string;
