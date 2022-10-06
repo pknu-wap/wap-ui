@@ -6,10 +6,16 @@ export const common = {
     lg: '2rem',
     xl: '2.5rem',
   },
+  // breakpoint
+  breakpoints : {
+    xlarge: '1200px',
+    large: '1024px',
+    medium: '768px',
+    small: '576px',
+  },
   color: {
     white: '#ffffff',
     black: '#000000',
-
     gray0: '#f8f9fa',
     gray1: '#f1f3f5',
     gray2: '#e9ecef',
