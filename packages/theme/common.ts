@@ -6,7 +6,12 @@ export const common = {
     lg: '2rem',
     xl: '2.5rem',
   },
-
+  breakpoints : {
+    xlarge: '1200px',
+    large: '1024px',
+    medium: '768px',
+    small: '576px',
+  },
   color: {
     white: '#ffffff',
     black: '#000000',
