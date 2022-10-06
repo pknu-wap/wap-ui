@@ -14,12 +14,12 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
-    "format": "prettier --write 'packages/**/*.{ts, tsx}' --config ./.prettierrc",
-    "lint": "eslint 'packages/**/*.{ts, tsx}'",
-    "lint:fix": "eslint --fix 'packages/**/*.{ts, tsx}'"
+    "format": "prettier --write . --config ./.prettierrc",
+    "lint": "eslint './packages/**/*.{ts, tsx}'",
+    "lint:fix": "eslint --fix ."
   },
   "lint-staged": {
-    "packages/**/*.{ts,tsx}": [
+    ".": [
       "yarn format",
       "yarn lint:fix"
     ]

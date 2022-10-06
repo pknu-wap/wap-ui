@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Spacer } from '../../layouts/Spacer';
 import { Radio, Props } from './Radio';
-import React from 'react';
 
 export default {
   title: 'Components/Radio',

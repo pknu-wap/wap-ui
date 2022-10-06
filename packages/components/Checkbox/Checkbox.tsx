@@ -1,7 +1,6 @@
 import * as S from './Checkbox.styles';
 import { NormalColorType } from '../../theme/types';
-import { forwardRef, InputHTMLAttributes } from 'react';
-import React from 'react';
+import React, { forwardRef, InputHTMLAttributes } from 'react';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   labelText?: string;
