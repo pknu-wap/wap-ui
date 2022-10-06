@@ -6,10 +6,10 @@ export const common = {
     lg: '2rem',
     xl: '2.5rem',
   },
+
   color: {
     white: '#ffffff',
     black: '#000000',
-
     gray0: '#f8f9fa',
     gray1: '#f1f3f5',
     gray2: '#e9ecef',
