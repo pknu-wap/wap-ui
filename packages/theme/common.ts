@@ -7,7 +7,7 @@ export const common = {
     xl: '2.5rem',
   },
   // breakpoint
-  breakpoints : {
+  breakpoints: {
     xlarge: '1200px',
     large: '1024px',
     medium: '768px',

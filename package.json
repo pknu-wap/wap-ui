@@ -7,7 +7,6 @@
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
-  "browser": "./dist/index.umd.js",
   "private": false,
   "scripts": {
     "build": "rollup -c",
@@ -15,11 +14,11 @@
     "build-storybook": "build-storybook",
     "prepare": "husky install",
     "format": "prettier --write . --config ./.prettierrc",
-    "lint": "eslint './packages/**/*.{ts, tsx}'",
-    "lint:fix": "eslint --fix ."
+    "lint": "eslint './packages/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix './packages/**/*.{ts,tsx}'"
   },
   "lint-staged": {
-    ".": [
+    "./packages/**/*.{ts,tsx}": [
       "yarn format",
       "yarn lint:fix"
     ]
