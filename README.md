@@ -28,11 +28,10 @@ const App = () => {
 export default App;
 ```
 
-
 ## `Contributors`
 
 ### [성준영](https://github.com/sjyoung428)<span style="font-size:50%">(소프트웨어·인공지능전공 16학번)</small>
+
 ### [김민수](https://github.com/neko113)<span style="font-size:50%">(컴퓨터공학전공 19학번)</small>
+
 ### [이예슬](https://github.com/mimpie)<span style="font-size:50%">(소프트웨어·인공지능전공 21학번)</small>
-
-
