@@ -3,7 +3,7 @@ import { common } from '../../../theme/common';
 
 export const Root = styled.div`
   position: relative;
-  padding: 10px 20px;
+  margin: 10px 20px;
 `;
 
 export const Label = styled.div`
@@ -11,6 +11,7 @@ export const Label = styled.div`
   padding: 10px;
   font-size: ${common.size.md};
   background: ${common.color.cyan3};
+  border-left: 5px solid ${common.color.cyan5};
   color: ${common.color.white};
   cursor: pointer;
   &::before {
@@ -22,4 +23,11 @@ export const Label = styled.div`
   }
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+  position: relative;
+  background: ${common.color.white};
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
+  overflow-y: auto;
+`;
