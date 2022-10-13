@@ -13,7 +13,11 @@ export const Label = styled.div`
   background: ${common.color.cyan3};
   border-left: 5px solid ${common.color.cyan5};
   color: ${common.color.white};
+  transition: 0.5s ease;
   cursor: pointer;
+  &:hover {
+    background: ${common.color.cyan4};
+  }
   &::before {
     content: '+';
     position: absolute;
