@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { common } from '../../../theme/common';
 
@@ -6,7 +7,7 @@ export const Root = styled.div`
   margin: 10px 20px;
 `;
 
-export const Label = styled.div`
+export const Label = styled.div<{ isOpen: boolean }>`
   position: relative;
   padding: 10px;
   font-size: ${common.size.md};
@@ -27,11 +28,15 @@ export const Label = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const ContentWrapper = styled.div<{ isOpen: boolean }>`
   position: relative;
-  background: ${common.color.white};
-  height: 0;
+  max-height: ${({ isOpen }) => (isOpen ? '600px' : '0')};
   overflow: hidden;
-  transition: height 0.5s ease;
+  transition: all 0.5s ease-in-out;
   overflow-y: auto;
+`;
+
+export const Content = styled.div`
+  background: ${common.color.cyan0};
+  padding: 10px;
 `;

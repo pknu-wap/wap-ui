@@ -7,10 +7,15 @@ export interface Props {
 }
 
 export const AccordionItem = ({ children, label }: Props) => {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <S.Root>
-      <S.Label>{label}</S.Label>
-      <S.Content>{children}</S.Content>
+      <S.Label isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+        {label}
+      </S.Label>
+      <S.ContentWrapper isOpen={isOpen}>
+        <S.Content>{children}</S.Content>
+      </S.ContentWrapper>
     </S.Root>
   );
 };
