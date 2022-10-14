@@ -28,8 +28,13 @@ const AccordionProvider = ({ children }: AccordionProviderProps) => {
   );
 };
 
-export const useAccordion = () => {
+export const useAccordionContext = () => {
   const context = useContext(AccordionContext);
+  if (context === undefined) {
+    throw new Error(
+      'useAccordionContext should be used within a AccordionContext.Provider',
+    );
+  }
   return context;
 };
 
