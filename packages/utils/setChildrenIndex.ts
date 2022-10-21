@@ -1,9 +1,10 @@
 import React, { ReactNode } from 'react';
 
 /**
- * @todo 이거는 일단 링크를 참고한거고 나중에 다시 공부해서 정리해야함
+ * @todo 이거는 일단 링크를 참고한거고 나중에 다시 공부해서 수정해야함
  * @see https://github.dev/nextui-org/nextui/blob/main/packages/react/src/utils/collections.ts
  */
+
 export const setChildrenIndex = (
   children: ReactNode | undefined,
   targetComponents: Array<React.ElementType> = [],
