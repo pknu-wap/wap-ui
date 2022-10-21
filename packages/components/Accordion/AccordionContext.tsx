@@ -5,28 +5,13 @@ export interface AccordionProviderProps {
 }
 
 export interface AccoridionContextValue {
-  onChange: () => void;
+  values: Array<number>;
+  updateValues?: (currentIndex: number, nextState: boolean) => void;
 }
 
-const handleChange = () => {
-  return;
-};
-
 export const AccordionContext = createContext<AccoridionContextValue>({
-  onChange: handleChange,
+  values: [],
 });
-
-const AccordionProvider = ({ children }: AccordionProviderProps) => {
-  return (
-    <AccordionContext.Provider
-      value={{
-        onChange: handleChange,
-      }}
-    >
-      {children}
-    </AccordionContext.Provider>
-  );
-};
 
 export const useAccordionContext = () => {
   const context = useContext(AccordionContext);
@@ -37,5 +22,3 @@ export const useAccordionContext = () => {
   }
   return context;
 };
-
-export default AccordionProvider;

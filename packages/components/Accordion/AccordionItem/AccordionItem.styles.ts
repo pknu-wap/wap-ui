@@ -6,7 +6,7 @@ export const Root = styled.div`
   margin: 10px 20px;
 `;
 
-export const Label = styled.div<{ isOpen: boolean }>`
+export const Label = styled.div<{ visible: boolean }>`
   position: relative;
   padding: 10px;
   font-size: ${common.size.md};
@@ -27,9 +27,9 @@ export const Label = styled.div<{ isOpen: boolean }>`
   }
 `;
 
-export const ContentWrapper = styled.div<{ isOpen: boolean }>`
+export const ContentWrapper = styled.div<{ visible: boolean }>`
   position: relative;
-  max-height: ${({ isOpen }) => (isOpen ? '600px' : '0')};
+  max-height: ${({ visible }) => (visible ? '600px' : '0')};
   overflow: hidden;
   transition: all 0.5s ease-in-out;
   overflow-y: auto;
