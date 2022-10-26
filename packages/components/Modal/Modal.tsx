@@ -4,9 +4,10 @@ import * as S from './Modal.styles';
 export interface Props {
   isOpen?: boolean;
   onClose: () => void;
+  children: React.ReactNode;
 }
 
-export const Modal = ({ isOpen = false, onClose }: Props) => {
+export const Modal = ({ isOpen = false, onClose, children }: Props) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -15,11 +16,22 @@ export const Modal = ({ isOpen = false, onClose }: Props) => {
       setVisible(true);
       document.body.style.overflow = 'hidden';
     } else {
-      visibleId = setTimeout(() => setVisible(false), 300);
+      visibleId = setTimeout(() => setVisible(false), 100);
       document.body.style.overflow = 'auto';
     }
     return () => clearTimeout(visibleId);
   }, [isOpen]);
 
-  return <>{visible && <S.Overlay onClick={onClose} />}</>;
+  return (
+    <>
+      {visible && (
+        <>
+          <S.Overlay onClick={onClose} />
+          <S.Container isOpen={isOpen}>
+            <S.ModalElement>{children}</S.ModalElement>
+          </S.Container>
+        </>
+      )}
+    </>
+  );
 };
