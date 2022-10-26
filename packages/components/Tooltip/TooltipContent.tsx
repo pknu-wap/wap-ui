@@ -1,11 +1,12 @@
 import React from 'react';
 import { NormalColorType } from '../../theme/types';
+import { placementType } from './placement';
 import * as S from './Tooltip.styles';
 
 interface Props {
   visible: boolean;
   color: NormalColorType;
-  placement: 'top' | 'bottom' | 'left' | 'right';
+  placement: placementType;
   children: React.ReactNode;
 }
 

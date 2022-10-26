@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { NormalColorType } from '../../theme/types';
+import { placementType } from './placement';
 import * as S from './Tooltip.styles';
 import TooltipContent from './TooltipContent';
 
@@ -7,7 +8,7 @@ export interface Props {
   children: React.ReactNode;
   content: string;
   color?: NormalColorType;
-  placement?: 'top' | 'bottom' | 'left' | 'right';
+  placement?: placementType;
 }
 
 /**
@@ -23,7 +24,7 @@ export const Tooltip = ({
   children,
   color = 'primary',
   content,
-  placement = 'bottom',
+  placement = 'top',
 }: Props) => {
   const [visible, setVisible] = useState<boolean>(false);
   const timer = useRef<number>();
