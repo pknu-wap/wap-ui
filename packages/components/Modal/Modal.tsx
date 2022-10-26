@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './Modal.styles';
+import { ModalBody } from './ModalBody';
+import { ModalFooter } from './ModalFooter';
+import { ModalHeader } from './ModalHeader';
 
 export interface Props {
   isOpen?: boolean;
   onClose: () => void;
   children: React.ReactNode;
 }
+
+// type NativeAttrs = Omit<React.DialogHTMLAttributes<unknown>, keyof Props>;
+
+// export type ModalProps = Props & NativeAttrs;
 
 export const Modal = ({ isOpen = false, onClose, children }: Props) => {
   const [visible, setVisible] = useState(false);
@@ -35,3 +42,7 @@ export const Modal = ({ isOpen = false, onClose, children }: Props) => {
     </>
   );
 };
+
+Modal.Header = ModalHeader;
+Modal.Body = ModalBody;
+Modal.Footer = ModalFooter;

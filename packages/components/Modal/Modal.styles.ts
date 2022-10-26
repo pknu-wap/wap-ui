@@ -35,6 +35,12 @@ export const ModalElement = styled.div`
   background-color: ${common.color.white};
 `;
 
+export const ModalHeader = styled.header``;
+
+export const ModalBody = styled.div``;
+
+export const ModalFooter = styled.footer``;
+
 const fadeIn = keyframes`
   from {
   opacity: 0;
