@@ -20,6 +20,7 @@ export const Overlay = styled.div`
   left: 0;
   top: 0;
   position: fixed;
+  -webkit-backdrop-filter: saturate(200%) blur(2px);
   backdrop-filter: saturate(200%) blur(2px);
   background-color: rgba(0, 0, 0, 0.1);
 `;
@@ -30,12 +31,40 @@ export const ModalElement = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 0.2rem;
-  padding: 2rem 2rem;
+  padding: 1rem 2rem;
   min-width: 30%;
+  max-width: 80%;
   background-color: ${common.color.white};
 `;
 
-export const ModalHeader = styled.header``;
+export const ModalHeader = styled.header`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+`;
+
+export const ModalHeaderTitle = styled.h2`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: ${common.size.md};
+  font-weight: bold;
+  overflow-wrap: anywhere;
+`;
+
+export const ModalCloseButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+  flex-basis: auto;
+  svg {
+    cursor: pointer;
+    color: ${common.color.gray5};
+  }
+`;
 
 export const ModalBody = styled.div``;
 

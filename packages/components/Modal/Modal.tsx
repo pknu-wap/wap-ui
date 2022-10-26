@@ -10,10 +10,6 @@ export interface Props {
   children: React.ReactNode;
 }
 
-// type NativeAttrs = Omit<React.DialogHTMLAttributes<unknown>, keyof Props>;
-
-// export type ModalProps = Props & NativeAttrs;
-
 export const Modal = ({ isOpen = false, onClose, children }: Props) => {
   const [visible, setVisible] = useState(false);
 

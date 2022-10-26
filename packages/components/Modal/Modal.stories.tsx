@@ -24,7 +24,7 @@ const Template: ComponentStory<typeof Modal> = () => {
     <Container>
       <Button onClick={openModal}>버튼</Button>
       <Modal isOpen={visible} onClose={closeModal}>
-        <Modal.Header>Header</Modal.Header>
+        <Modal.Header onClose={closeModal}>Header</Modal.Header>
         <Modal.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
