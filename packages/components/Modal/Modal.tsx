@@ -33,10 +33,10 @@ export const Modal = ({ isOpen = false, onClose, children }: Props) => {
     <>
       {visible && (
         <>
-          <S.Overlay onClick={onClose} />
-          <S.Container isOpen={isOpen}>
+          <S.ModalAnimationProvider isOpen={isOpen}>
+            <S.Overlay onClick={onClose} />
             <S.ModalElement>{children}</S.ModalElement>
-          </S.Container>
+          </S.ModalAnimationProvider>
         </>
       )}
     </>

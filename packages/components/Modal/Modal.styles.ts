@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { common } from '../../theme/common';
 import { Props } from './Modal';
 
-export const Container = styled.div<Pick<Props, 'isOpen'>>`
+export const ModalAnimationProvider = styled.div<Pick<Props, 'isOpen'>>`
   ${({ isOpen }) => css`
     visibility: ${isOpen ? 'visible' : 'hidden'};
     animation: ${isOpen ? fadeIn : fadeOut} 0.1s;
