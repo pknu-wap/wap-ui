@@ -13,7 +13,6 @@ export interface Props
 export const ModalHeader = ({ children, onClose, ...rest }: Props) => {
   return (
     <S.ModalHeader>
-      <div />
       <S.ModalHeaderTitle {...rest}>{children}</S.ModalHeaderTitle>
       <ModalCloseButton onClose={onClose} />
     </S.ModalHeader>

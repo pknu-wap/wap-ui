@@ -39,13 +39,15 @@ export const ModalElement = styled.div`
 
 export const ModalHeader = styled.header`
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 `;
 
 export const ModalHeaderTitle = styled.h2`
   display: flex;
-  width: 100%;
+  width: 80%;
   justify-content: center;
   align-items: center;
   font-size: ${common.size.md};
@@ -57,6 +59,9 @@ export const ModalCloseButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
   border: none;
   background: none;
   flex-basis: auto;
