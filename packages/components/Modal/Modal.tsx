@@ -19,7 +19,10 @@ export const Modal = ({ isOpen = false, onClose, children }: Props) => {
       setVisible(true);
       document.body.style.overflow = 'hidden';
     } else {
-      visibleId = setTimeout(() => setVisible(false), 100);
+      visibleId = setTimeout(() => {
+        setVisible(false);
+        clearTimeout(visibleId);
+      }, 100);
       document.body.style.overflow = 'auto';
     }
     return () => clearTimeout(visibleId);

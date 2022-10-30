@@ -66,7 +66,11 @@ export const ModalCloseButton = styled.button`
   }
 `;
 
-export const ModalBody = styled.div``;
+export const ModalBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
 
 export const ModalFooter = styled.footer``;
 
