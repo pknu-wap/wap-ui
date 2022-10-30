@@ -13,7 +13,7 @@ export const Label = styled.div<{ visible: boolean }>`
   background: ${common.color.cyan3};
   border-left: 5px solid ${common.color.cyan5};
   color: ${common.color.white};
-  transition: 0.5s ease;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
   &:hover {
     background: ${common.color.cyan4};

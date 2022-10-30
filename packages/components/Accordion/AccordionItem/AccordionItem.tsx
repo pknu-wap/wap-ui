@@ -13,30 +13,30 @@ export interface Props {
  * @see https://github.dev/nextui-org/nextui/blob/main/packages/react/src/utils/collections.ts
  */
 
-export const AccordionItem = ({
-  children,
-  label,
-  expanded = false,
-  index,
-}: Props) => {
+export const AccordionItem = ({ children, label, index }: Props) => {
   const [visible, setVisible] = useState(false);
   const { values, updateValues } = useAccordionContext();
 
-  useEffect(() => {
-    if (visible !== expanded) {
-      setVisible(expanded);
-    }
-  }, [expanded]);
+  /** @todo 나중에 적용하기 */
+  // useEffect(() => {
+  //   if (visible !== expanded) {
+  //     setVisible(expanded);
+  //   }
+  // }, [expanded]);
 
   useEffect(() => {
-    if (values.length) return;
+    if (!values.length) return;
     const isActive = !!values.find((v) => v === index);
     setVisible(isActive);
-  }, [values.join(',')]);
+  }, [values]);
+
+  const handleChangeVisible = () => {
+    updateValues && updateValues(index, !visible);
+  };
 
   return (
     <S.Root>
-      <S.Label visible={visible} onClick={() => setVisible(!visible)}>
+      <S.Label visible={visible} onClick={() => handleChangeVisible()}>
         {label}
       </S.Label>
       <S.ContentWrapper visible={visible}>

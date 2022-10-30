@@ -6,7 +6,8 @@ export interface AccordionProviderProps {
 
 export interface AccoridionContextValue {
   values: Array<number>;
-  updateValues?: (currentIndex: number, nextState: boolean) => void;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  updateValues?: Function;
 }
 
 export const AccordionContext = createContext<AccoridionContextValue>({
