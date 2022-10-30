@@ -72,7 +72,11 @@ export const ModalBody = styled.div`
   gap: 1rem;
 `;
 
-export const ModalFooter = styled.footer``;
+export const ModalFooter = styled.footer`
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+`;
 
 const fadeIn = keyframes`
   from {

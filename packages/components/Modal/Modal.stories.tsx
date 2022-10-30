@@ -37,7 +37,9 @@ const Template: ComponentStory<typeof Modal> = () => {
           </span>
           <Button>Body Button</Button>
         </Modal.Body>
-        <Modal.Footer>Footer</Modal.Footer>
+        <Modal.Footer>
+          <Button onClick={closeModal}>Close</Button>
+        </Modal.Footer>
       </Modal>
     </Container>
   );
