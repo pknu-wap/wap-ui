@@ -17,7 +17,3 @@ const useDidMountEffect = (
 };
 
 export default useDidMountEffect;
-
-// create usedidmounteffect
-// Path: packages/hooks/index.ts
-export { default as useDidMountEffect } from './useDidMountEffect';
