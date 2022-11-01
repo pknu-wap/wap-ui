@@ -57,7 +57,7 @@ export const AccordionItem = ({
     setVisible(nextState);
 
     /** contextApi 이용 */
-    updateValues && updateValues(index, nextState);
+    updateValues && index && updateValues(index, nextState);
   };
 
   return (
