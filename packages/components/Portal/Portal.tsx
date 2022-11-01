@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 
 export interface Props {
   children: React.ReactNode;
+
+  /**
+   * @description DOM의 id 혹은 element를 지정합니다.
+   * @default 'portal' - className으로 지정됨
+   *
+   */
   target?: HTMLElement | string;
 }
 
@@ -28,11 +34,20 @@ export const Portal = ({ children, target }: Props) => {
   const portalContainer = useRef<HTMLElement>();
 
   if (typeof target === 'string') {
+    /**
+     * @description target이 string일 경우, 해당 id를 가진 element를 찾는다
+     */
     portalContainer.current = document.getElementById(target) as HTMLElement;
   } else if (target instanceof HTMLElement) {
+    /**
+     * @description target이 HTMLElement일 경우, 해당 element를 찾는다
+     */
     portalContainer.current = target;
     document.body.appendChild(portalContainer.current);
   } else {
+    /**
+     * @description target이 없을 경우, body에 portal라는 className를 가진 div element를 생성한다
+     */
     if (!portalContainer.current) {
       const div = document.createElement('div');
       div.className = 'portal';
