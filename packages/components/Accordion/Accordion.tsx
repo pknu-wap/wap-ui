@@ -6,21 +6,38 @@ import { setChildrenIndex } from '../../utils/setChildrenIndex';
 
 export interface Props extends AccordionProviderProps {
   children: React.ReactNode;
+  /**
+   * 여러개가 열리게 할 수 있는지, 하나가 열릴 때 나머지는 닫히게 할 지 결정합니다.
+   */
   allowMultiple?: boolean;
 }
 
-export const Accordion = ({ children, allowMultiple = true }: Props) => {
+export const Accordion = ({ children, allowMultiple = false }: Props) => {
   const [state, setState] = useState<Array<number>>([]);
 
+  /**
+   * currentIndex: 선택한 index
+   * nextState: 다음이 visible인지 unvisible인지
+   */
   const updateValues = (currentIndex: number, nextState: boolean) => {
+    /** 하나만 열림 */
     if (!allowMultiple) {
+      /** 다음이 visible 상태 */
       if (nextState) return setState([currentIndex]);
+      /** 다음이 unvisible 상태 */
       return setState([]);
     }
-    if (nextState) return setState([...state, currentIndex]);
-    setState(state.filter((v) => v !== currentIndex));
+
+    /** 여러개 열림 */
+    if (nextState)
+      /** 다음이 visible 상태 */
+      return setState([...state, currentIndex]);
+
+    /** 다음이 unvisible 상태 */
+    return setState(state.filter((v) => v !== currentIndex));
   };
 
+  /** children을 순회하면서 index를 부여한다 */
   const hasIndexChildren = useMemo(
     () => setChildrenIndex(children, [Accordion.Item]),
     [children],

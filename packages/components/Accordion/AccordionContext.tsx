@@ -6,6 +6,7 @@ export interface AccordionProviderProps {
 
 export interface AccoridionContextValue {
   values: Array<number>;
+  /** (index: number, nextState: boolean) => void으로 하면 index값이 있을 수도 없을 수도 있어서 애매 */
   // eslint-disable-next-line @typescript-eslint/ban-types
   updateValues?: Function;
 }

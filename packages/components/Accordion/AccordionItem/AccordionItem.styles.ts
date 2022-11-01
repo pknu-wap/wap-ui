@@ -8,34 +8,43 @@ export const Root = styled.div`
 
 export const Label = styled.div<{ visible: boolean }>`
   position: relative;
-  padding: 10px;
+  padding: 1rem;
   font-size: ${common.size.md};
-  background: ${common.color.cyan3};
-  border-left: 5px solid ${common.color.cyan5};
+  font-weight: 800;
+  background: ${common.color.gray5};
+  border-left: 5px solid ${common.color.gray6};
   color: ${common.color.white};
-  transition: all 0.5s ease-in-out;
+  transition: background 0.3s ease;
   cursor: pointer;
   &:hover {
-    background: ${common.color.cyan4};
+    background: ${common.color.gray6};
   }
   &::before {
     content: '+';
+    font-size: 2rem;
     position: absolute;
     top: 50%;
     right: 20px;
-    transform: translateY(-50%);
+    transform: translateY(-50%)
+      rotate(${({ visible }) => (visible ? '45deg' : '0')});
+    transition: all 0.1s ease-in-out;
   }
 `;
 
-export const ContentWrapper = styled.div<{ visible: boolean }>`
+export const Description = styled.div`
+  font-size: ${common.size.sm};
+  color: ${common.color.white};
+`;
+
+export const ContentWrapper = styled.div`
+  height: 0;
   position: relative;
-  max-height: ${({ visible }) => (visible ? '600px' : '0')};
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease;
   overflow-y: auto;
 `;
 
 export const Content = styled.div`
-  background: ${common.color.cyan0};
-  padding: 10px;
+  background: ${common.color.gray2};
+  padding: 1rem 2rem;
 `;

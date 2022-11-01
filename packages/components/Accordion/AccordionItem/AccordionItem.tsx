@@ -1,28 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import useDidMountEffect from '../../../hooks/useDidMountEffect';
 import { useAccordionContext } from '../AccordionContext';
 import * as S from './AccordionItem.styles';
 
 export interface Props {
   children: React.ReactNode;
-  label: string;
-  expanded?: boolean;
+  /**
+   * AccordionItem의 닫혔을 경우에도 보여지는 부분입니다.
+   */
+  label: React.ReactNode;
+
+  /**
+   * AccordionItem의 닫혔을 경우에도 보여지는 label 밑에 위치하는 부연설명입니다.
+   */
+  description?: React.ReactNode;
+
+  /**
+   * Accordion에 의해 자동으로 부여되는 index
+   */
   index?: number;
 }
-/**
- * @todo setChildrenIndex라는 chilren에 자동으로 index값 부여해주는 util 함수를 만들기 / Accoridion Component에서 처리
- * @see https://github.dev/nextui-org/nextui/blob/main/packages/react/src/utils/collections.ts
- */
 
-export const AccordionItem = ({ children, label, index }: Props) => {
+export const AccordionItem = ({
+  children,
+  label,
+  index,
+  description,
+}: Props) => {
+  const parentRef = useRef<HTMLDivElement>(null);
+  const childRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const { values, updateValues } = useAccordionContext();
-
-  /** @todo 나중에 적용하기 */
-  // useEffect(() => {
-  //   if (visible !== expanded) {
-  //     setVisible(expanded);
-  //   }
-  // }, [expanded]);
 
   useEffect(() => {
     if (!values.length) return;
@@ -30,17 +38,36 @@ export const AccordionItem = ({ children, label, index }: Props) => {
     setVisible(isActive);
   }, [values]);
 
+  /** 첫 마운트 이후부터 visible이 변경할 때 작동한다. */
+  useDidMountEffect(() => {
+    if (parentRef.current === null || childRef.current === null) return;
+
+    if (!visible) {
+      parentRef.current.style.height = '0';
+      parentRef.current.style.opacity = '0';
+    } else {
+      parentRef.current.style.height = `${childRef.current.clientHeight}px`;
+      parentRef.current.style.opacity = '1';
+    }
+  }, [visible]);
+
+  /** 다음 상태로 변경시키는 함수 */
   const handleChangeVisible = () => {
-    updateValues && updateValues(index, !visible);
+    const nextState = !visible;
+    setVisible(nextState);
+
+    /** contextApi 이용 */
+    updateValues && updateValues(index, nextState);
   };
 
   return (
     <S.Root>
-      <S.Label visible={visible} onClick={() => handleChangeVisible()}>
+      <S.Label visible={visible} onClick={handleChangeVisible}>
         {label}
+        {description && <S.Description>{description}</S.Description>}
       </S.Label>
-      <S.ContentWrapper visible={visible}>
-        <S.Content>{children}</S.Content>
+      <S.ContentWrapper ref={parentRef}>
+        <S.Content ref={childRef}>{children}</S.Content>
       </S.ContentWrapper>
     </S.Root>
   );
