@@ -1,5 +1,4 @@
-import { ThemeProvider } from '@emotion/react';
-import lightTheme from '../packages/theme/light-theme';
+import { WapUIProvider } from '../packages/index';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -13,8 +12,8 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={lightTheme}>
+    <WapUIProvider>
       <Story />
-    </ThemeProvider>
+    </WapUIProvider>
   ),
 ];
