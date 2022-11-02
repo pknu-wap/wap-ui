@@ -17,7 +17,7 @@ npm i wap-ui @emotion/react @emotion/styled framer-motion
 import React from 'react';
 
 // 1. import `WapUIProvider` component
-import { ChakraProvider } from '@chakra-ui/react';
+import { WapUIProvider } from 'wap-ui';
 
 function App() {
   // 2. Wrap WapUIProvider at the root of your app
