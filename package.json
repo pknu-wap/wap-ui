@@ -72,5 +72,15 @@
   "dependencies": {},
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "emotion",
+    "framer-motion",
+    "ui",
+    "components",
+    "react-component-library",
+    "react-ui-kit",
+    "wap"
   ]
 }
