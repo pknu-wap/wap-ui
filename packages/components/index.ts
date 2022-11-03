@@ -6,3 +6,4 @@ export * from './Modal';
 export * from './Portal';
 export * from './Accordion';
 export * from './TextInput';
+export * from './Toggle';
