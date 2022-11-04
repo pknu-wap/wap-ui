@@ -5,7 +5,14 @@ import { ModalFooter } from './ModalFooter';
 import { ModalHeader } from './ModalHeader';
 
 export interface Props {
+  /**
+   * @description 모달이 열려있는지 여부
+   * @default false
+   */
   isOpen?: boolean;
+  /**
+   * @description 모달이 닫힐 때 사용되는 함수
+   */
   onClose: () => void;
   children: React.ReactNode;
   /**
@@ -15,6 +22,27 @@ export interface Props {
   blur?: boolean;
 }
 
+/**
+ * @example
+ * ```jsx
+ * const App = () =>{
+ * const [isOpen, setIsOpen] = useState(false);
+ * return (
+ *  <>
+ *   <button onClick={() => setIsOpen(true)}>열기</button>
+ *   <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+ *      <Modal.Header>제목</Modal.Header>
+ *      <Modal.Body>내용</Modal.Body>
+ *      <Modal.Footer>
+ *          <button onClick={() => setIsOpen(false)}>닫기</button>
+ *      </Modal.Footer>
+ *    </Modal>
+ *  </>
+ * );
+ * };
+ *
+ * ```
+ */
 export const Modal = ({
   isOpen = false,
   onClose,
@@ -26,13 +54,25 @@ export const Modal = ({
   useEffect(() => {
     let visibleId: NodeJS.Timeout;
     if (isOpen) {
+      /**
+       * @description 모달이 열릴 때, visible을 true로 변경한다
+       */
       setVisible(true);
+      /**
+       * @description 스크롤을 막기 위해 body에 overflow: hidden을 추가
+       */
       document.body.style.overflow = 'hidden';
     } else {
+      /**
+       * @description 모달이 닫힐 때, visible을 false로 변경한다
+       */
       visibleId = setTimeout(() => {
         setVisible(false);
         clearTimeout(visibleId);
       }, 100);
+      /**
+       * @description 스크롤 기능을 위해 body에 overflow: hidden을 제거
+       */
       document.body.style.overflow = 'auto';
     }
     return () => clearTimeout(visibleId);
