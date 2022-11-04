@@ -49,6 +49,7 @@ export const ModalElement = styled.div`
 
 export const ModalHeader = styled.header`
   width: 100%;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,6 +90,7 @@ export const ModalBody = styled.div`
 
 export const ModalFooter = styled.footer`
   display: flex;
+  padding-top: 1rem;
   justify-content: flex-end;
   gap: 1rem;
 `;
