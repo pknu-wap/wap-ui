@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Modal } from './Modal';
+import { Modal, Props } from './Modal';
 import React from 'react';
 import { Button } from '../Button';
 import styled from '@emotion/styled';
@@ -10,13 +10,13 @@ export default {
   component: Modal,
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = () => {
+const Template: ComponentStory<typeof Modal> = (args: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Container>
       <Button onClick={onOpen}>버튼</Button>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal {...args} isOpen={isOpen} onClose={onClose}>
         <Modal.Header onClose={onClose}>Header</Modal.Header>
         <Modal.Body>
           <span>
@@ -44,6 +44,7 @@ const Container = styled.div`
 
 export const Default = Template.bind({});
 
-// Default.args = {
-//   children: 'A Basic Modal',
-// };
+export const Blur = Template.bind({});
+Blur.args = {
+  blur: true,
+};

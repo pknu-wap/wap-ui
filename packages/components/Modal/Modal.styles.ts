@@ -11,7 +11,7 @@ export const ModalAnimationProvider = styled.div<Pick<Props, 'isOpen'>>`
   `}
 `;
 
-export const Overlay = styled.div`
+export const Overlay = styled.div<{ blur: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,9 +20,19 @@ export const Overlay = styled.div`
   left: 0;
   top: 0;
   position: fixed;
-  -webkit-backdrop-filter: saturate(200%) blur(2px);
-  backdrop-filter: saturate(200%) blur(2px);
-  background-color: rgba(0, 0, 0, 0.1);
+  ${({ blur }) =>
+    blur === true &&
+    css`
+      -webkit-backdrop-filter: saturate(200%) blur(2px);
+      backdrop-filter: saturate(200%) blur(2px);
+      background-color: rgba(0, 0, 0, 0.1);
+    `}
+  ${({ blur }) =>
+    blur === false &&
+    css`
+      background-color: ${common.color.black};
+      opacity: 0.5;
+    `}
 `;
 
 export const ModalElement = styled.div`

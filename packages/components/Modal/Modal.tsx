@@ -8,9 +8,19 @@ export interface Props {
   isOpen?: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  /**
+   * @description 모달의 overlay를 blur 처리할지 여부
+   * @default false
+   */
+  blur?: boolean;
 }
 
-export const Modal = ({ isOpen = false, onClose, children }: Props) => {
+export const Modal = ({
+  isOpen = false,
+  onClose,
+  blur = false,
+  children,
+}: Props) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -33,7 +43,7 @@ export const Modal = ({ isOpen = false, onClose, children }: Props) => {
       {visible && (
         <>
           <S.ModalAnimationProvider isOpen={isOpen}>
-            <S.Overlay onClick={onClose} />
+            <S.Overlay blur={blur} onClick={onClose} />
             <S.ModalElement>{children}</S.ModalElement>
           </S.ModalAnimationProvider>
         </>
