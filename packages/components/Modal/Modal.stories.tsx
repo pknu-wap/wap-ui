@@ -1,8 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Modal } from './Modal';
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '../Button';
 import styled from '@emotion/styled';
+import useDisclosure from '../../hooks/useDisclosure';
 
 export default {
   title: 'Components/Modal',
@@ -10,21 +11,13 @@ export default {
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = () => {
-  const [visible, setVisible] = useState(false);
-
-  const openModal = () => {
-    setVisible(true);
-  };
-
-  const closeModal = () => {
-    setVisible(false);
-  };
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Container>
-      <Button onClick={openModal}>버튼</Button>
-      <Modal isOpen={visible} onClose={closeModal}>
-        <Modal.Header onClose={closeModal}>Header</Modal.Header>
+      <Button onClick={onOpen}>버튼</Button>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal.Header onClose={onClose}>Header</Modal.Header>
         <Modal.Body>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -38,7 +31,7 @@ const Template: ComponentStory<typeof Modal> = () => {
           <Button>Body Button</Button>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={closeModal}>Close</Button>
+          <Button onClick={onClose}>Close</Button>
         </Modal.Footer>
       </Modal>
     </Container>
