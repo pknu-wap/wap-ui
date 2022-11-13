@@ -7,37 +7,31 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 const extensions = ['js', 'jsx', 'ts', 'tsx', 'mjs'];
 import pkg from './package.json';
 
-function setUpRollup({ output }) {
-  return {
-    external: ['react', 'react-dom'],
-    input: './packages/index.ts',
-    output,
-    plugins: [
-      nodeResolve({ extensions }),
-      babel({
-        exclude: 'node_modules/**',
-        extensions,
-        include: ['packages/**/*'],
-        babelHelpers: 'bundled',
-      }),
-      commonjs({ include: 'node_modules/**' }),
-      peerDepsExternal(),
-      typescript({ tsconfig: './tsconfig.json' }),
-    ],
-  };
-}
-
-export default [
-  setUpRollup({
-    output: {
+export default {
+  external: ['react', 'react-dom'],
+  input: './packages/index.ts',
+  output: [
+    {
       file: pkg.main,
       format: 'cjs',
+      sourcemap: true,
     },
-  }),
-  setUpRollup({
-    output: {
+    {
       file: pkg.module,
       format: 'esm',
+      sourcemap: true,
     },
-  }),
-];
+  ],
+  plugins: [
+    nodeResolve({ extensions }),
+    babel({
+      exclude: 'node_modules/**',
+      extensions,
+      include: ['packages/**/*'],
+      babelHelpers: 'bundled',
+    }),
+    commonjs({ include: 'node_modules/**' }),
+    peerDepsExternal(),
+    typescript({ tsconfig: './tsconfig.json', sourceMap: true }),
+  ],
+};
