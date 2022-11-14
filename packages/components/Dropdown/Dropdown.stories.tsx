@@ -12,7 +12,9 @@ export const Default = () => {
   return (
     <FlexColumn>
       <Dropdown>
-        <Dropdown.Button shadow>Actions</Dropdown.Button>
+        <Dropdown.Button color="secondary" shadow>
+          Actions
+        </Dropdown.Button>
         <Dropdown.Menu>
           <Dropdown.MenuItem>Create a Copy</Dropdown.MenuItem>
           <Dropdown.MenuItem>Download</Dropdown.MenuItem>

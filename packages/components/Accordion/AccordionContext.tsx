@@ -4,12 +4,12 @@ export interface AccordionProviderProps {
   children: React.ReactNode;
 }
 
-export interface AccoridionContextValue {
+export interface AccordionContextValue {
   values: Array<number>;
   updateValues?: (index: number, nextState: boolean) => void;
 }
 
-export const AccordionContext = createContext<AccoridionContextValue>({
+export const AccordionContext = createContext<AccordionContextValue>({
   values: [],
 });
 
