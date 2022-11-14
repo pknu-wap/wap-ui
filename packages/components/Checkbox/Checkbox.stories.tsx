@@ -32,9 +32,8 @@ const Template: ComponentStory<typeof Checkbox> = (_: Props) => {
   return (
     <FlexColumn>
       {CHECKBOX_LIST.map((checkbox) => (
-        <>
+        <FlexColumn key={checkbox.id}>
           <Checkbox
-            key={checkbox.id}
             color={checkbox.data}
             labelText={checkbox.data}
             value={checkbox.data}
@@ -45,7 +44,7 @@ const Template: ComponentStory<typeof Checkbox> = (_: Props) => {
             checked={selected.includes(checkbox.data) ? true : false}
           />
           <Spacer />
-        </>
+        </FlexColumn>
       ))}
       <div>Selected : {selected.join(', ')}</div>
     </FlexColumn>

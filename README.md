@@ -15,6 +15,22 @@ npm i wap-ui @emotion/react @emotion/styled framer-motion
 
 ```jsx
 import React from 'react';
+
+// 1. import `WapUIProvider` component
+import { WapUIProvider } from 'wap-ui';
+
+function App() {
+  // 2. Wrap WapUIProvider at the root of your app
+  return (
+    <WapUIProvider>
+      <WriteYourCode />
+    </WapUIProvider>
+  );
+}
+```
+
+```jsx
+import React from 'react';
 import { Button } from 'wap-ui';
 
 const App = () => {
