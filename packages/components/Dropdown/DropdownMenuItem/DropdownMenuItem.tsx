@@ -6,5 +6,9 @@ export interface DropdownMenuItemProps {
 }
 
 export const DropdownMenuItem = ({ children }: DropdownMenuItemProps) => {
-  return <S.StyledMenuItem>{children}</S.StyledMenuItem>;
+  return (
+    <S.StyledMenuItem>
+      <S.StyledMenuItemText>{children}</S.StyledMenuItemText>
+    </S.StyledMenuItem>
+  );
 };

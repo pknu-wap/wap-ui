@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { ComponentMeta } from '@storybook/react';
 import { Dropdown } from './Dropdown';
 import React from 'react';
+import { Spacer } from '../../layouts';
 
 export default {
   title: 'Components/Dropdown',
@@ -10,7 +11,8 @@ export default {
 
 export const Default = () => {
   return (
-    <FlexColumn>
+    <FlexRow>
+      <Spacer x={4} />
       <Dropdown>
         <Dropdown.Button color="secondary" shadow>
           Actions
@@ -22,13 +24,13 @@ export const Default = () => {
           <Dropdown.MenuItem>Mark as Draft</Dropdown.MenuItem>
         </Dropdown.Menu>
       </Dropdown>
-    </FlexColumn>
+    </FlexRow>
   );
 };
 
-const FlexColumn = styled.div`
+const FlexRow = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   width: 250px;
 `;

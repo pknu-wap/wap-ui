@@ -3,6 +3,7 @@ import useOnClickOutside from '../../hooks/useOnClickOutside';
 import { DropdownMenu } from './DropdownMenu';
 import { DropdownMenuItem } from './DropdownMenuItem';
 import { DropdownButton } from './DropdownButton/DropdownButton';
+import { DropdownContext } from './DropdownContext';
 
 export interface DropdownProps {
   children: React.ReactNode[];
@@ -27,15 +28,16 @@ export interface DropdownProps {
 export const Dropdown = ({ children }: DropdownProps) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState<boolean>(false);
-  const onClose = () => {
-    setVisible(false);
+  const onClose = (nextState: boolean) => {
+    setVisible(nextState);
   };
-  useOnClickOutside(ref, onClose);
+  useOnClickOutside(ref, () => onClose(false));
   return (
-    <div ref={ref} onClick={() => setVisible(true)}>
-      {children}
-      {visible ? 'visible' : 'hidden'}
-    </div>
+    <DropdownContext.Provider value={{ state: visible, updateState: onClose }}>
+      <div ref={ref} onClick={() => setVisible(true)}>
+        {children}
+      </div>
+    </DropdownContext.Provider>
   );
 };
 

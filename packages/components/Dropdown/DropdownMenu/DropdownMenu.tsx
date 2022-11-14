@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDropdownContext } from '../DropdownContext';
 import * as S from './DropdownMenu.styles';
 
 export interface DropdownMenuProps {
@@ -6,5 +7,7 @@ export interface DropdownMenuProps {
 }
 
 export const DropdownMenu = ({ children }: DropdownMenuProps) => {
+  const { state } = useDropdownContext();
+  if (!state) return null;
   return <S.StyledMenu>{children}</S.StyledMenu>;
 };

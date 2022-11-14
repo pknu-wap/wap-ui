@@ -5,11 +5,12 @@ export interface DropdownProviderProps {
 }
 
 export interface DropdownContextValue {
-  visible: boolean;
+  state: boolean;
+  updateState?: (nextState: boolean) => void;
 }
 
 export const DropdownContext = createContext<DropdownContextValue>({
-  visible: false,
+  state: false,
 });
 
 export const useDropdownContext = () => {
