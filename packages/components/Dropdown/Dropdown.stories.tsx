@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Dropdown, DropdownProps } from './Dropdown';
+import { ComponentMeta } from '@storybook/react';
+import { Dropdown } from './Dropdown';
 import React from 'react';
 
 export default {
@@ -8,10 +8,10 @@ export default {
   component: Dropdown,
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => {
+export const Default = () => {
   return (
     <FlexColumn>
-      <Dropdown {...args} />
+      <Dropdown>Dropdown</Dropdown>
     </FlexColumn>
   );
 };
@@ -22,9 +22,3 @@ const FlexColumn = styled.div`
   align-items: flex-start;
   width: 250px;
 `;
-
-export const Default = Template.bind({});
-
-Default.args = {
-  children: 'A Basic Dropdown',
-};
