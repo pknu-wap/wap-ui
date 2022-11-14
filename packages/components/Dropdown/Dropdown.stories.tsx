@@ -11,7 +11,15 @@ export default {
 export const Default = () => {
   return (
     <FlexColumn>
-      <Dropdown>Dropdown</Dropdown>
+      <Dropdown>
+        <Dropdown.Button>Actions</Dropdown.Button>
+        <Dropdown.Menu>
+          <Dropdown.MenuItem>Create a Copy</Dropdown.MenuItem>
+          <Dropdown.MenuItem>Download</Dropdown.MenuItem>
+          <Dropdown.MenuItem>Delete</Dropdown.MenuItem>
+          <Dropdown.MenuItem>Mark as Draft</Dropdown.MenuItem>
+        </Dropdown.Menu>
+      </Dropdown>
     </FlexColumn>
   );
 };
