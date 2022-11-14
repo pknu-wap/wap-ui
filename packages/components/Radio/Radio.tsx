@@ -2,13 +2,13 @@ import { NormalColorType } from '../../theme/types';
 import React, { forwardRef, InputHTMLAttributes } from 'react';
 import * as S from './Radio.styles';
 
-export interface Props extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   labelText?: string;
   color?: NormalColorType;
   labelColor?: boolean;
 }
 
-export const Radio = forwardRef<HTMLInputElement, Props>(function Radio(
+export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
   { labelText = '', labelColor = false, color = 'primary', ...options },
   ref,
 ) {

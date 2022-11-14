@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
-export interface Props {
+export interface PortalProps {
   children: React.ReactNode;
 
   /**
@@ -30,7 +30,7 @@ export interface Props {
  * </Portal>
  */
 
-export const Portal = ({ children, target }: Props) => {
+export const Portal = ({ children, target }: PortalProps) => {
   const portalContainer = useRef<HTMLElement>();
 
   if (typeof target === 'string') {

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { TextInput, Props } from './TextInput';
+import { TextInput, TextInputProps } from './TextInput';
 import React from 'react';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: TextInput,
 } as ComponentMeta<typeof TextInput>;
 
-const Template: ComponentStory<typeof TextInput> = (args: Props) => {
+const Template: ComponentStory<typeof TextInput> = (args: TextInputProps) => {
   return (
     <FlexColumn>
       <TextInput {...args} />

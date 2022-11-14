@@ -2,14 +2,14 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Spacer } from '../../layouts';
-import { Toggle, Props } from './Toggle';
+import { Toggle, ToggleProps } from './Toggle';
 
 export default {
   title: 'Components/Toggle',
   component: Toggle,
 } as ComponentMeta<typeof Toggle>;
 
-const Template: ComponentStory<typeof Toggle> = (args: Props) => {
+const Template: ComponentStory<typeof Toggle> = (args: ToggleProps) => {
   return (
     <FlexColumn>
       <Toggle {...args} />

@@ -1,9 +1,9 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { common } from '../../theme/common';
-import { Props } from './Modal';
+import { ModalProps } from './Modal';
 
-export const ModalAnimationProvider = styled.div<Pick<Props, 'isOpen'>>`
+export const ModalAnimationProvider = styled.div<Pick<ModalProps, 'isOpen'>>`
   ${({ isOpen }) => css`
     visibility: ${isOpen ? 'visible' : 'hidden'};
     animation: ${isOpen ? fadeIn : fadeOut} 0.1s;

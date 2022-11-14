@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Spacer, Props } from './Spacer';
+import { Spacer, SpacerProps } from './Spacer';
 import React from 'react';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: Spacer,
 } as ComponentMeta<typeof Spacer>;
 
-const Template: ComponentStory<typeof Spacer> = (args: Props) => {
+const Template: ComponentStory<typeof Spacer> = (args: SpacerProps) => {
   return (
     <Container>
       <FlexColumn>
