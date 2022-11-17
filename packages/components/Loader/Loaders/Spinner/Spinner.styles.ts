@@ -25,17 +25,17 @@ export const Container = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
   ${({ size }) =>
     size === 'sm'
       ? css`
-          width: 2rem;
-          height: 2rem;
+          width: 1.375rem;
+          height: 1.375rem;
         `
       : size === 'md'
       ? css`
-          width: 3rem;
-          height: 3rem;
+          width: 2.25rem;
+          height: 2.25rem;
         `
       : css`
-          width: 4rem;
-          height: 4rem;
+          width: 2.75rem;
+          height: 2.75rem;
         `}
   position: relative;
   animation: ${containerKeyframes} 2.5s infinite linear both;
@@ -43,7 +43,7 @@ export const Container = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
 
 export const SpinningDot = styled.div<{
   delay: number;
-  color: 'primary' | 'secondary' | string;
+  color: 'primary' | 'secondary';
 }>`
   width: 100%;
   height: 100%;
@@ -57,7 +57,8 @@ export const SpinningDot = styled.div<{
     display: block;
     width: 25%;
     height: 25%;
-    background-color: ${common.color.green6};
+    background-color: ${({ color }) =>
+      color === 'primary' ? common.color.green6 : common.color.white};
     border-radius: 50%;
     animation: ${beforeKeyframes} 2s infinite ease-in-out both;
     animation-delay: ${({ delay }) => -1.2 + delay + 's'};
