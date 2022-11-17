@@ -1,11 +1,37 @@
 import React from 'react';
+import { Bars } from './Loaders/Bars/Bars';
 import { Spinner } from './Loaders/Spinner/Spinner';
 
 export interface LoaderProps {
+  /**
+   * @default 'md'
+   */
   size?: 'sm' | 'md' | 'lg';
+  /**
+   * @default 'primary'
+   */
   color?: 'primary' | 'secondary';
+  /**
+   * @default 'spinner'
+   */
   type?: 'spinner' | 'bars' | 'dots';
 }
+
+/**
+ * @example
+ * ```jsx
+ * const App = () => {
+ *  return (
+ * <>
+ *   <Loader />
+ *   <Loader type="spinner" size='sm' />
+ *   <Loader type="bars" color='secondary' />
+ *   <Loader type="dots" />
+ * </>
+ * )
+ * }
+ * ```
+ */
 
 export const Loader = ({
   color = 'primary',
@@ -13,6 +39,12 @@ export const Loader = ({
   type = 'spinner',
 }: LoaderProps) => {
   return (
-    <>{type === 'spinner' ? <Spinner size={size} color={color} /> : null}</>
+    <>
+      {type === 'spinner' ? (
+        <Spinner size={size} color={color} />
+      ) : type === 'bars' ? (
+        <Bars size={size} color={color} />
+      ) : null}
+    </>
   );
 };

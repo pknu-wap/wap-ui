@@ -3,6 +3,7 @@ import { Loader, LoaderProps } from './Loader';
 import React from 'react';
 import styled from '@emotion/styled';
 import { Spacer } from '../../layouts';
+import { BarsProps } from './Loaders/Bars/Bars';
 
 export default {
   title: 'Components/Loader',
@@ -27,6 +28,10 @@ export const Spinner = ({ size }: Pick<LoaderProps, 'size'>) => {
       <Loader type="spinner" color="secondary" size={size} />
     </Container>
   );
+};
+
+export const Bars = ({ size, color }: BarsProps) => {
+  return <Loader type="bars" size={size} color={color} />;
 };
 
 const Container = styled.div`
