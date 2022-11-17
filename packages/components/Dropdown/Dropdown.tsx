@@ -4,6 +4,7 @@ import { DropdownMenu } from './DropdownMenu';
 import { DropdownMenuItem } from './DropdownMenuItem';
 import { DropdownButton } from './DropdownButton/DropdownButton';
 import { DropdownContext } from './DropdownContext';
+import { Portal } from '../Portal';
 
 export interface DropdownProps {
   children: React.ReactNode[];
@@ -32,11 +33,18 @@ export const Dropdown = ({ children }: DropdownProps) => {
     setVisible(nextState);
   };
   useOnClickOutside(ref, () => onClose(false));
+  const [trigger, content] = React.Children.toArray(children);
   return (
     <DropdownContext.Provider value={{ state: visible, updateState: onClose }}>
-      <div ref={ref} onClick={() => setVisible(true)}>
-        {children}
+      <div
+        ref={ref}
+        onClick={() => {
+          setVisible(true);
+        }}
+      >
+        {trigger}
       </div>
+      <Portal>{content}</Portal>
     </DropdownContext.Provider>
   );
 };
