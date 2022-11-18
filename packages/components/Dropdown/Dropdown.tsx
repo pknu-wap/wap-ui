@@ -39,7 +39,7 @@ export const Dropdown = ({ children }: DropdownProps) => {
       <div
         ref={ref}
         onClick={() => {
-          setVisible(true);
+          setVisible(!visible);
         }}
       >
         {trigger}
