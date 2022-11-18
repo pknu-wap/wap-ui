@@ -58,5 +58,7 @@ export const Bar = styled.div<{
       ? css`
           background-color: ${common.color.green6};
         `
-      : css``}
+      : css`
+          background-color: ${common.color.white};
+        `}
 `;
