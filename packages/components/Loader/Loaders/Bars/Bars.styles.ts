@@ -1,6 +1,7 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import { common } from '../../../../theme/common';
+import { palette } from '../../../../theme/palette';
+import { NormalColorType } from '../../../../theme/types';
 
 const BarKeyframes = keyframes`
   0% {
@@ -48,17 +49,10 @@ export const Container = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
 `;
 
 export const Bar = styled.div<{
-  color: 'primary' | 'secondary';
+  color: NormalColorType;
   delay: number;
 }>`
   animation: ${BarKeyframes} 1s infinite ease-in-out;
   animation-delay: ${({ delay }) => delay + 's'};
-  ${({ color }) =>
-    color === 'primary'
-      ? css`
-          background-color: ${common.color.green6};
-        `
-      : css`
-          background-color: ${common.color.white};
-        `}
+  background-color: ${({ color }) => palette[color]};
 `;

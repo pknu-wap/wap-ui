@@ -1,9 +1,10 @@
 import React from 'react';
+import { NormalColorType } from '../../../../theme/types';
 import * as S from './Dots.styles';
 
 export interface DotsProps {
   size: 'sm' | 'md' | 'lg';
-  color: 'primary' | 'secondary';
+  color: NormalColorType;
 }
 
 export const Dots = ({ size, color }: DotsProps) => {

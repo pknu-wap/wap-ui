@@ -1,6 +1,7 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import { common } from '../../../../theme/common';
+import { palette } from '../../../../theme/palette';
+import { NormalColorType } from '../../../../theme/types';
 
 const containerKeyframes = keyframes`
   100% {
@@ -43,7 +44,7 @@ export const Container = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
 
 export const SpinningDot = styled.div<{
   delay: number;
-  color: 'primary' | 'secondary';
+  color: NormalColorType;
 }>`
   width: 100%;
   height: 100%;
@@ -57,8 +58,7 @@ export const SpinningDot = styled.div<{
     display: block;
     width: 25%;
     height: 25%;
-    background-color: ${({ color }) =>
-      color === 'primary' ? common.color.green6 : common.color.white};
+    background-color: ${({ color }) => palette[color]};
     border-radius: 50%;
     animation: ${beforeKeyframes} 2s infinite ease-in-out both;
     animation-delay: ${({ delay }) => -1.2 + delay + 's'};

@@ -1,6 +1,7 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import { common } from '../../../../theme/common';
+import { palette } from '../../../../theme/palette';
+import { NormalColorType } from '../../../../theme/types';
 
 const DotsKeyframes = keyframes`
  0%{
@@ -46,20 +47,10 @@ export const Container = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
 
 export const Dot = styled.div<{
   delay: number;
-
-  color: 'primary' | 'secondary';
+  color: NormalColorType;
 }>`
   border-radius: 50%;
-  ${({ color }) =>
-    color === 'primary' &&
-    css`
-      background-color: ${common.color.green6};
-    `};
-  ${({ color }) =>
-    color === 'secondary' &&
-    css`
-      background-color: ${common.color.white};
-    `};
+  background-color: ${({ color }) => palette[color]};
   animation: ${DotsKeyframes} 1s infinite linear alternate;
   animation-delay: ${({ delay }) => delay + 's'};
 `;

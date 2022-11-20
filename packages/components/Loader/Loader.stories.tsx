@@ -23,8 +23,13 @@ export const Default = Template.bind({});
 export const Spinner = ({ size }: Pick<LoaderProps, 'size'>) => {
   return (
     <Container>
-      <Loader type="spinner" size={size} />
-      <Loader type="spinner" color="secondary" size={size} />
+      <FlexRow>
+        <Loader type="spinner" size={size} />
+        <Loader type="spinner" color="error" size={size} />
+        <Loader type="spinner" color="secondary" size={size} />
+        <Loader type="spinner" color="success" size={size} />
+        <Loader type="spinner" color="warning" size={size} />
+      </FlexRow>
     </Container>
   );
 };
@@ -32,8 +37,13 @@ export const Spinner = ({ size }: Pick<LoaderProps, 'size'>) => {
 export const Bars = ({ size }: Pick<BarsProps, 'size'>) => {
   return (
     <Container>
-      <Loader type="bars" size={size} color="primary" />
-      <Loader type="bars" size={size} color="secondary" />
+      <FlexRow>
+        <Loader type="bars" size={size} />
+        <Loader type="bars" color="error" size={size} />
+        <Loader type="bars" color="secondary" size={size} />
+        <Loader type="bars" color="success" size={size} />
+        <Loader type="bars" color="warning" size={size} />
+      </FlexRow>
     </Container>
   );
 };
@@ -41,8 +51,13 @@ export const Bars = ({ size }: Pick<BarsProps, 'size'>) => {
 export const Dots = ({ size }: Pick<DotsProps, 'size'>) => {
   return (
     <Container>
-      <Loader type="dots" size={size} color="primary" />
-      <Loader type="dots" size={size} color="secondary" />
+      <FlexRow>
+        <Loader type="dots" size={size} />
+        <Loader type="dots" color="error" size={size} />
+        <Loader type="dots" color="secondary" size={size} />
+        <Loader type="dots" color="success" size={size} />
+        <Loader type="dots" color="warning" size={size} />
+      </FlexRow>
     </Container>
   );
 };
@@ -52,5 +67,10 @@ const Container = styled.div`
   gap: 3rem;
   height: 100vh;
   padding: 3rem;
-  background-color: #5f5f5f;
+`;
+
+const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 `;

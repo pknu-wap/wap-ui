@@ -1,9 +1,10 @@
 import React from 'react';
+import { NormalColorType } from '../../../../theme/types';
 import * as S from './Bars.styles';
 
 export interface BarsProps {
   size: 'sm' | 'md' | 'lg';
-  color: 'primary' | 'secondary';
+  color: NormalColorType;
 }
 
 export const Bars = ({ size, color }: BarsProps) => {

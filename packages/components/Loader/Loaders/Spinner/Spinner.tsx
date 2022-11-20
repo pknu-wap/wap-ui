@@ -1,9 +1,10 @@
 import React from 'react';
+import { NormalColorType } from '../../../../theme/types';
 import * as S from './Spinner.styles';
 
 interface SpinnerProps {
   size: 'sm' | 'md' | 'lg';
-  color: 'primary' | 'secondary';
+  color: NormalColorType;
 }
 
 export const Spinner = ({ size, color }: SpinnerProps) => {
