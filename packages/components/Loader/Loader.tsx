@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bars } from './Loaders/Bars/Bars';
+import { Dots } from './Loaders/Dots/Dots';
 import { Spinner } from './Loaders/Spinner/Spinner';
 
 export interface LoaderProps {
@@ -44,6 +45,8 @@ export const Loader = ({
         <Spinner size={size} color={color} />
       ) : type === 'bars' ? (
         <Bars size={size} color={color} />
+      ) : type === 'dots' ? (
+        <Dots size={size} color={color} />
       ) : null}
     </>
   );

@@ -3,6 +3,7 @@ import { Loader, LoaderProps } from './Loader';
 import React from 'react';
 import styled from '@emotion/styled';
 import { BarsProps } from './Loaders/Bars/Bars';
+import { DotsProps } from './Loaders/Dots/Dots';
 
 export default {
   title: 'Components/Loader',
@@ -37,6 +38,14 @@ export const Bars = ({ size }: Pick<BarsProps, 'size'>) => {
   );
 };
 
+export const Dots = ({ size }: Pick<DotsProps, 'size'>) => {
+  return (
+    <Container>
+      <Loader type="dots" size={size} color="primary" />
+      <Loader type="dots" size={size} color="secondary" />
+    </Container>
+  );
+};
 const Container = styled.div`
   display: flex;
   flex-direction: column;
