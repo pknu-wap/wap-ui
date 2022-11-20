@@ -1,7 +1,7 @@
 {
   "name": "wap-ui",
-  "version": "1.1.2",
-  "repository": "https://github.com/neko113/wap-ui.git",
+  "version": "1.1.8",
+  "repository": "https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1.git",
   "author": "neko113 <alstn113@gmail.com>",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -15,10 +15,10 @@
     "prepare": "husky install",
     "format": "prettier --write . --config ./.prettierrc",
     "lint": "eslint './packages/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix './packages/**/*.{ts,tsx}'"
   },
   "lint-staged": {
-    ".": [
+    "./packages/**/*.{ts,tsx}": [
       "yarn format",
       "yarn lint:fix"
     ]
@@ -72,5 +72,16 @@
   "dependencies": {},
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "emotion",
+    "framer-motion",
+    "ui",
+    "components",
+    "react-component-library",
+    "react-ui-kit",
+    "wap",
+    "design-system"
   ]
 }
