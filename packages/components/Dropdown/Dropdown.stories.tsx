@@ -1,22 +1,26 @@
 import styled from '@emotion/styled';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Dropdown } from './Dropdown';
 import React from 'react';
 import { Spacer } from '../../layouts';
+import {
+  DropdownButton,
+  DropdownButtonProps,
+} from '../Dropdown/DropdownButton';
 
 export default {
   title: 'Components/Dropdown',
-  component: Dropdown,
-} as ComponentMeta<typeof Dropdown>;
+  component: DropdownButton,
+} as ComponentMeta<typeof DropdownButton>;
 
-export const Default = () => {
+const Template: ComponentStory<typeof DropdownButton> = (
+  args: DropdownButtonProps,
+) => {
   return (
     <FlexRow>
-      <Spacer x={4} />
+      <Spacer x={8} />
       <Dropdown>
-        <Dropdown.Button color="secondary" shadow>
-          Actions
-        </Dropdown.Button>
+        <Dropdown.Button {...args} />
         <Dropdown.Menu>
           <Dropdown.MenuItem>Create a Copy</Dropdown.MenuItem>
           <Dropdown.MenuItem>Download</Dropdown.MenuItem>
@@ -26,6 +30,14 @@ export const Default = () => {
       </Dropdown>
     </FlexRow>
   );
+};
+
+export const Default = Template.bind({});
+
+Default.args = {
+  color: 'secondary',
+  shadow: true,
+  children: 'Actions',
 };
 
 const FlexRow = styled.div`
