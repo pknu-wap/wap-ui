@@ -27,7 +27,7 @@ export interface DropdownProps {
  * ```
  */
 export const Dropdown = ({ children }: DropdownProps) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLButtonElement>(null);
   const [visible, setVisible] = useState<boolean>(false);
   const onClose = (nextState: boolean) => {
     setVisible(nextState);
@@ -35,15 +35,10 @@ export const Dropdown = ({ children }: DropdownProps) => {
   useOnClickOutside(ref, () => onClose(false));
   const [trigger, content] = React.Children.toArray(children);
   return (
-    <DropdownContext.Provider value={{ state: visible, updateState: onClose }}>
-      <div
-        ref={ref}
-        onClick={() => {
-          setVisible(!visible);
-        }}
-      >
-        {trigger}
-      </div>
+    <DropdownContext.Provider
+      value={{ ref, state: visible, updateState: onClose }}
+    >
+      {trigger}
       <Portal>{content}</Portal>
     </DropdownContext.Provider>
   );

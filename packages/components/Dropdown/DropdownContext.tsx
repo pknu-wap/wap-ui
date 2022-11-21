@@ -5,6 +5,7 @@ export interface DropdownProviderProps {
 }
 
 export interface DropdownContextValue {
+  ref?: React.RefObject<HTMLButtonElement>;
   state: boolean;
   updateState?: (nextState: boolean) => void;
 }
