@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { common } from '../../../theme/common';
 
 export const StyledMenuItem = styled.li`
   display: flex;
@@ -8,8 +9,9 @@ export const StyledMenuItem = styled.li`
   padding: 0 12px;
   justify-content: center;
   border-radius: 9px;
+  cursor: pointer;
   &:hover {
-    background-color: #3a3f42;
+    background-color: ${common.color.gray7};
   }
 `;
 
