@@ -5,9 +5,10 @@ export interface DropdownProviderProps {
 }
 
 export interface DropdownContextValue {
+  /** DropdownButton의 ref */
   ref?: React.RefObject<HTMLButtonElement>;
-  state: boolean;
   updateState?: (nextState: boolean) => void;
+  state: boolean;
 }
 
 export const DropdownContext = createContext<DropdownContextValue>({

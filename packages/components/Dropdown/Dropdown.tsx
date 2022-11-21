@@ -27,16 +27,19 @@ export interface DropdownProps {
  * ```
  */
 export const Dropdown = ({ children }: DropdownProps) => {
-  const ref = useRef<HTMLButtonElement>(null);
-  const [visible, setVisible] = useState<boolean>(false);
-  const onClose = (nextState: boolean) => {
-    setVisible(nextState);
-  };
-  useOnClickOutside(ref, () => onClose(false));
+  /** triggerRef은 Context를 타고 DropdownButton으로 전달됨 */
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const [trigger, content] = React.Children.toArray(children);
+  const [visible, setVisible] = useState<boolean>(false);
+
+  const onChangeVisible = (nextState: boolean) => setVisible(nextState);
+
+  /** trigger(버튼) 외부 클릭 시 visible = false */
+  useOnClickOutside(triggerRef, () => onChangeVisible(false));
+
   return (
     <DropdownContext.Provider
-      value={{ ref, state: visible, updateState: onClose }}
+      value={{ ref: triggerRef, state: visible, updateState: onChangeVisible }}
     >
       {trigger}
       <Portal>{content}</Portal>
