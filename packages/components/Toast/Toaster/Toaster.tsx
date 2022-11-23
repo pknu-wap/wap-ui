@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Portal } from '../../Portal';
 import * as S from './Toaster.styles';
 
@@ -11,7 +11,7 @@ type ToastPosition =
   | 'bottom-right';
 
 export interface ToasterProps {
-  position: ToastPosition;
+  position?: ToastPosition;
 }
 
 const getPositionStyles = (position: ToastPosition): React.CSSProperties => {
@@ -35,13 +35,44 @@ const getPositionStyles = (position: ToastPosition): React.CSSProperties => {
   };
 };
 
-export const Toaster = ({ position }: ToasterProps) => {
+/**
+ * @example
+ * ```jsx
+ * <Toaster/>
+ * <Toaster position="top-center">
+ * ```
+ */
+
+export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
   const positionStyles = getPositionStyles(position);
+  const [isBottom, setIsBottom] = useState(true);
+
+  useEffect(() => {
+    if (
+      position === 'top-left' ||
+      position === 'top-center' ||
+      position === 'top-right'
+    ) {
+      setIsBottom(false);
+    } else {
+      setIsBottom(true);
+    }
+  }, [position, setIsBottom]);
 
   return (
     <>
       <Portal>
-        <S.ToastWrapper style={positionStyles}></S.ToastWrapper>
+        <S.Wrapper style={positionStyles}>
+          <S.ToastList isBottom={isBottom}>
+            <span>test1</span>
+            <span>test2</span>
+            <span>test3</span>
+            <span>test4</span>
+            <span>test5</span>
+            <span>test6</span>
+            <span>test7</span>
+          </S.ToastList>
+        </S.Wrapper>
       </Portal>
     </>
   );
