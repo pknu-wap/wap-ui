@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Portal } from '../../Portal';
+import { ToastBar } from '../ToastBar/ToastBar';
 import * as S from './Toaster.styles';
 
 type ToastPosition =
@@ -64,13 +65,13 @@ export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
       <Portal>
         <S.Wrapper style={positionStyles}>
           <S.ToastList isBottom={isBottom}>
-            <span>test1</span>
-            <span>test2</span>
-            <span>test3</span>
-            <span>test4</span>
-            <span>test5</span>
-            <span>test6</span>
-            <span>test7</span>
+            <ToastBar>test1</ToastBar>
+            <ToastBar>test2</ToastBar>
+            <ToastBar>test3</ToastBar>
+            <ToastBar>test4</ToastBar>
+            <ToastBar>test5</ToastBar>
+            <ToastBar>test6</ToastBar>
+            <ToastBar>test7</ToastBar>
           </S.ToastList>
         </S.Wrapper>
       </Portal>
