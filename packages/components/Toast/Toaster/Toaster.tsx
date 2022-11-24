@@ -62,7 +62,7 @@ export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
 
   return (
     <>
-      <Portal>
+      <Portal target="toast">
         <S.Wrapper style={positionStyles}>
           <S.ToastList isBottom={isBottom}>
             <ToastBar>test1</ToastBar>
