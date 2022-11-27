@@ -16,6 +16,8 @@ export const useToast = () => {
   };
 
   const toast = (message: string) => {
+    if (toastList.length >= 5) return;
+
     const toast: Toast = {
       id: Date.now(),
       message,
