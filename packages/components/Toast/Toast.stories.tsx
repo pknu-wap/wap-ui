@@ -12,7 +12,7 @@ export default {
 const Template: ComponentStory<typeof Toaster> = (args: ToasterProps) => {
   const { toast } = useToast();
   const onClick = () => {
-    toast(`'Hello World ${Math.floor(Math.random() * 10)}`);
+    toast(`Hello World ${Math.floor(Math.random() * 10)}`);
   };
 
   return (

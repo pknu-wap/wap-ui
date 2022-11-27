@@ -55,8 +55,6 @@ export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
   const [isBottom, setIsBottom] = useState(true);
   const toastList = getToastList();
 
-  console.log(toastList);
-
   useEffect(() => {
     if (
       position === 'top-left' ||
