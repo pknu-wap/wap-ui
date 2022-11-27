@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Portal } from '../../Portal';
 import { ToastBar } from '../ToastBar/ToastBar';
+import { getToastList } from '../useToast';
 import * as S from './Toaster.styles';
 
 type ToastPosition =
@@ -13,6 +14,11 @@ type ToastPosition =
 
 export interface ToasterProps {
   position?: ToastPosition;
+}
+
+export interface Toast {
+  id: number;
+  message: string;
 }
 
 const getPositionStyles = (position: ToastPosition): React.CSSProperties => {
@@ -47,6 +53,9 @@ const getPositionStyles = (position: ToastPosition): React.CSSProperties => {
 export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
   const positionStyles = getPositionStyles(position);
   const [isBottom, setIsBottom] = useState(true);
+  const toastList = getToastList();
+
+  console.log(toastList);
 
   useEffect(() => {
     if (
@@ -65,13 +74,9 @@ export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
       <Portal target="toast">
         <S.Wrapper style={positionStyles}>
           <S.ToastList isBottom={isBottom}>
-            <ToastBar>test1</ToastBar>
-            <ToastBar>test2</ToastBar>
-            <ToastBar>test3</ToastBar>
-            <ToastBar>test4</ToastBar>
-            <ToastBar>test5</ToastBar>
-            <ToastBar>test6</ToastBar>
-            <ToastBar>test7</ToastBar>
+            {toastList.map((toast) => (
+              <ToastBar key={toast.id}>{toast.message}</ToastBar>
+            ))}
           </S.ToastList>
         </S.Wrapper>
       </Portal>
