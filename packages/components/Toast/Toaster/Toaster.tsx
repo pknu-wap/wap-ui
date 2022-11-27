@@ -13,6 +13,10 @@ type ToastPosition =
   | 'bottom-right';
 
 export interface ToasterProps {
+  /**
+   * toast message의 위치
+   * @default 'bottom-center'
+   */
   position?: ToastPosition;
 }
 
@@ -21,6 +25,9 @@ export interface Toast {
   message: string;
 }
 
+/**
+ * toast message의 위치에 따른 style을 반환하는 함수
+ */
 const getPositionStyles = (position: ToastPosition): React.CSSProperties => {
   const top = position.includes('top');
   const vertical: React.CSSProperties = top ? { top: 0 } : { bottom: 0 };
