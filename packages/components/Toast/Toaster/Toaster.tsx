@@ -63,14 +63,10 @@ export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
   const toastList = getToastList();
 
   useEffect(() => {
-    if (
-      position === 'top-left' ||
-      position === 'top-center' ||
-      position === 'top-right'
-    ) {
-      setIsBottom(false);
-    } else {
+    if (position.includes('top')) {
       setIsBottom(true);
+    } else {
+      setIsBottom(false);
     }
   }, [position, setIsBottom]);
 
