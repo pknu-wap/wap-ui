@@ -31,7 +31,7 @@ export const useToast = () => {
   /**
    * toast message를 추가하는 함수
    */
-  const toast = (message: string) => {
+  const toast = (message: string, type?: 'success' | 'error') => {
     /**
      * toast message의 최대 개수 5개 까지 허용
      */
@@ -40,6 +40,7 @@ export const useToast = () => {
     const toast: Toast = {
       id: Date.now(),
       message,
+      type,
     };
 
     toastList.push(toast);
@@ -60,14 +61,14 @@ export const useToast = () => {
    * toast success message를 추가하는 함수
    */
   toast.success = (message: string) => {
-    toast(message);
+    toast(message, 'success');
   };
 
   /**
    * toast error message를 추가하는 함수
    */
   toast.error = (message: string) => {
-    toast(message);
+    toast(message, 'error');
   };
 
   return { toast };

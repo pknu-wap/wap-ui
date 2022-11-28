@@ -23,6 +23,7 @@ export interface ToasterProps {
 export interface Toast {
   id: number;
   message: string;
+  type?: 'success' | 'error';
 }
 
 /**
@@ -76,7 +77,9 @@ export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
         <S.Wrapper style={positionStyles}>
           <S.ToastList isBottom={isBottom}>
             {toastList.map((toast) => (
-              <ToastBar key={toast.id}>{toast.message}</ToastBar>
+              <ToastBar key={toast.id} type={toast.type}>
+                {toast.message}
+              </ToastBar>
             ))}
           </S.ToastList>
         </S.Wrapper>

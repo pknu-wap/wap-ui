@@ -3,6 +3,7 @@ import { Toaster, ToasterProps } from './Toaster/Toaster';
 import React from 'react';
 import { Button } from '../Button';
 import { useToast } from './useToast';
+import styled from '@emotion/styled';
 
 export default {
   title: 'Components/Toaster',
@@ -11,16 +12,40 @@ export default {
 
 const Template: ComponentStory<typeof Toaster> = (args: ToasterProps) => {
   const { toast } = useToast();
+
   const onClick = () => {
-    toast.success(`Hello World ${Math.floor(Math.random() * 10)}`);
+    toast('Hello World');
+  };
+
+  const onSuccess = () => {
+    toast.success('Hello World');
+  };
+
+  const onError = () => {
+    toast.error('Hello World');
   };
 
   return (
     <>
-      <Button onClick={onClick}>버튼</Button>
+      <FlexColumn>
+        <Button onClick={onClick}>기본</Button>
+        <Button size="md" onClick={onSuccess}>
+          성공
+        </Button>
+        <Button size="md" onClick={onError}>
+          실패
+        </Button>
+      </FlexColumn>
       <Toaster {...args} />
     </>
   );
 };
 
 export const Default = Template.bind({});
+
+const FlexColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+`;
