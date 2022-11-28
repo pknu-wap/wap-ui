@@ -4,15 +4,14 @@ import { placementType } from './placement';
 import * as S from './Tooltip.styles';
 
 interface Props {
-  visible: boolean;
   color: NormalColorType;
   placement: placementType;
   children: React.ReactNode;
 }
 
-const TooltipContent = ({ visible, color, placement, children }: Props) => {
+const TooltipContent = ({ color, placement, children }: Props) => {
   return (
-    <S.TooltipContent visible={visible} color={color} placement={placement}>
+    <S.TooltipContent color={color} placement={placement}>
       {children}
     </S.TooltipContent>
   );

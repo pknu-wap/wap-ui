@@ -1,7 +1,8 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState, useRef } from 'react';
 import { NormalColorType } from '../../theme/types';
+import { Portal } from '../Portal';
 import { placementType } from './placement';
-import * as S from './Tooltip.styles';
 import TooltipContent from './TooltipContent';
 
 export interface Props {
@@ -11,21 +12,14 @@ export interface Props {
   placement?: placementType;
 }
 
-/**
- * @todo 이거 참고하기!!
- * @see w3schools https://www.w3schools.com/css/css_tooltip.asp
- * @see nextui https://nextui.org/docs/components/tooltip
- */
-
-const ENTER_DELAY = 100; // 0.1s
-const LEAVE_DELAY = 100; // 0.1s
-
 export const Tooltip = ({
   children,
   color = 'primary',
   content,
   placement = 'top',
 }: Props) => {
+  const ENTER_DELAY = 100;
+  const EXIT_DELAY = 250;
   const [visible, setVisible] = useState<boolean>(false);
   const timer = useRef<number>();
 
@@ -34,10 +28,6 @@ export const Tooltip = ({
     changeVisible(nextState);
   };
 
-  /**
-   * nextui 참고
-   * @see https://github.com/nextui-org/nextui/blob/main/packages/react/src/tooltip/tooltip.tsx
-   *  */
   const changeVisible = (nextState: boolean) => {
     const clear = () => {
       clearTimeout(timer.current);
@@ -50,42 +40,46 @@ export const Tooltip = ({
 
     clear();
 
-    if (nextState) {
-      timer.current = window.setTimeout(() => handler(nextState), ENTER_DELAY);
+    if (!nextState) {
+      timer.current = window.setTimeout(() => handler(nextState), EXIT_DELAY);
       return;
     }
-    timer.current = window.setTimeout(() => handler(nextState), LEAVE_DELAY);
+    timer.current = window.setTimeout(() => handler(nextState), ENTER_DELAY);
   };
 
-  /**
-   * @legacy clearTimeout()을 사용한 방법
-   */
-  // useEffect(() => {
-  //   let timeoutId: ReturnType<typeof setTimeout> | null = null;
-  //   if (visible) {
-  //     setVisible(false);
-  //   } else {
-  //     timeoutId = setTimeout(() => {
-  //       setVisible(true);
-  //     }, 100); /** animation도 0.1로 설정해야함. 주의하기! */
-  //   }
-  //   return () => {
-  //     if (timeoutId) {
-  //       clearTimeout(timeoutId);
-  //     }
-  //   };
-  // }, [visible]);
+  const trigger = React.cloneElement(children as React.ReactElement, {
+    onMouseEnter: () => handleChangeVisible(true),
+    onMouseLeave: () => handleChangeVisible(false),
+  });
 
   return (
-    <S.TooltipTrigger
-      onMouseEnter={() => handleChangeVisible(true)}
-      onMouseLeave={() => handleChangeVisible(false)}
-    >
-      <TooltipContent visible={visible} color={color} placement={placement}>
-        {content}
-      </TooltipContent>
-      {children}
-    </S.TooltipTrigger>
+    <>
+      <AnimatePresence>
+        {visible && (
+          <Portal>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                transition: { duration: 0.25, ease: 'easeInOut' },
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.85,
+                transition: { duration: 0.25, ease: 'easeInOut' },
+              }}
+            >
+              <TooltipContent color={color} placement={placement}>
+                {content}
+              </TooltipContent>
+            </motion.div>
+          </Portal>
+        )}
+      </AnimatePresence>
+      {/* trigger button */}
+      {trigger} {visible ? 'true' : 'false'}
+    </>
   );
 };
 
