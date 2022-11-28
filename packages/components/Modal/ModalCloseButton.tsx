@@ -1,11 +1,11 @@
 import React, { SVGProps } from 'react';
 import * as S from './Modal.styles';
 
-interface Props extends SVGProps<SVGSVGElement> {
+interface ModalCloseButtonProps extends SVGProps<SVGSVGElement> {
   onClose: () => void;
 }
 
-export const ModalCloseButton = (props: Props) => {
+export const ModalCloseButton = (props: ModalCloseButtonProps) => {
   return (
     <S.ModalCloseButton>
       <svg

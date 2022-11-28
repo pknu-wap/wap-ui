@@ -3,7 +3,7 @@ import React from 'react';
 
 export type CardVariantType = 'shadow' | 'flat' | 'bordered';
 
-export interface Props {
+export interface CardProps {
   children: React.ReactNode;
   variant?: CardVariantType;
   isPressable?: boolean;
@@ -13,7 +13,7 @@ export const Card = ({
   children,
   variant = 'shadow',
   isPressable = false,
-}: Props) => {
+}: CardProps) => {
   return (
     <S.StyledCard variant={variant} isPressable={isPressable}>
       {children}

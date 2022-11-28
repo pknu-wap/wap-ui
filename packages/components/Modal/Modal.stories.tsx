@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Modal, Props } from './Modal';
+import { Modal, ModalProps } from './Modal';
 import React from 'react';
 import { Button } from '../Button';
 import styled from '@emotion/styled';
@@ -10,7 +10,7 @@ export default {
   component: Modal,
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = (args: Props) => {
+const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (

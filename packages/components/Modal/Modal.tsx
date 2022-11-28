@@ -4,7 +4,7 @@ import { ModalBody } from './ModalBody';
 import { ModalFooter } from './ModalFooter';
 import { ModalHeader } from './ModalHeader';
 
-export interface Props {
+export interface ModalProps {
   /**
    * @description 모달이 열려있는지 여부
    * @default false
@@ -48,7 +48,7 @@ export const Modal = ({
   onClose,
   blur = false,
   children,
-}: Props) => {
+}: ModalProps) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

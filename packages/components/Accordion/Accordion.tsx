@@ -4,7 +4,7 @@ import { AccordionItem } from './AccordionItem/AccordionItem';
 import { AccordionContext, AccordionProviderProps } from './AccordionContext';
 import { setChildrenIndex } from '../../utils/setChildrenIndex';
 
-export interface Props extends AccordionProviderProps {
+export interface AccordionProps extends AccordionProviderProps {
   children: React.ReactNode;
   /**
    * 여러개가 열리게 할 수 있는지, 하나가 열릴 때 나머지는 닫히게 할 지 결정합니다.
@@ -12,7 +12,10 @@ export interface Props extends AccordionProviderProps {
   allowMultiple?: boolean;
 }
 
-export const Accordion = ({ children, allowMultiple = false }: Props) => {
+export const Accordion = ({
+  children,
+  allowMultiple = false,
+}: AccordionProps) => {
   const [state, setState] = useState<Array<number>>([]);
 
   /**

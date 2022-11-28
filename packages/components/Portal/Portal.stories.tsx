@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '../Button';
 import styled from '@emotion/styled';
 import { Modal } from '../Modal';
-import { Portal, Props } from './Portal';
+import { Portal, PortalProps } from './Portal';
 import useDisclosure from '../../hooks/useDisclosure';
 
 export default {
@@ -11,7 +11,7 @@ export default {
   component: Portal,
 } as ComponentMeta<typeof Portal>;
 
-const Template: ComponentStory<typeof Portal> = (args: Props) => {
+const Template: ComponentStory<typeof Portal> = (args: PortalProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
