@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { common } from '../../../theme/common';
 
-export const StyledMenuItem = styled.li`
+export const StyledMenuItem = styled.button`
   display: flex;
   flex-direction: column;
   width: 234px;
@@ -9,6 +9,7 @@ export const StyledMenuItem = styled.li`
   padding: 0 12px;
   justify-content: center;
   border-radius: 9px;
+  color: #fff;
   cursor: pointer;
   &:hover {
     background-color: ${common.color.gray7};

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import * as S from './DropdownMenuItem.styles';
 
-export interface DropdownMenuItemProps {
+export interface DropdownMenuItemProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
