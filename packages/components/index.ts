@@ -7,3 +7,5 @@ export * from './Portal';
 export * from './Accordion';
 export * from './TextInput';
 export * from './Toggle';
+export * from './Loader';
+export * from './Toast';

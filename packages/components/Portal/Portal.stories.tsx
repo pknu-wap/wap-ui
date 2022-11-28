@@ -49,12 +49,12 @@ const Container = styled.div`
 
 export const Default = Template.bind({});
 
-export const WidthId = Template.bind({});
-WidthId.args = {
+export const WithId = Template.bind({});
+WithId.args = {
   target: 'modal',
 };
 
-export const WidthElement = Template.bind({});
-WidthElement.args = {
+export const WithElement = Template.bind({});
+WithElement.args = {
   target: document.getElementById('modal') as HTMLElement,
 };
