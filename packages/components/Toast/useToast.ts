@@ -14,6 +14,7 @@ export const useToast = () => {
   /**
    * toast 함수가 호출될 때 마다 toaster컴포넌트를 re-rendering하기 위한 useState
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setIsUpdateToast] = useState(false);
 
   /**
@@ -53,6 +54,20 @@ export const useToast = () => {
     setTimeout(() => {
       removeToast(toast.id);
     }, DefaultToastDuration);
+  };
+
+  /**
+   * toast success message를 추가하는 함수
+   */
+  toast.success = (message: string) => {
+    toast(message);
+  };
+
+  /**
+   * toast error message를 추가하는 함수
+   */
+  toast.error = (message: string) => {
+    toast(message);
   };
 
   return { toast };
