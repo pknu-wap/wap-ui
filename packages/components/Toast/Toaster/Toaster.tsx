@@ -51,10 +51,32 @@ const getPositionStyles = (position: ToastPosition): React.CSSProperties => {
 };
 
 /**
- * @example
+ *
  * ```jsx
- * <Toaster/>
- * <Toaster position="top-center">
+ * const App = () =>{
+ *  const {toast} = useToast();
+ *
+ *  const onClick = () => {
+ *   toast('Hello World');
+ * };
+ *
+ *  const onSuccess = () => {
+ *  toast.success('Hello World');
+ * };
+ *
+ * const onError = () => {
+ * toast.error('Hello World');
+ * };
+ *
+ *  return (
+ *  <>
+ *   <button onClick={onClick} />
+ *   <button onClick={onSuccess} />
+ *   <button onClick={onError} />
+ *   <Toaster />
+ *  </>
+ * )
+ * }
  * ```
  */
 
