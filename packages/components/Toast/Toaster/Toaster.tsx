@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { Portal } from '../../Portal';
 import { ToastBar } from '../ToastBar/ToastBar';
@@ -31,14 +32,17 @@ export interface Toast {
  */
 const getPositionStyles = (position: ToastPosition): React.CSSProperties => {
   const top = position.includes('top');
-  const vertical: React.CSSProperties = top ? { top: 0 } : { bottom: 0 };
+  const vertical: React.CSSProperties = top
+    ? { top: '1rem' }
+    : { bottom: '1rem' };
   const horizontal: React.CSSProperties = position.includes('center')
     ? { justifyContent: 'center' }
     : position.includes('right')
     ? {
         justifyContent: 'flex-end',
+        paddingRight: '1rem',
       }
-    : {};
+    : { marginLeft: '1rem' };
 
   return {
     left: 0,
@@ -95,17 +99,19 @@ export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
 
   return (
     <>
-      <Portal target="toast">
-        <S.Wrapper style={positionStyles}>
-          <S.ToastList isBottom={isBottom}>
-            {toastList.map((toast) => (
-              <ToastBar key={toast.id} type={toast.type}>
-                {toast.message}
-              </ToastBar>
-            ))}
-          </S.ToastList>
-        </S.Wrapper>
-      </Portal>
+      <AnimatePresence>
+        <Portal target="toast">
+          <S.Wrapper style={positionStyles}>
+            <S.ToastList isBottom={isBottom}>
+              {toastList.map((toast) => (
+                <ToastBar key={toast.id} type={toast.type}>
+                  {toast.message}
+                </ToastBar>
+              ))}
+            </S.ToastList>
+          </S.Wrapper>
+        </Portal>
+      </AnimatePresence>
     </>
   );
 };

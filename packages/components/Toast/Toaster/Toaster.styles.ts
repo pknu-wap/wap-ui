@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
 
 export const ToastList = styled.div<{ isBottom: boolean }>`
   display: flex;
+  gap: 0.5rem;
   ${({ isBottom }) =>
     isBottom === true &&
     css`

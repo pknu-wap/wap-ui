@@ -29,10 +29,10 @@ const Template: ComponentStory<typeof Toaster> = (args: ToasterProps) => {
     <>
       <FlexColumn>
         <Button onClick={onClick}>기본</Button>
-        <Button size="md" onClick={onSuccess}>
+        <Button color="success" size="md" onClick={onSuccess}>
           성공
         </Button>
-        <Button size="md" onClick={onError}>
+        <Button color="error" size="md" onClick={onError}>
           실패
         </Button>
       </FlexColumn>

@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import { common } from '../../../theme/common';
 
-export const ToastBarBase = styled.div`
+export const ToastBarBase = styled(motion.div)`
   display: flex;
   align-items: center;
   background: ${common.color.white};
@@ -15,7 +16,7 @@ export const ToastBarBase = styled.div`
   border-radius: 8px;
 `;
 
-export const Message = styled.span`
+export const Message = styled(motion.span)`
   display: flex;
   justify-content: center;
   margin: 0.5rem 0.625rem;

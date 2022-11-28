@@ -1,3 +1,4 @@
+import type { Variants } from 'framer-motion';
 import React from 'react';
 import { ErrorIcon, SuccessIcon } from '../ToastIcon/ToastIcon';
 import * as S from './ToastBar.styles';
@@ -8,9 +9,28 @@ interface ToastBarProps {
 }
 
 export const ToastBar = ({ children, type }: ToastBarProps) => {
-  console.log(type);
+  const toastVariants: Variants = {
+    initial: {
+      opacity: 0,
+      y: -20,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+    },
+  };
+
   return (
-    <S.ToastBarBase>
+    <S.ToastBarBase
+      variants={toastVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       {type === 'success' && <SuccessIcon />}
       {type === 'error' && <ErrorIcon />}
       <S.Message>{children}</S.Message>
