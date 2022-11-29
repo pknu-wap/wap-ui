@@ -19,7 +19,13 @@ const Template: ComponentStory<typeof Checkbox> = (_: CheckboxProps) => {
     { id: 4, data: 'warning' },
     { id: 5, data: 'error' },
   ];
-  const [selected, setSelected] = useState<NormalColorType[]>([]);
+  const [selected, setSelected] = useState<NormalColorType[]>([
+    'primary',
+    'success',
+    'error',
+    'secondary',
+    'warning',
+  ]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onCheckedElement = (checked: any, item: any) => {
     if (checked) {
