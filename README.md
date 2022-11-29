@@ -1,7 +1,7 @@
 <div align="center"><img src="https://user-images.githubusercontent.com/75781414/192261497-b3e4b288-d1c5-4d27-a062-da65a876ecfb.png" width="220" height="240">
 </div>
 
-# <div align="center">🐳 Awesome React Component Library 🐳</div>
+# <div align="center">Awesome React Component Library</div>
 
 <p align="center">
   <a href="https://github.com/jrgarciadev/nextui/blob/main/LICENSE">
