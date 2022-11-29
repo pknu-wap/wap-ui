@@ -1,8 +1,9 @@
 import { RefObject, useEffect } from 'react';
 
 /**
- * @description ref가 있는 Element의 밖을 click시 handler 작동한다.
- * @description 대체제로 react-outside-click-handler 라이브러리가 있음
+ * @description
+ * ref가 있는 Element의 밖을 click시 handler 작동한다.
+ * 대체제로 react-outside-click-handler 라이브러리가 있음
  *
  * @example
  * ```tsx
