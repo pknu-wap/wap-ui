@@ -41,7 +41,9 @@ export const Dropdown = ({ children }: DropdownProps) => {
     <DropdownContext.Provider
       value={{ ref: triggerRef, state: visible, updateState: onChangeVisible }}
     >
+      {/* tirgger button <Dropdown.Button>Actions</Dropdown.Button> */}
       {trigger}
+      {/* content menu <Dropdown.Menu>...</Dropdown.Menu> */}
       <Portal>{content}</Portal>
     </DropdownContext.Provider>
   );
