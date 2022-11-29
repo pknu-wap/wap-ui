@@ -2,7 +2,7 @@ import { NormalColorType } from '../../theme/types';
 import React, { ButtonHTMLAttributes } from 'react';
 import * as S from './Button.styles';
 
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg' | 'auto';
   children: React.ReactNode;
   color?: NormalColorType;
@@ -15,7 +15,7 @@ export const Button = ({
   children,
   shadow = false,
   ...options
-}: Props) => {
+}: ButtonProps) => {
   return (
     <S.StyledButton size={size} color={color} shadow={shadow} {...options}>
       {children}

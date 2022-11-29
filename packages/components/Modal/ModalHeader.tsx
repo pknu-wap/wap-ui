@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './Modal.styles';
 import { ModalCloseButton } from './ModalCloseButton';
 
-export interface Props
+export interface ModalHeaderProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLHeadingElement>,
     HTMLHeadingElement
@@ -10,7 +10,11 @@ export interface Props
   onClose: () => void;
 }
 
-export const ModalHeader = ({ children, onClose, ...rest }: Props) => {
+export const ModalHeader = ({
+  children,
+  onClose,
+  ...rest
+}: ModalHeaderProps) => {
   return (
     <S.ModalHeader>
       <S.ModalHeaderTitle {...rest}>{children}</S.ModalHeaderTitle>
