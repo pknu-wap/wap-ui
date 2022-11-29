@@ -9,8 +9,9 @@ export interface DropdownMenuProps {
 
 export const DropdownMenu = ({ children }: DropdownMenuProps) => {
   const { state, ref } = useDropdownContext();
-  const offset = ref?.current?.getBoundingClientRect();
 
+  /** 아래 두 코드는 trigger button 밑에 content를 높기 위한 코드 */
+  const offset = ref?.current?.getBoundingClientRect();
   const style = offset
     ? {
         top: offset.top + offset.height,
