@@ -4,7 +4,7 @@ import { common } from '../../../theme/common';
 export const StyledMenuItem = styled.button`
   display: flex;
   flex-direction: column;
-  width: 234px;
+  min-width: 200px;
   height: 36px;
   padding: 0 12px;
   justify-content: center;

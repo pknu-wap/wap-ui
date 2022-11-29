@@ -8,7 +8,15 @@ export interface DropdownMenuProps {
 }
 
 export const DropdownMenu = ({ children }: DropdownMenuProps) => {
-  const { state } = useDropdownContext();
+  const { state, ref } = useDropdownContext();
+  const offset = ref?.current?.getBoundingClientRect();
+
+  const style = offset
+    ? {
+        top: offset.top + offset.height,
+        left: offset.left,
+      }
+    : {};
   return (
     <AnimatePresence>
       {state && (
@@ -17,6 +25,7 @@ export const DropdownMenu = ({ children }: DropdownMenuProps) => {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ type: 'spring', bounce: 0.33, duration: 0.3 }}
+          style={style}
         >
           {children}
         </S.StyledMenu>
