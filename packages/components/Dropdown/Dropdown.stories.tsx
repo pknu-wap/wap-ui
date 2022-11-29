@@ -20,7 +20,13 @@ export const Defulat = () => {
             Actions
           </Dropdown.Button>
           <Dropdown.Menu>
-            <Dropdown.MenuItem>First Action</Dropdown.MenuItem>
+            <Dropdown.MenuItem
+              onClick={() => {
+                alert('sdf');
+              }}
+            >
+              First Action
+            </Dropdown.MenuItem>
             <Dropdown.MenuItem>Second Action</Dropdown.MenuItem>
             <Dropdown.MenuItem>Third Acition</Dropdown.MenuItem>
           </Dropdown.Menu>

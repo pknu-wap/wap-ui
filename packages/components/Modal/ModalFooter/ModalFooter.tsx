@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './Modal.styles';
+import * as S from './ModalFooter.styles';
 
 export type ModalFooterProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
