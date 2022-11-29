@@ -44,7 +44,7 @@ export const Dropdown = ({ children }: DropdownProps) => {
       {/* tirgger button <Dropdown.Button>Actions</Dropdown.Button> */}
       {trigger}
       {/* content menu <Dropdown.Menu>...</Dropdown.Menu> */}
-      <Portal target="dropdown">{content}</Portal>
+      <Portal>{content}</Portal>
     </DropdownContext.Provider>
   );
 };

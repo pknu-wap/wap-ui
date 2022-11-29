@@ -18,6 +18,7 @@ export const DropdownMenu = ({ children }: DropdownMenuProps) => {
         left: offset.left,
       }
     : {};
+
   return (
     <AnimatePresence>
       {state && (
