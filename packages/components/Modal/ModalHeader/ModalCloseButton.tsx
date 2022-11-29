@@ -1,5 +1,5 @@
 import React, { SVGProps } from 'react';
-import * as S from './Modal.styles';
+import * as S from './ModalHeader.styles';
 
 interface ModalCloseButtonProps extends SVGProps<SVGSVGElement> {
   onClose: () => void;
