@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { common } from '../../theme/common';
 
-export const Overlay = styled(motion.div)<{ blur: boolean }>`
+export const Overlay = styled(motion.div)<{ blur: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,14 +13,14 @@ export const Overlay = styled(motion.div)<{ blur: boolean }>`
   top: 0;
   position: fixed;
   ${({ blur }) =>
-    blur === true &&
+    blur === 'true' &&
     css`
       -webkit-backdrop-filter: saturate(200%) blur(2px);
       backdrop-filter: saturate(200%) blur(2px);
       background-color: rgba(0, 0, 0, 0.1);
     `}
   ${({ blur }) =>
-    blur === false &&
+    blur === 'false' &&
     css`
       background-color: ${common.color.black};
       opacity: 0.5;

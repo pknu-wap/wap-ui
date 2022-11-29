@@ -66,6 +66,7 @@ export const Modal = ({
     },
     animate: {
       opacity: blur ? 1 : 0.5,
+      // filter: blur ? 'saturate(200%) blur(100px)' : 'none',
     },
     exit: {
       opacity: blur ? 1 : 0,
@@ -100,8 +101,9 @@ export const Modal = ({
               initial="initial"
               animate="animate"
               exit="exit"
-              blur={blur}
+              blur={blur.toString()}
               onClick={onClose}
+              style={{ willChange }}
             />
             <S.ModalContainer
               variants={modalVariants}
