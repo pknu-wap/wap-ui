@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { common } from '../../theme/common';
+import mediaQuery from '../../theme/mediaQuery';
 
 export const Overlay = styled(motion.div)<{ blur: string }>`
   display: flex;
@@ -33,7 +34,9 @@ export const ModalContainer = styled(motion.div)`
   top: 50%;
   border-radius: 0.2rem;
   padding: 1rem 2rem;
-  min-width: 30%;
-  max-width: 80%;
+  width: 25rem;
+  ${mediaQuery.small} {
+    width: 17rem;
+  }
   background-color: ${common.color.white};
 `;

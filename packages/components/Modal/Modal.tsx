@@ -62,14 +62,13 @@ export const Modal = ({
 
   const overlayVariants: Variants = {
     initial: {
-      opacity: blur ? 1 : 0,
+      opacity: 0,
     },
     animate: {
       opacity: blur ? 1 : 0.5,
-      // filter: blur ? 'saturate(200%) blur(100px)' : 'none',
     },
     exit: {
-      opacity: blur ? 1 : 0,
+      opacity: 0,
     },
   };
 
