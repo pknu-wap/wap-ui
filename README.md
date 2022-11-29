@@ -30,7 +30,7 @@ npm i wap-ui @emotion/react @emotion/styled framer-motion
 
 ## `Usage`
 
-```jsx
+```tsx
 import React from 'react';
 
 // 1. import `WapUIProvider` component
@@ -46,7 +46,7 @@ function App() {
 }
 ```
 
-```jsx
+```tsx
 import React from 'react';
 import { Button } from 'wap-ui';
 
