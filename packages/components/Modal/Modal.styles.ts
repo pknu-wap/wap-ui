@@ -35,7 +35,7 @@ export const Overlay = styled.div<{ blur: boolean }>`
     `}
 `;
 
-export const ModalElement = styled.div`
+export const ModalContainer = styled.div`
   position: fixed;
   left: 50%;
   top: 50%;
@@ -45,54 +45,6 @@ export const ModalElement = styled.div`
   min-width: 30%;
   max-width: 80%;
   background-color: ${common.color.white};
-`;
-
-export const ModalHeader = styled.header`
-  width: 100%;
-  padding-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-`;
-
-export const ModalHeaderTitle = styled.h2`
-  display: flex;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  font-size: ${common.size.md};
-  font-weight: bold;
-  overflow-wrap: anywhere;
-`;
-
-export const ModalCloseButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 1rem;
-  top: 0.5rem;
-  border: none;
-  background: none;
-  flex-basis: auto;
-  svg {
-    cursor: pointer;
-    color: ${common.color.gray5};
-  }
-`;
-
-export const ModalBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-export const ModalFooter = styled.footer`
-  display: flex;
-  padding-top: 1rem;
-  justify-content: flex-end;
-  gap: 1rem;
 `;
 
 const fadeIn = keyframes`

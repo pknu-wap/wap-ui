@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './Modal.styles';
-import { ModalBody } from './ModalBody';
-import { ModalFooter } from './ModalFooter';
-import { ModalHeader } from './ModalHeader';
+import { ModalBody } from './ModalBody/ModalBody';
+import { ModalFooter } from './ModalFooter/ModalFooter';
+import { ModalHeader } from './ModalHeader/ModalHeader';
 
 export interface ModalProps {
   /**
@@ -78,14 +78,27 @@ export const Modal = ({
     return () => clearTimeout(visibleId);
   }, [isOpen]);
 
+  useEffect(() => {
+    /**
+     * overlay를 클릭했을 때, 0.1초 뒤에 모달을 닫는다
+     */
+    const closeId = setTimeout(() => {
+      if (isOpen) {
+        onClose();
+      }
+      clearTimeout(closeId);
+    }, 100);
+    return () => clearTimeout(closeId);
+  }, [isOpen, onClose]);
+
   return (
     <>
       {visible && (
         <>
-          <S.ModalAnimationProvider isOpen={isOpen}>
-            <S.Overlay blur={blur} onClick={onClose} />
-            <S.ModalElement>{children}</S.ModalElement>
-          </S.ModalAnimationProvider>
+            <S.ModalAnimationProvider isOpen={isOpen}>
+              <S.Overlay blur={blur} onClick={onClose} />
+              <S.ModalContainer >{children}</S.ModalContainer>
+            </S.ModalAnimationProvider>
         </>
       )}
     </>

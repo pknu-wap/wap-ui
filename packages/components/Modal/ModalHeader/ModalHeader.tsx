@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './Modal.styles';
+import * as S from './ModalHeader.styles';
 import { ModalCloseButton } from './ModalCloseButton';
 
 export interface ModalHeaderProps

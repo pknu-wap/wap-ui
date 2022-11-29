@@ -1,9 +1,9 @@
 import React from 'react';
-import * as S from './Modal.styles';
+import * as S from './ModalBody.styles';
 
 export type ModalBodyProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
 >;
 
 export const ModalBody = ({ children, ...rest }: ModalBodyProps) => {
