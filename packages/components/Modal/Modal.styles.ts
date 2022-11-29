@@ -1,17 +1,9 @@
-import { css, keyframes } from '@emotion/react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import { common } from '../../theme/common';
-import { ModalProps } from './Modal';
 
-export const ModalAnimationProvider = styled.div<Pick<ModalProps, 'isOpen'>>`
-  ${({ isOpen }) => css`
-    visibility: ${isOpen ? 'visible' : 'hidden'};
-    animation: ${isOpen ? fadeIn : fadeOut} 0.1s;
-    transition: visibility 0.1s;
-  `}
-`;
-
-export const Overlay = styled.div<{ blur: boolean }>`
+export const Overlay = styled(motion.div)<{ blur: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,32 +27,13 @@ export const Overlay = styled.div<{ blur: boolean }>`
     `}
 `;
 
-export const ModalContainer = styled.div`
-  position: fixed;
+export const ModalContainer = styled(motion.div)`
+  position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
   border-radius: 0.2rem;
   padding: 1rem 2rem;
   min-width: 30%;
   max-width: 80%;
   background-color: ${common.color.white};
-`;
-
-const fadeIn = keyframes`
-  from {
-  opacity: 0;
-}
-  to {
-  opacity: 1;
-}
-`;
-
-const fadeOut = keyframes`
-  from {
-  opacity: 1;
-}
-  to {
-  opacity: 0; 
-}
 `;

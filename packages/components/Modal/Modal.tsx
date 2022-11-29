@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { AnimatePresence, useWillChange, type Variants } from 'framer-motion';
+import React, { useLayoutEffect } from 'react';
 import * as S from './Modal.styles';
 import { ModalBody } from './ModalBody/ModalBody';
 import { ModalFooter } from './ModalFooter/ModalFooter';
@@ -49,58 +50,71 @@ export const Modal = ({
   blur = false,
   children,
 }: ModalProps) => {
-  const [visible, setVisible] = useState(false);
+  const willChange = useWillChange();
 
-  useEffect(() => {
-    let visibleId: NodeJS.Timeout;
+  useLayoutEffect(() => {
     if (isOpen) {
-      /**
-       * @description 모달이 열릴 때, visible을 true로 변경한다
-       */
-      setVisible(true);
-      /**
-       * @description 스크롤을 막기 위해 body에 overflow: hidden을 추가
-       */
       document.body.style.overflow = 'hidden';
     } else {
-      /**
-       * @description 모달이 닫힐 때, visible을 false로 변경한다
-       */
-      visibleId = setTimeout(() => {
-        setVisible(false);
-        clearTimeout(visibleId);
-      }, 100);
-      /**
-       * @description 스크롤 기능을 위해 body에 overflow: hidden을 제거
-       */
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'unset';
     }
-    return () => clearTimeout(visibleId);
   }, [isOpen]);
 
-  useEffect(() => {
-    /**
-     * overlay를 클릭했을 때, 0.1초 뒤에 모달을 닫는다
-     */
-    const closeId = setTimeout(() => {
-      if (isOpen) {
-        onClose();
-      }
-      clearTimeout(closeId);
-    }, 100);
-    return () => clearTimeout(closeId);
-  }, [isOpen, onClose]);
+  const overlayVariants: Variants = {
+    initial: {
+      opacity: blur ? 1 : 0,
+    },
+    animate: {
+      opacity: blur ? 1 : 0.5,
+    },
+    exit: {
+      opacity: blur ? 1 : 0,
+    },
+  };
+
+  const modalVariants: Variants = {
+    initial: {
+      y: 100,
+      translate: '-50% -50%',
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      translate: '-50% -50%',
+      opacity: 1,
+    },
+    exit: {
+      y: 100,
+      translate: '-50% -50%',
+      opacity: 0,
+    },
+  };
 
   return (
     <>
-      {visible && (
-        <>
-            <S.ModalAnimationProvider isOpen={isOpen}>
-              <S.Overlay blur={blur} onClick={onClose} />
-              <S.ModalContainer >{children}</S.ModalContainer>
-            </S.ModalAnimationProvider>
-        </>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <S.Overlay
+              variants={overlayVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              blur={blur}
+              onClick={onClose}
+            />
+            <S.ModalContainer
+              variants={modalVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              style={{ willChange }}
+            >
+              {children}
+            </S.ModalContainer>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };
