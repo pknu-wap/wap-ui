@@ -4,14 +4,11 @@ import { motion } from 'framer-motion';
 import { common } from '../../theme/common';
 
 export const Overlay = styled(motion.div)<{ blur: string }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
-  left: 0;
-  top: 0;
-  position: fixed;
   ${({ blur }) =>
     blur === 'true' &&
     css`
@@ -27,13 +24,17 @@ export const Overlay = styled(motion.div)<{ blur: string }>`
     `}
 `;
 
-export const ModalContainer = styled(motion.div)`
+export const Positioner = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+`;
+
+export const ModalContainer = styled(motion.div)`
   border-radius: 0.2rem;
   padding: 1rem 2rem;
-  min-width: 30%;
-  max-width: 80%;
+
   background-color: ${common.color.white};
 `;
