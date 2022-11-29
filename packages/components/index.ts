@@ -8,3 +8,5 @@ export * from './Accordion';
 export * from './TextInput';
 export * from './Toggle';
 export * from './Tooltip';
+export * from './Loader';
+export * from './Toast';

@@ -2,12 +2,12 @@ import React, { forwardRef, InputHTMLAttributes } from 'react';
 import { NormalColorType } from '../../theme/types';
 import * as S from './Toggle.styles';
 
-export interface Props extends InputHTMLAttributes<HTMLInputElement> {
+export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
   labelText?: string;
   color?: NormalColorType;
 }
 
-export const Toggle = forwardRef<HTMLInputElement, Props>(function Toggle(
+export const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
   { labelText = '', color = 'primary', ...options },
   ref,
 ) {

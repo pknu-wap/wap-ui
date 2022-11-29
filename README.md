@@ -1,7 +1,24 @@
 <div align="center"><img src="https://user-images.githubusercontent.com/75781414/192261497-b3e4b288-d1c5-4d27-a062-da65a876ecfb.png" width="220" height="240">
 </div>
 
-# <div align="center">🌊 Awesome React Component Library 💦</div>
+# <div align="center">&lt;Awesome React UI Library /&gt;</div>
+
+<p align="center">
+  <a href="https://github.com/jrgarciadev/nextui/blob/main/LICENSE">
+    <img src="https://img.shields.io/apm/l/atomic-design-ui.svg?style=flat" alt="License">
+  </a>
+  <a href="https://www.npmjs.com/package/wap-ui">
+    <img src="https://img.shields.io/npm/dm/wap-ui.svg?style=flat-round" alt="npm downloads">
+  </a>
+   <img alt="Github Stars" src="https://badgen.net/github/stars/pknu-wap/2022_2_WAP_WEB_TEAM1" />
+  <img src="https://badgen.net/github/release/pknu-wap/2022_2_WAP_WEB_TEAM1">
+
+</p>
+<p align="center">
+  <img src="https://badgen.net/github/issues/pknu-wap/2022_2_WAP_WEB_TEAM1">
+  <img src="https://badgen.net/github/prs/pknu-wap/2022_2_WAP_WEB_TEAM1">
+  <img src="https://badgen.net/github/contributors/pknu-wap/2022_2_WAP_WEB_TEAM1">
+</p>
 
 ## `Installing WAP-UI`
 
@@ -13,7 +30,7 @@ npm i wap-ui @emotion/react @emotion/styled framer-motion
 
 ## `Usage`
 
-```jsx
+```tsx
 import React from 'react';
 
 // 1. import `WapUIProvider` component
@@ -29,7 +46,7 @@ function App() {
 }
 ```
 
-```jsx
+```tsx
 import React from 'react';
 import { Button } from 'wap-ui';
 

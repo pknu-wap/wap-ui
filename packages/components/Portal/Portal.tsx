@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
-export interface Props {
+export interface PortalProps {
   children: React.ReactNode;
 
   /**
@@ -30,14 +30,23 @@ export interface Props {
  * </Portal>
  */
 
-export const Portal = ({ children, target }: Props) => {
+export const Portal = ({ children, target }: PortalProps) => {
   const portalContainer = useRef<HTMLElement>();
 
   if (typeof target === 'string') {
     /**
      * @description target이 string일 경우, 해당 id를 가진 element를 찾는다
      */
-    portalContainer.current = document.getElementById(target) as HTMLElement;
+    if (document.getElementById(target) as HTMLElement) {
+      portalContainer.current = document.getElementById(target) as HTMLElement;
+    } else {
+      /**
+       * 찾지 못할 경우 target을 className으로 갖는 element를 만든다
+       */
+      portalContainer.current = document.createElement('div');
+      portalContainer.current.className = target;
+      document.body.appendChild(portalContainer.current);
+    }
   } else if (target instanceof HTMLElement) {
     /**
      * @description target이 HTMLElement일 경우, 해당 element를 찾는다

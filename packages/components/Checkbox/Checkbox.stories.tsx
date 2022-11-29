@@ -2,7 +2,7 @@ import { NormalColorType } from '../../theme/types';
 import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React, { useState } from 'react';
-import { Checkbox, Props } from './Checkbox';
+import { Checkbox, CheckboxProps } from './Checkbox';
 import { Spacer } from '../../layouts/Spacer';
 
 export default {
@@ -11,7 +11,7 @@ export default {
 } as ComponentMeta<typeof Checkbox>;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Template: ComponentStory<typeof Checkbox> = (_: Props) => {
+const Template: ComponentStory<typeof Checkbox> = (_: CheckboxProps) => {
   const CHECKBOX_LIST: { id: number; data: NormalColorType }[] = [
     { id: 1, data: 'primary' },
     { id: 2, data: 'success' },

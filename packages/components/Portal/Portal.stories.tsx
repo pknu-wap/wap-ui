@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '../Button';
 import styled from '@emotion/styled';
 import { Modal } from '../Modal';
-import { Portal, Props } from './Portal';
+import { Portal, PortalProps } from './Portal';
 import useDisclosure from '../../hooks/useDisclosure';
 
 export default {
@@ -11,7 +11,7 @@ export default {
   component: Portal,
 } as ComponentMeta<typeof Portal>;
 
-const Template: ComponentStory<typeof Portal> = (args: Props) => {
+const Template: ComponentStory<typeof Portal> = (args: PortalProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -49,12 +49,12 @@ const Container = styled.div`
 
 export const Default = Template.bind({});
 
-export const WidthId = Template.bind({});
-WidthId.args = {
+export const WithId = Template.bind({});
+WithId.args = {
   target: 'modal',
 };
 
-export const WidthElement = Template.bind({});
-WidthElement.args = {
+export const WithElement = Template.bind({});
+WithElement.args = {
   target: document.getElementById('modal') as HTMLElement,
 };

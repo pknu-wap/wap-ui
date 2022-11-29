@@ -1,6 +1,6 @@
 {
   "name": "wap-ui",
-  "version": "1.1.8",
+  "version": "1.0.0-beta.19",
   "repository": "https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1.git",
   "author": "neko113 <alstn113@gmail.com>",
   "license": "MIT",
@@ -60,6 +60,7 @@
     "react-dom": "^18.2.0",
     "rollup": "^2.79.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.8.3"
   },
   "peerDependencies": {
