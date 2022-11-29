@@ -74,18 +74,15 @@ export const Modal = ({
 
   const modalVariants: Variants = {
     initial: {
-      y: 100,
-      translate: '-50% -50%',
+      y: '30vh',
       opacity: 0,
     },
     animate: {
       y: 0,
-      translate: '-50% -50%',
       opacity: 1,
     },
     exit: {
-      y: 100,
-      translate: '-50% -50%',
+      y: '30vh',
       opacity: 0,
     },
   };
@@ -100,19 +97,23 @@ export const Modal = ({
               initial="initial"
               animate="animate"
               exit="exit"
+              transition={{ duration: 0.3 }}
               blur={blur.toString()}
               onClick={onClose}
               style={{ willChange }}
             />
-            <S.ModalContainer
-              variants={modalVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              style={{ willChange }}
-            >
-              {children}
-            </S.ModalContainer>
+            <S.Positioner>
+              <S.ModalContainer
+                variants={modalVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.3 }}
+                style={{ willChange }}
+              >
+                {children}
+              </S.ModalContainer>
+            </S.Positioner>
           </>
         )}
       </AnimatePresence>
