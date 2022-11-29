@@ -65,8 +65,8 @@ export const Modal = ({
       opacity: blur ? 1 : 0,
     },
     animate: {
-      opacity: blur ? 1 : 0.5,
       // filter: blur ? 'saturate(200%) blur(100px)' : 'none',
+      opacity: blur ? 1 : 0.5,
     },
     exit: {
       opacity: blur ? 1 : 0,
