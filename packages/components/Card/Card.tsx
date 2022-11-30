@@ -9,6 +9,20 @@ export interface CardProps {
   isPressable?: boolean;
 }
 
+/**
+ * @example
+ * ```tsx
+ * <Card variant="shadow">
+ *  lorem ipsum dolor sit amet
+ * </Card>
+ * <Card variant="flat">
+ *  lorem ipsum dolor sit amet
+ * </Card>
+ * <Card variant="bordered">
+ *  lorem ipsum dolor sit amet
+ * </Card>
+ * ```
+ */
 export const Card = ({
   children,
   variant = 'shadow',

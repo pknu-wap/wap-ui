@@ -12,6 +12,22 @@ export interface AccordionProps extends AccordionProviderProps {
   allowMultiple?: boolean;
 }
 
+/**
+ * @example
+ * ```tsx
+ * <Accordion>
+ *  <Accordion.Item label="Item 1" description="description">
+ *    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto et ad,
+ *  </Accordion.Item>
+ *  <Accordion.Item label="Item 2" description="description">
+ *    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto et ad,
+ *  </Accordion.Item>
+ *  <Accordion.Item label="Item 3" description="description">
+ *    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto et ad,
+ *  </Accordion.Item>
+ * </Accordion>
+ *```
+ */
 export const Accordion = ({
   children,
   allowMultiple = false,

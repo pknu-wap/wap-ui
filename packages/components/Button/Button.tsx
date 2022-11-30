@@ -8,7 +8,16 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: NormalColorType;
   shadow?: boolean;
 }
-
+/**
+ * @example
+ * ```tsx
+ * <Button color="primary" shadow>Button</Button>
+ * <Button color="success" shadow>Button</Button>
+ * <Button color="secondary" shadow>Button</Button>
+ * <Button color="warning" shadow>Button</Button>
+ * <Button color="error" shadow>Button</Button>
+ * ```
+ */
 export const Button = ({
   size = 'md',
   color = 'primary',

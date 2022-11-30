@@ -8,6 +8,16 @@ export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   labelColor?: boolean;
 }
 
+/**
+ * @example
+ * ```tsx
+ * <Radio labelText="Radio" color="primary" />
+ * <Radio labelText="Radio" color="success" />
+ * <Radio labelText="Radio" color="secondary" />
+ * <Radio labelText="Radio" color="warning" />
+ * <Radio labelText="Radio" color="error" />
+ * ```
+ */
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
   { labelText = '', labelColor = false, color = 'primary', ...options },
   ref,

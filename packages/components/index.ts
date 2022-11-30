@@ -10,3 +10,5 @@ export * from './Toggle';
 export * from './Tooltip';
 export * from './Loader';
 export * from './Toast';
+export * from './Dropdown';
+export * from './Tooltip';
