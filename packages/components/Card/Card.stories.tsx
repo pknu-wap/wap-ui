@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Spacer } from '../../layouts/Spacer';
-import { Card, Props } from './Card';
+import { Card, CardProps } from './Card';
 import React from 'react';
 
 export default {
@@ -9,7 +9,7 @@ export default {
   component: Card,
 } as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = (args: Props) => {
+const Template: ComponentStory<typeof Card> = (args: CardProps) => {
   return (
     <FlexColumn>
       <Card {...args} />

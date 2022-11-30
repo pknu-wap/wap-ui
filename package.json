@@ -1,13 +1,12 @@
 {
   "name": "wap-ui",
-  "version": "1.1.2",
-  "repository": "https://github.com/neko113/wap-ui.git",
+  "version": "1.0.0-beta.20",
+  "repository": "https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1.git",
   "author": "neko113 <alstn113@gmail.com>",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
-  "browser": "./dist/index.umd.js",
   "private": false,
   "scripts": {
     "build": "rollup -c",
@@ -15,11 +14,11 @@
     "build-storybook": "build-storybook",
     "prepare": "husky install",
     "format": "prettier --write . --config ./.prettierrc",
-    "lint": "eslint './packages/**/*.{ts, tsx}'",
-    "lint:fix": "eslint --fix ."
+    "lint": "eslint './packages/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix './packages/**/*.{ts,tsx}'"
   },
   "lint-staged": {
-    ".": [
+    "./packages/**/*.{ts,tsx}": [
       "yarn format",
       "yarn lint:fix"
     ]
@@ -35,13 +34,13 @@
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@rollup/plugin-typescript": "^8.5.0",
-    "@storybook/addon-actions": "^6.5.12",
-    "@storybook/addon-essentials": "^6.5.12",
-    "@storybook/addon-interactions": "^6.5.12",
-    "@storybook/addon-links": "^6.5.12",
-    "@storybook/builder-webpack5": "^6.5.12",
-    "@storybook/manager-webpack5": "^6.5.12",
-    "@storybook/react": "^6.5.12",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
@@ -53,6 +52,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.7",
     "framer-motion": "^7.3.6",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
@@ -61,6 +61,7 @@
     "react-dom": "^18.2.0",
     "rollup": "^2.79.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.8.3"
   },
   "peerDependencies": {
@@ -73,5 +74,16 @@
   "dependencies": {},
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "emotion",
+    "framer-motion",
+    "ui",
+    "components",
+    "react-component-library",
+    "react-ui-kit",
+    "wap",
+    "design-system"
   ]
 }

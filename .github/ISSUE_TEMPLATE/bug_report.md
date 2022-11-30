@@ -2,7 +2,7 @@
 name: 버그 템플릿
 about: 버그 작업을 위한 템플릿입니다.
 labels: bug
-assignees: ""
+assignees: ''
 ---
 
 ## 버그 설명

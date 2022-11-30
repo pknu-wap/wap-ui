@@ -2,7 +2,7 @@ import { NormalColorType } from '../../theme/types';
 import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React, { useState } from 'react';
-import { Checkbox, Props } from './Checkbox';
+import { Checkbox, CheckboxProps } from './Checkbox';
 import { Spacer } from '../../layouts/Spacer';
 
 export default {
@@ -11,7 +11,7 @@ export default {
 } as ComponentMeta<typeof Checkbox>;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Template: ComponentStory<typeof Checkbox> = (_: Props) => {
+const Template: ComponentStory<typeof Checkbox> = (_: CheckboxProps) => {
   const CHECKBOX_LIST: { id: number; data: NormalColorType }[] = [
     { id: 1, data: 'primary' },
     { id: 2, data: 'success' },
@@ -19,7 +19,13 @@ const Template: ComponentStory<typeof Checkbox> = (_: Props) => {
     { id: 4, data: 'warning' },
     { id: 5, data: 'error' },
   ];
-  const [selected, setSelected] = useState<NormalColorType[]>([]);
+  const [selected, setSelected] = useState<NormalColorType[]>([
+    'primary',
+    'success',
+    'error',
+    'secondary',
+    'warning',
+  ]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onCheckedElement = (checked: any, item: any) => {
     if (checked) {
@@ -32,9 +38,8 @@ const Template: ComponentStory<typeof Checkbox> = (_: Props) => {
   return (
     <FlexColumn>
       {CHECKBOX_LIST.map((checkbox) => (
-        <>
+        <FlexColumn key={checkbox.id}>
           <Checkbox
-            key={checkbox.id}
             color={checkbox.data}
             labelText={checkbox.data}
             value={checkbox.data}
@@ -45,7 +50,7 @@ const Template: ComponentStory<typeof Checkbox> = (_: Props) => {
             checked={selected.includes(checkbox.data) ? true : false}
           />
           <Spacer />
-        </>
+        </FlexColumn>
       ))}
       <div>Selected : {selected.join(', ')}</div>
     </FlexColumn>

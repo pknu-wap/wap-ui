@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React, { useState } from 'react';
 import { Spacer } from '../../layouts/Spacer';
-import { Radio, Props } from './Radio';
+import { Radio, RadioProps } from './Radio';
 
 export default {
   title: 'Components/Radio',
@@ -17,7 +17,7 @@ type RadioValues =
   | 'warning'
   | 'error';
 
-const Template: ComponentStory<typeof Radio> = (args: Props) => {
+const Template: ComponentStory<typeof Radio> = (args: RadioProps) => {
   const [value, setValue] = useState<RadioValues>('default');
 
   const handleChange = (value: RadioValues) => {
