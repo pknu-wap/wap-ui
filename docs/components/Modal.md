@@ -3,7 +3,7 @@
 ## `type`
 
 ```tsx
-<Modal>
+interface ModalProps {
   /**
    * @description 모달이 열려있는지 여부
    * @default false
@@ -19,16 +19,25 @@
    * @default false
    */
   blur?: boolean;
+}
 
-<Modal.Header>
+interface ModalHeaderProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+  > {
   onClose: () => void;
-  children: React.ReactNode;
+}
 
-<Modal.Body>
-  children: React.ReactNode;
+type ModalBodyProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
+>;
 
-<Modal.Footer>
-  children: React.ReactNode;
+type ModalFooterProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 ```
 
 ## `example`
@@ -68,6 +77,6 @@ const App = () => {
 };
 
 const Container = styeld.div`
-height: 100vh;
+  height: 100vh;
 `;
 ```

@@ -3,6 +3,7 @@
 ## `type`
 
 ```tsx
+interface Portal {
   children: React.ReactNode;
 
   /**
@@ -11,6 +12,7 @@
    *
    */
   target?: HTMLElement | string;
+}
 ```
 
 ## `example`

@@ -5,6 +5,15 @@
 ref가 있는 Element의 밖을 click시 handler 작동한다.
 대체제로 react-outside-click-handler 라이브러리가 있음
 
+## `type`
+
+```ts
+interface Props {
+  ref: RefObject<HTMLElement>;
+  handler: (event: MouseEvent | TouchEvent) => void;
+}
+```
+
 ## `example`
 
 ```tsx

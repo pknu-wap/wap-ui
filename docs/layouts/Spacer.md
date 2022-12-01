@@ -3,8 +3,10 @@
 ## `type`
 
 ```ts
-x?: number;
-y?: number;
+interface Spacer {
+  x?: number;
+  y?: number;
+}
 ```
 
 ## `example`

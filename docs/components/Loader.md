@@ -20,6 +20,8 @@
 ## `example`
 
 ```tsx
+import { Loader } from 'wap-ui';
+
 const App = () => {
   return (
     <>
