@@ -17,9 +17,16 @@ interface Props {
 ## `example`
 
 ```tsx
-const ref = useRef(null);
+import { useRef } from 'react'
+import { useOnClickOutside } from 'wap-ui'
 
-useOnClickOutside(ref, () => alert('You clicked outside of me!'));
+const App = () => {
+  const ref = useRef(null);
 
-<div ref={ref}>Button</div>;
+  useOnClickOutside(ref, () => alert('You clicked outside of me!'));
+
+  return (
+    <div ref={ref}>Button</div>;
+  )
+}
 ```

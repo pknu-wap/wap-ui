@@ -17,10 +17,16 @@ interface Props {
 ## `example`
 
 ```tsx
-const [count, setCount] = useState<number>(0);
-useDidMountEffect(() => {
-  console.log('count changed');
-}, [count]);
+import { useState } from 'react';
+import { useDidMountEffect } from 'wap-ui';
 
-<button onClick={() => setCount(count + 1)}>count + 1</button>;
+const App = () => {
+  const [count, setCount] = useState<number>(0);
+
+  useDidMountEffect(() => {
+    console.log('count changed');
+  }, [count]);
+
+  return <button onClick={() => setCount(count + 1)}>count + 1</button>;
+};
 ```

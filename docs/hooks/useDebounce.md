@@ -18,13 +18,20 @@ interface Props<T> {
 ## `example`
 
 ```tsx
-const [searchText, setSearchText] = useState<string>('');
-const debouncedText = useDebounce<string>({ value: searchText });
+import { useState } from 'react';
+import { useDebounce, TextInput } from 'wap-ui';
 
-<TextInput
-  placeholder="Search"
-  type="text"
-  value={searchText}
-  onChange={(e) => setSearchText(e.target.value)}
-/>;
+const App = () => {
+  const [searchText, setSearchText] = useState<string>('');
+  const debouncedText = useDebounce<string>({ value: searchText });
+
+  return (
+    <TextInput
+      placeholder="Search"
+      type="text"
+      value={searchText}
+      onChange={(e) => setSearchText(e.target.value)}
+    />
+  );
+};
 ```

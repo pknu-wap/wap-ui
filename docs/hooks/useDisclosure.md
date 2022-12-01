@@ -15,9 +15,11 @@ interface Props {
 ## `example`
 
 ```tsx
-const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
+import { Modal, useDisclosure } from 'wap-ui';
 
 const App = () => {
+  const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
+
   return (
     <>
       <button onClick={onOpen}>열기</button>
