@@ -25,8 +25,8 @@ export const ModalCloseButton = styled.button`
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 1rem;
-  top: 0.5rem;
+  right: 0;
+  top: 0;
   border: none;
   background: none;
   flex-basis: auto;

@@ -34,7 +34,7 @@ export const Positioner = styled.div`
 `;
 
 export const ModalContainer = styled(motion.div)`
-  border-radius: 0.2rem;
+  border-radius: 1rem;
   padding: 1rem 2rem;
   width: 25rem;
   ${mediaQuery.small} {
