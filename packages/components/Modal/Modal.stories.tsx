@@ -39,7 +39,7 @@ const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
 };
 
 const Container = styled.div`
-  height: 200vh;
+  height: 100vh;
 `;
 
 export const Default = Template.bind({});

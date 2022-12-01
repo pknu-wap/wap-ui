@@ -40,7 +40,7 @@ function App() {
   // 2. Wrap WapUIProvider at the root of your app
   return (
     <WapUIProvider>
-      <App /> // 3. Write Your Code
+      <Write-Your-Code />
     </WapUIProvider>
   );
 }

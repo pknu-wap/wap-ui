@@ -1,0 +1,7 @@
+# `[Component] Loader`
+
+## `example`
+
+```tsx
+
+```
