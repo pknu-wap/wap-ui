@@ -1,9 +1,10 @@
+import styled from '@emotion/styled';
 import { Button, Modal, useDisclosure } from 'wap-ui';
 
 function App() {
   const { isOpen, onClose, onOpen } = useDisclosure();
   return (
-    <>
+    <Container>
       <Button color="error" shadow onClick={onOpen}>
         Button
       </Button>
@@ -27,8 +28,16 @@ function App() {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
 
 export default App;
