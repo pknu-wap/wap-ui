@@ -40,7 +40,7 @@ function App() {
   // 2. Wrap WapUIProvider at the root of your app
   return (
     <WapUIProvider>
-      <WriteYourCode />
+      <Write-Your-Code />
     </WapUIProvider>
   );
 }
@@ -50,7 +50,7 @@ function App() {
 import React from 'react';
 import { Button } from 'wap-ui';
 
-const App = () => {
+const Home = () => {
   return (
     <Button size="md" color="success" shadow>
       버튼
@@ -58,13 +58,17 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
 ```
 
 ## `Contributors`
 
 ### [성준영](https://github.com/sjyoung428)<span style="font-size:50%">(소프트웨어·인공지능전공 16학번)</small>
 
+### [이예슬](https://github.com/mimpie)<span style="font-size:50%">(소프트웨어·인공지능전공 21학번)</small>
+
 ### [김민수](https://github.com/neko113)<span style="font-size:50%">(컴퓨터공학전공 19학번)</small>
 
-### [이예슬](https://github.com/mimpie)<span style="font-size:50%">(소프트웨어·인공지능전공 21학번)</small>
+## `Links`
+
+### [Docs](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/docs) / [NPM](https://www.npmjs.com/package/wap-ui) / [Storybook](https://wap-ui.vercel.app/) / [PPT](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/ppt) / [Example](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/example)

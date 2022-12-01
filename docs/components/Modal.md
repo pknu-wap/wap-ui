@@ -1,22 +1,58 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Modal, ModalProps } from './Modal';
-import React from 'react';
-import { Button } from '../Button';
+# `[Component] Modal`
+
+## `type`
+
+```tsx
+interface ModalProps {
+  /**
+   * @description 모달이 열려있는지 여부
+   * @default false
+   */
+  isOpen?: boolean;
+  /**
+   * @description 모달이 닫힐 때 사용되는 함수
+   */
+  onClose: () => void;
+  children: React.ReactNode;
+  /**
+   * @description 모달의 overlay를 blur 처리할지 여부
+   * @default false
+   */
+  blur?: boolean;
+}
+
+interface ModalHeaderProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+  > {
+  onClose: () => void;
+}
+
+type ModalBodyProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
+>;
+
+type ModalFooterProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
+```
+
+## `example`
+
+```tsx
+import { Modal, Button, useDisclosure } from 'wap-ui';
 import styled from '@emotion/styled';
-import useDisclosure from '../../hooks/useDisclosure';
 
-export default {
-  title: 'Components/Modal',
-  component: Modal,
-} as ComponentMeta<typeof Modal>;
-
-const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
+const App = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Container>
       <Button onClick={onOpen}>버튼</Button>
-      <Modal {...args} isOpen={isOpen} onClose={onClose}>
+      <Modal blur isOpen={isOpen} onClose={onClose}>
         <Modal.Header onClose={onClose}>Header</Modal.Header>
         <Modal.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -40,13 +76,7 @@ const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
   );
 };
 
-const Container = styled.div`
+const Container = styeld.div`
   height: 100vh;
 `;
-
-export const Default = Template.bind({});
-
-export const Blur = Template.bind({});
-Blur.args = {
-  blur: true,
-};
+```
