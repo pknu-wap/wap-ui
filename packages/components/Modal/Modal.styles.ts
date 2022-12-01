@@ -24,9 +24,15 @@ export const Overlay = styled(motion.div)<{ blur: string }>`
       opacity: 0.5;
     `}
 `;
-
-export const Positioner = styled.div`
+export const PositionWrapper = styled.div`
   position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+`;
+export const Positioner = styled.div`
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

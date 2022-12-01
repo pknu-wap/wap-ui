@@ -1,5 +1,6 @@
 import { AnimatePresence, useWillChange, type Variants } from 'framer-motion';
 import React, { useLayoutEffect } from 'react';
+import { Portal } from '../Portal';
 import * as S from './Modal.styles';
 import { ModalBody } from './ModalBody/ModalBody';
 import { ModalFooter } from './ModalFooter/ModalFooter';
@@ -88,7 +89,7 @@ export const Modal = ({
   };
 
   return (
-    <>
+    <Portal target="modal">
       <AnimatePresence>
         {isOpen && (
           <>
@@ -102,22 +103,24 @@ export const Modal = ({
               onClick={onClose}
               style={{ willChange }}
             />
-            <S.Positioner>
-              <S.ModalContainer
-                variants={modalVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.3 }}
-                style={{ willChange }}
-              >
-                {children}
-              </S.ModalContainer>
-            </S.Positioner>
+            <S.PositionWrapper>
+              <S.Positioner>
+                <S.ModalContainer
+                  variants={modalVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.3 }}
+                  style={{ willChange }}
+                >
+                  {children}
+                </S.ModalContainer>
+              </S.Positioner>
+            </S.PositionWrapper>
           </>
         )}
       </AnimatePresence>
-    </>
+    </Portal>
   );
 };
 
