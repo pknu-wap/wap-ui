@@ -11,7 +11,7 @@ interface AccordionProps extends AccordionProviderProps {
   allowMultiple?: boolean;
 }
 
-interface AccorDionItemProps {
+interface AccordionItemProps {
   children: React.ReactNode;
   /**
    * AccordionItem의 닫혔을 경우에도 보여지는 부분입니다.

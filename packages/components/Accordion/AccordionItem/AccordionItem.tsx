@@ -3,7 +3,7 @@ import useDidMountEffect from '../../../hooks/useDidMountEffect';
 import { useAccordionContext } from '../AccordionContext';
 import * as S from './AccordionItem.styles';
 
-export interface AccorDionItemProps {
+export interface AccordionItemProps {
   children: React.ReactNode;
   /**
    * AccordionItem의 닫혔을 경우에도 보여지는 부분입니다.
@@ -26,7 +26,7 @@ export const AccordionItem = ({
   label,
   index,
   description,
-}: AccorDionItemProps) => {
+}: AccordionItemProps) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const childRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
