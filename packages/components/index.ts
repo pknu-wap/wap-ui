@@ -10,3 +10,4 @@ export * from './Toggle';
 export * from './Loader';
 export * from './Toast';
 export * from './Dropdown';
+export * from './ScrollToTop';

@@ -43,9 +43,11 @@ export const Portal = ({ children, target }: PortalProps) => {
       /**
        * 찾지 못할 경우 target을 className으로 갖는 element를 만든다
        */
-      portalContainer.current = document.createElement('div');
-      portalContainer.current.className = target;
-      document.body.appendChild(portalContainer.current);
+      if (!portalContainer.current) {
+        portalContainer.current = document.createElement('div');
+        portalContainer.current.className = target;
+        document.body.appendChild(portalContainer.current);
+      }
     }
   } else if (target instanceof HTMLElement) {
     /**

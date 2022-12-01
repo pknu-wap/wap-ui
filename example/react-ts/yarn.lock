@@ -1092,10 +1092,10 @@ vite@^3.2.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-wap-ui@^1.0.0-beta.21:
-  version "1.0.0-beta.21"
-  resolved "https://registry.yarnpkg.com/wap-ui/-/wap-ui-1.0.0-beta.21.tgz#0effff637d95299d3b153141fe5f1165a58cb1bf"
-  integrity sha512-JcQXOdQDSatZbpdzw71pGRNiQHEl8IArIlemKzmo/4eTjZtF+PlB5aI8kPXtjqlWP2GPbWq7q6GfCEGA59hf7w==
+wap-ui@^1.0.0-beta.26:
+  version "1.0.0-beta.26"
+  resolved "https://registry.yarnpkg.com/wap-ui/-/wap-ui-1.0.0-beta.26.tgz#f3a1c2ea48737b361b6730343f0a2cfc9325480a"
+  integrity sha512-MvZ9XSG0Cz5bBgL6CF9oyZdykI+yfVoBOLUgrnpIOpuYpVH+gsRUFQrCwOR1OlRR/D6CVBbtWsIeMvP5ahjgqA==
 
 yaml@^1.10.0:
   version "1.10.2"
