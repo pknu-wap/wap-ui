@@ -71,12 +71,4 @@ export default Home;
 
 ## `Links`
 
-### [npm](https://www.npmjs.com/package/wap-ui)
-
-### [storybook](https://wap-ui.vercel.app/)
-
-### [ppt](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/ppt)
-
-### [exmpale](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/example)
-
-### [docs](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/docs)
+### [docs](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/docs) / [npm](https://www.npmjs.com/package/wap-ui) / [storybook](https://wap-ui.vercel.app/) / [ppt](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/ppt) / [example](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/example)
