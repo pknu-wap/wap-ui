@@ -103,20 +103,18 @@ export const Modal = ({
               onClick={onClose}
               style={{ willChange }}
             />
-            <S.PositionWrapper>
-              <S.Positioner>
-                <S.ModalContainer
-                  variants={modalVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  transition={{ duration: 0.3 }}
-                  style={{ willChange }}
-                >
-                  {children}
-                </S.ModalContainer>
-              </S.Positioner>
-            </S.PositionWrapper>
+            <S.Positioner>
+              <S.ModalContainer
+                variants={modalVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.3 }}
+                style={{ willChange }}
+              >
+                {children}
+              </S.ModalContainer>
+            </S.Positioner>
           </>
         )}
       </AnimatePresence>
