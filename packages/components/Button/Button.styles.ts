@@ -1,5 +1,4 @@
-import { NormalColorType } from '../../theme/types';
-import { palette } from '../../theme/palette';
+import { NormalColorType, ButtonColorMap } from '../../theme/types';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -8,7 +7,7 @@ export const StyledButton = styled.button<{
   color: NormalColorType;
   shadow: boolean;
 }>`
-  background: ${({ color }) => palette[color]};
+  background: ${({ color }) => ButtonColorMap[color].normal};
   color: #fff;
   border-radius: 0.7rem;
   padding: 0.7rem 2rem;
@@ -16,6 +15,15 @@ export const StyledButton = styled.button<{
   min-width: 100px;
   line-height: 20px;
   font-size: 15px;
+  position: relative;
+  overflow: hidden;
+
+  transition: background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+
+  &:hover {
+    background: ${({ color }) => ButtonColorMap[color].hover};
+  }
+
   ${({ size }) =>
     size === 'sm' &&
     css`
@@ -40,6 +48,9 @@ export const StyledButton = styled.button<{
     ${({ shadow, color }) =>
     shadow &&
     css`
-      box-shadow: 0 4px 14px 0 ${palette[color]};
+      box-shadow: 0 4px 14px 0 ${ButtonColorMap[color].normal};
+      &:hover {
+        box-shadow: 0 4px 14px 0 ${ButtonColorMap[color].hover};
+      }
     `};
 `;

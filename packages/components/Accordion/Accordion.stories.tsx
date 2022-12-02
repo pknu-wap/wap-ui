@@ -67,7 +67,7 @@ export const allowMultiple = () => (
 
 export const NoGroup = () => {
   return (
-    <Accordion.Item label="sdf">
+    <Accordion.Item label="No Group">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto et ad,
       dolore harum facilis sequi recusandae fugiat, delectus iste id libero!
       Quasi, nulla sapiente illo similique culpa asperiores quisquam quos? Lorem

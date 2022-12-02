@@ -10,6 +10,7 @@ export const Overlay = styled(motion.div)<{ blur: string }>`
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: 999;
   ${({ blur }) =>
     blur === 'true' &&
     css`
@@ -22,17 +23,11 @@ export const Overlay = styled(motion.div)<{ blur: string }>`
     css`
       background-color: ${common.color.black};
       opacity: 0.5;
-    `}
+    `};
 `;
-export const PositionWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-`;
+
 export const Positioner = styled.div`
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
