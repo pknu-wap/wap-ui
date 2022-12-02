@@ -1,6 +1,7 @@
 import { NormalColorType } from '../../theme/types';
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 import * as S from './Button.styles';
+import Ripple from './Ripple';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg' | 'auto';
@@ -18,16 +19,17 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  * <Button color="error" shadow>Button</Button>
  * ```
  */
-export const Button = ({
+export const Button = forwardRef(function Button({
   size = 'md',
   color = 'primary',
   children,
   shadow = false,
   ...options
-}: ButtonProps) => {
+}: ButtonProps) {
   return (
     <S.StyledButton size={size} color={color} shadow={shadow} {...options}>
-      {children}
+      <Ripple />
+      <span>{children}</span>
     </S.StyledButton>
   );
-};
+});
