@@ -13,69 +13,72 @@ export default {
 export const Defulat = () => {
   return (
     <Container>
-      <FlexColumn>
-        <FlexRow>
-          <Spacer x={3} />
-          <Dropdown>
-            <Dropdown.Button shadow color="primary">
-              Actions
-            </Dropdown.Button>
-            <Dropdown.Menu>
-              <Dropdown.MenuItem
-                onClick={() => {
-                  alert('sdf');
-                }}
-              >
-                First Action
-              </Dropdown.MenuItem>
-              <Dropdown.MenuItem>Second Action</Dropdown.MenuItem>
-              <Dropdown.MenuItem>Third Acition</Dropdown.MenuItem>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Spacer x={10} />
-          <Dropdown>
-            <Dropdown.Button shadow color="warning">
-              Actions
-            </Dropdown.Button>
-            <Dropdown.Menu>
-              <Dropdown.MenuItem onClick={() => console.log('sdf')}>
-                Create a Copy
-              </Dropdown.MenuItem>
-              <Dropdown.MenuItem>Download</Dropdown.MenuItem>
-              <Dropdown.MenuItem>Delete</Dropdown.MenuItem>
-              <Dropdown.MenuItem>Mark as Draft</Dropdown.MenuItem>
-              <Dropdown.MenuItem>Write Something</Dropdown.MenuItem>
-            </Dropdown.Menu>
-          </Dropdown>
-        </FlexRow>
-        <Spacer y={14} />
-        <FlexRow>
-          <Spacer x={3} />
-          <Dropdown>
-            <Dropdown.Button shadow color="error">
-              Actions
-            </Dropdown.Button>
-            <Dropdown.Menu>
-              <Dropdown.MenuItem>First Action</Dropdown.MenuItem>
-              <Dropdown.MenuItem>Second Action</Dropdown.MenuItem>
-              <Dropdown.MenuItem>Third Acition</Dropdown.MenuItem>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Spacer x={10} />
-          <Dropdown>
-            <Dropdown.Button shadow color="secondary">
-              Actions
-            </Dropdown.Button>
-            <Dropdown.Menu>
-              <Dropdown.MenuItem onClick={() => console.log('sdf')}>
-                Create a Copy
-              </Dropdown.MenuItem>
-              <Dropdown.MenuItem>Download</Dropdown.MenuItem>
-              <Dropdown.MenuItem>Delete</Dropdown.MenuItem>
-            </Dropdown.Menu>
-          </Dropdown>
-        </FlexRow>
-      </FlexColumn>
+      <Title>Dropdown Scroll에 따른 Position 오류 // 미완성</Title>
+      <FlexRow>
+        <Dropdown>
+          <Dropdown.Button shadow color="primary">
+            Actions
+          </Dropdown.Button>
+          <Dropdown.Menu>
+            <Dropdown.MenuItem
+              onClick={() => {
+                alert('sdf');
+              }}
+            >
+              First Action
+            </Dropdown.MenuItem>
+            <Dropdown.MenuItem>Second Action</Dropdown.MenuItem>
+            <Dropdown.MenuItem>Third Acition</Dropdown.MenuItem>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Spacer x={10} />
+        <Dropdown>
+          <Dropdown.Button shadow color="warning">
+            Actions
+          </Dropdown.Button>
+          <Dropdown.Menu>
+            <Dropdown.MenuItem onClick={() => console.log('sdf')}>
+              Create a Copy
+            </Dropdown.MenuItem>
+            <Dropdown.MenuItem>Download</Dropdown.MenuItem>
+            <Dropdown.MenuItem>Delete</Dropdown.MenuItem>
+            <Dropdown.MenuItem>Mark as Draft</Dropdown.MenuItem>
+            <Dropdown.MenuItem>Write Something</Dropdown.MenuItem>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Spacer x={10} />
+        <Dropdown>
+          <Dropdown.Button shadow color="error">
+            Actions
+          </Dropdown.Button>
+          <Dropdown.Menu>
+            <Dropdown.MenuItem
+              onClick={() => {
+                alert('sdf');
+              }}
+            >
+              First Action
+            </Dropdown.MenuItem>
+            <Dropdown.MenuItem>Second Action</Dropdown.MenuItem>
+            <Dropdown.MenuItem>Third Acition</Dropdown.MenuItem>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Spacer x={10} />
+        <Dropdown>
+          <Dropdown.Button shadow color="secondary">
+            Actions
+          </Dropdown.Button>
+          <Dropdown.Menu>
+            <Dropdown.MenuItem onClick={() => console.log('sdf')}>
+              Create a Copy
+            </Dropdown.MenuItem>
+            <Dropdown.MenuItem>Download</Dropdown.MenuItem>
+            <Dropdown.MenuItem>Delete</Dropdown.MenuItem>
+            <Dropdown.MenuItem>Mark as Draft</Dropdown.MenuItem>
+            <Dropdown.MenuItem>Write Something</Dropdown.MenuItem>
+          </Dropdown.Menu>
+        </Dropdown>
+      </FlexRow>
     </Container>
   );
 };
@@ -92,4 +95,11 @@ const FlexColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+`;
+
+const Title = styled.div`
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem 0;
 `;
