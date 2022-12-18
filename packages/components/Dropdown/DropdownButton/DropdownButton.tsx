@@ -16,7 +16,7 @@ export const DropdownButton = ({
   shadow = false,
   ...options
 }: DropdownButtonProps) => {
-  const { ref, updateState, state } = useDropdownContext();
+  const { triggerRef, updateState, state } = useDropdownContext();
   const onChangeVisible = () => {
     updateState && updateState(!state);
   };
@@ -25,7 +25,7 @@ export const DropdownButton = ({
       color={color}
       shadow={shadow}
       {...options}
-      ref={ref}
+      ref={triggerRef}
       onClick={onChangeVisible}
     >
       {children}

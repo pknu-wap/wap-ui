@@ -35,7 +35,9 @@ const App = () => {
         Actions
       </Dropdown.Button>
       <Dropdown.Menu>
-        <Dropdown.MenuItem>Create a Copy</Dropdown.MenuItem>
+        <Dropdown.MenuItem onAction={() => alert('asdf')}>
+          Create a Copy
+        </Dropdown.MenuItem>
         <Dropdown.MenuItem>Download</Dropdown.MenuItem>
         <Dropdown.MenuItem>Delete</Dropdown.MenuItem>
         <Dropdown.MenuItem>Mark as Draft</Dropdown.MenuItem>

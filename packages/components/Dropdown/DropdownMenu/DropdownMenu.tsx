@@ -8,11 +8,11 @@ export interface DropdownMenuProps {
 }
 
 export const DropdownMenu = ({ children }: DropdownMenuProps) => {
-  const { state, ref } = useDropdownContext();
+  const { state, triggerRef, contentRef } = useDropdownContext();
 
   /** 아래 두 코드는 trigger button 밑에 content를 높기 위한 코드 */
-  const offset = ref?.current?.getBoundingClientRect();
-  /** 위치 정상 작ㅗ */
+  const offset = triggerRef?.current?.getBoundingClientRect();
+  /** 위치 정상 작동 */
   const style = offset
     ? {
         top: scrollY + offset.top + offset.height,
@@ -29,6 +29,7 @@ export const DropdownMenu = ({ children }: DropdownMenuProps) => {
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ type: 'spring', bounce: 0.33, duration: 0.3 }}
           style={style}
+          ref={contentRef}
         >
           {children}
         </S.StyledMenu>
