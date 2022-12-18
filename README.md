@@ -4,7 +4,7 @@
 # <div align="center">&lt;Awesome React UI Library /&gt;</div>
 
 <p align="center">
-  <a href="https://github.com/jrgarciadev/nextui/blob/main/LICENSE">
+  <a href="https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/blob/main/LICENSE">
     <img src="https://img.shields.io/apm/l/atomic-design-ui.svg?style=flat" alt="License">
   </a>
   <a href="https://www.npmjs.com/package/wap-ui">
