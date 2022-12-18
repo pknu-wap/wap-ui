@@ -12,10 +12,11 @@ export const DropdownMenu = ({ children }: DropdownMenuProps) => {
 
   /** 아래 두 코드는 trigger button 밑에 content를 높기 위한 코드 */
   const offset = ref?.current?.getBoundingClientRect();
+  /** 위치 정상 작ㅗ */
   const style = offset
     ? {
-        top: offset.top + offset.height,
-        left: offset.left,
+        top: scrollY + offset.top + offset.height,
+        left: scrollX + offset.left,
       }
     : {};
 
