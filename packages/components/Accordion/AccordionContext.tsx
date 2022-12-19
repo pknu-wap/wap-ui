@@ -6,7 +6,7 @@ export interface AccordionProviderProps {
 
 export interface AccordionContextValue {
   values: Array<number>;
-  updateValues?: (nextState: boolean) => void;
+  updateValues?: (index: number, nextState: boolean) => void;
 }
 
 export const AccordionContext = createContext<AccordionContextValue>({

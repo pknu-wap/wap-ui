@@ -5,12 +5,12 @@
 
 <p align="center">
   <a href="https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/blob/main/LICENSE">
-    <img src="https://img.shields.io/apm/l/atomic-design-ui.svg?style=flat" alt="License">
+    <img src="https://badgen.net/github/license/pknu-wap/2022_2_WAP_WEB_TEAM1">
   </a>
   <a href="https://www.npmjs.com/package/wap-ui">
     <img src="https://img.shields.io/npm/dm/wap-ui.svg?style=flat-round" alt="npm downloads">
   </a>
-   <img alt="Github Stars" src="https://badgen.net/github/stars/pknu-wap/2022_2_WAP_WEB_TEAM1" />
+  <img alt="Github Stars" src="https://badgen.net/github/stars/pknu-wap/2022_2_WAP_WEB_TEAM1" />
   <img src="https://badgen.net/github/release/pknu-wap/2022_2_WAP_WEB_TEAM1">
 
 </p>
