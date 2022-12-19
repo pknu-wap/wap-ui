@@ -15,8 +15,9 @@ export const StyledMenuItem = styled.button<{
   cursor: pointer;
   &:hover {
     background-color: ${({ color }) =>
-      color === 'default' ? common.color.gray7 : ButtonColorMap[color].normal};
+      color === 'default' ? common.color.gray7 : ButtonColorMap[color].bg};
   }
+  transition: background-color 0.2s;
 `;
 
 export const StyledMenuItemText = styled.span<{
@@ -29,5 +30,5 @@ export const StyledMenuItemText = styled.span<{
   height: 36px;
   border-radius: 14px;
   color: ${({ color }) =>
-    color === 'default' ? '#fff' : ButtonColorMap[color].hover};
+    color === 'default' ? '#fff' : ButtonColorMap[color].hoverSolid};
 `;
