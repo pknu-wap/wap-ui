@@ -20,6 +20,27 @@
   <img src="https://badgen.net/github/contributors/pknu-wap/2022_2_WAP_WEB_TEAM1">
 </p>
 
+## `Demo`
+
+<table>
+  <tr>
+    <td>
+      <img src="https://user-images.githubusercontent.com/75781414/208494136-402c2f72-c2ed-422b-8569-4a8e6d7d2a6c.gif" width=520 />
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/75781414/208494143-7b6160eb-69ca-4b3a-aa96-8945ac424df4.gif" width=520 />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://user-images.githubusercontent.com/75781414/208494160-27c10e7a-665a-43c0-b76b-9efc4732d74b.gif" width=520 />
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/75781414/208494166-1c2a715e-201b-4fbe-bdbe-f2309e9f0aab.gif" width=520 />
+    </td>
+  </tr>
+</table>
+
 ## `Installing WAP-UI`
 
 ```sh
