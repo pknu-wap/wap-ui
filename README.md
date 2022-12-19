@@ -22,7 +22,7 @@
 
 ## `Demo`
 
-<table>
+<table align="center">
   <tr>
     <td>
       <img src="https://user-images.githubusercontent.com/75781414/208494136-402c2f72-c2ed-422b-8569-4a8e6d7d2a6c.gif" width=380 />
