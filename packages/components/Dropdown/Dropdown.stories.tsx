@@ -22,6 +22,7 @@ const RowSet = () => {
             onAction={() => {
               alert('asdfv');
             }}
+            color="primary"
           >
             First Action
           </Dropdown.MenuItem>
