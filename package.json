@@ -1,9 +1,13 @@
 {
-  "name": "wap-ui",
+  "name": "@wap-ui/react",
   "version": "1.2.2",
+  "description": "WAP UI / React UI Components Library",
   "repository": "https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1.git",
   "author": "neko113 <alstn113@gmail.com>",
   "license": "MIT",
+  "workspaces": [
+    "./packages/react"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
