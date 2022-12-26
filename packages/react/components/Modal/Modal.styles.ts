@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { common } from '../../theme/common';
-import mediaQuery from '../../theme/mediaQuery';
+import { common, mediaQuery } from '../../theme';
+
 
 export const Overlay = styled(motion.div)<{ blur: string }>`
   position: fixed;

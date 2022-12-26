@@ -1,5 +1,5 @@
 import React from 'react';
-import { NormalColorType } from '../../theme/types';
+import { NormalColorType } from '../../theme';
 import { Bars } from './Loaders/Bars/Bars';
 import { Dots } from './Loaders/Dots/Dots';
 import { Spinner } from './Loaders/Spinner/Spinner';

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { common } from '../../../theme/common';
-import { ButtonColorMap, NormalColorType } from '../../../theme/types';
+import { ButtonColorMap, NormalColorType } from '../../../theme';
 
 export const StyledMenuItem = styled.button<{
   color: NormalColorType | 'default';

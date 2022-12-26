@@ -1,4 +1,4 @@
-import { WapUIProvider } from '../packages/index';
+import { WapUIProvider } from '../packages/react/theme';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

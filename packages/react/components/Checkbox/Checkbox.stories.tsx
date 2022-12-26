@@ -1,4 +1,4 @@
-import { NormalColorType } from '../../theme/types';
+import { NormalColorType } from '../../theme';
 import styled from '@emotion/styled';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React, { useState } from 'react';

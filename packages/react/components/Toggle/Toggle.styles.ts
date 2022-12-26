@@ -1,4 +1,4 @@
-import { NormalColorType } from '../../theme/types';
+import { NormalColorType } from '../../theme';
 import { palette } from '../../theme/palette';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';

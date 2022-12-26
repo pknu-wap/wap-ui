@@ -1,5 +1,5 @@
 import { palette } from '../../theme/palette';
-import { NormalColorType } from '../../theme/types';
+import { NormalColorType } from '../../theme';
 import styled from '@emotion/styled';
 
 export const RadioPoint = styled.span`

@@ -1,4 +1,4 @@
-import { NormalColorType } from '../../theme/types';
+import { NormalColorType } from '../../theme';
 import React, { forwardRef, InputHTMLAttributes } from 'react';
 import * as S from './Radio.styles';
 

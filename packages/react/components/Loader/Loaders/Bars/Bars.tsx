@@ -1,5 +1,5 @@
 import React from 'react';
-import { NormalColorType } from '../../../../theme/types';
+import { NormalColorType } from '../../../../theme';
 import * as S from './Bars.styles';
 
 export interface BarsProps {

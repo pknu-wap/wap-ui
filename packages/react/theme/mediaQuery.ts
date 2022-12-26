@@ -2,7 +2,7 @@ export const customMediaQuery = (maxWidth: number) => `
   @media (max-width: ${maxWidth}px)
 `;
 
-const mediaQuery = {
+export const mediaQuery = {
   xxlarge: customMediaQuery(1920),
   xlarge: customMediaQuery(1440),
   large: customMediaQuery(1200),
@@ -12,4 +12,3 @@ const mediaQuery = {
   custom: customMediaQuery,
 };
 
-export default mediaQuery;

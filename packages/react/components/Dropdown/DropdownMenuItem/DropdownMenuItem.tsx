@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes } from 'react';
-import { NormalColorType } from '../../../theme/types';
+import { NormalColorType } from '../../../theme';
 import { useDropdownContext } from '../DropdownContext';
 import * as S from './DropdownMenuItem.styles';
 

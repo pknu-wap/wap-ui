@@ -1,4 +1,4 @@
-import { NormalColorType, ButtonColorMap } from '../../theme/types';
+import { NormalColorType, ButtonColorMap } from '../../theme';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 

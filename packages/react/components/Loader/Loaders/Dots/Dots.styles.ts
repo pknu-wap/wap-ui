@@ -1,7 +1,7 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { palette } from '../../../../theme/palette';
-import { NormalColorType } from '../../../../theme/types';
+import { NormalColorType } from '../../../../theme';
 
 const DotsKeyframes = keyframes`
  0%{

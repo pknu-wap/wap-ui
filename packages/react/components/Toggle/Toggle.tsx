@@ -1,5 +1,5 @@
 import React, { forwardRef, InputHTMLAttributes } from 'react';
-import { NormalColorType } from '../../theme/types';
+import { NormalColorType } from '../../theme';
 import * as S from './Toggle.styles';
 
 export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
