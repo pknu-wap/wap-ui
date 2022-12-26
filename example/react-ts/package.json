@@ -1,5 +1,5 @@
 {
-  "name": "react-ts",
+  "name": "react-ts-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,10 +11,10 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@wap-ui/react": "^0.0.1-alpha.6",
     "framer-motion": "^7.6.15",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "wap-ui": "^1.2.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
