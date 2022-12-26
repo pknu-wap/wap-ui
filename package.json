@@ -1,17 +1,14 @@
 {
-  "name": "@wap-ui/react",
-  "version": "1.2.2",
+  "name": "root",
+  "version": "1.0.0",
   "description": "WAP UI / React UI Components Library",
   "repository": "https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1.git",
   "author": "neko113 <alstn113@gmail.com>",
   "license": "MIT",
+  "private": false,
   "workspaces": [
     "./packages/react"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
-  "private": false,
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
@@ -74,20 +71,5 @@
     "framer-motion": "^7.3.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "dependencies": {},
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "react",
-    "emotion",
-    "framer-motion",
-    "ui",
-    "components",
-    "react-component-library",
-    "react-ui-kit",
-    "wap",
-    "design-system"
-  ]
+  }
 }
