@@ -4,20 +4,20 @@
 # <div align="center">&lt;Awesome React UI Library /&gt;</div>
 
 <p align="center">
-  <a href="https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/blob/main/LICENSE">
-    <img src="https://badgen.net/github/license/pknu-wap/2022_2_WAP_WEB_TEAM1">
+  <a href="https://github.com/pknu-wap/wap-ui/blob/main/LICENSE">
+    <img src="https://badgen.net/github/license/pknu-wap/wap-ui">
   </a>
-  <a href="https://www.npmjs.com/package/wap-ui">
+  <a href="https://www.npmjs.com/package/@wap-ui/react">
     <img src="https://img.shields.io/npm/dm/wap-ui.svg?style=flat-round" alt="npm downloads">
   </a>
-  <img alt="Github Stars" src="https://badgen.net/github/stars/pknu-wap/2022_2_WAP_WEB_TEAM1" />
-  <img src="https://badgen.net/github/release/pknu-wap/2022_2_WAP_WEB_TEAM1">
+  <img alt="Github Stars" src="https://badgen.net/github/stars/pknu-wap/wap-ui" />
+  <img src="https://badgen.net/github/release/pknu-wap/wap-ui">
 
 </p>
 <p align="center">
-  <img src="https://badgen.net/github/issues/pknu-wap/2022_2_WAP_WEB_TEAM1">
-  <img src="https://badgen.net/github/prs/pknu-wap/2022_2_WAP_WEB_TEAM1">
-  <img src="https://badgen.net/github/contributors/pknu-wap/2022_2_WAP_WEB_TEAM1">
+  <img src="https://badgen.net/github/issues/pknu-wap/wap-ui">
+  <img src="https://badgen.net/github/prs/pknu-wap/wap-ui">
+  <img src="https://badgen.net/github/contributors/pknu-wap/wap-ui">
 </p>
 
 ## `Demo`
@@ -49,9 +49,9 @@
 ## `Installing WAP-UI`
 
 ```sh
-yarn add wap-ui @emotion/react @emotion/styled framer-motion
+yarn add @wap-ui/react @emotion/react @emotion/styled framer-motion
 # or
-npm i wap-ui @emotion/react @emotion/styled framer-motion
+npm i @wap-ui/react @emotion/react @emotion/styled framer-motion
 ```
 
 ## `Usage`
@@ -60,20 +60,19 @@ npm i wap-ui @emotion/react @emotion/styled framer-motion
 import React from 'react';
 
 // 1. import `WapUIProvider` component
+import ReactDOM from 'react-dom/client';
+import App from './App';
 import { WapUIProvider } from '@wap-ui/react';
 
-function App() {
-  // 2. Wrap WapUIProvider at the root of your app
-  return (
-    <WapUIProvider>
-      <Write-Your-Code />
-    </WapUIProvider>
-  );
-}
+// 2. Wrap WapUIProvider at the root of your app
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <WapUIProvider>
+    <App />
+  </WapUIProvider>,
+);
 ```
 
 ```tsx
-import React from 'react';
 import { Button } from '@wap-ui/react';
 
 const Home = () => {
@@ -97,4 +96,4 @@ export default Home;
 
 ## `Links`
 
-### [Docs](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/docs) / [NPM](https://www.npmjs.com/package/wap-ui) / [Storybook](https://wap-ui.vercel.app/) / [PPT](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/ppt) / [Example](https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1/tree/main/example)
+### [Docs](https://github.com/pknu-wap/wap-ui/tree/main/docs) / [NPM](https://www.npmjs.com/package/wap-ui) / [Storybook](https://wap-ui.vercel.app/) / [PPT](https://github.com/pknu-wap/wap-ui/tree/main/ppt) / [Example](https://github.com/pknu-wap/wap-ui/tree/main/example)
