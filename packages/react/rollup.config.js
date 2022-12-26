@@ -16,7 +16,7 @@ import pkg from './package.json';
 
 export default {
   external: ['react', 'react-dom'],
-  input: './packages/index.ts',
+  input: './src/index.ts',
   output: [
     {
       file: pkg.main,
@@ -34,12 +34,16 @@ export default {
     babel({
       exclude: 'node_modules/**',
       extensions,
-      include: ['packages/**/*'],
+      include: ['./src/**/*'],
       babelHelpers: 'bundled',
     }),
     commonjs({ include: 'node_modules/**' }),
     peerDepsExternal(),
-    typescript({ tsconfig: './tsconfig.json', sourceMap: true }),
+    typescript({
+      tsconfig: './tsconfig.json',
+      sourceMap: true,
+      removeComments: false,
+    }),
     terser(),
   ],
 };
