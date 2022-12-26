@@ -1,6 +1,27 @@
 {
   "name": "@wap-ui/react",
   "version": "0.0.1-alpha.5",
-  "main": "index.js",
-  "license": "MIT"
+  "description": "WAP UI / React UI Components Library",
+  "repository": "https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1.git",
+  "author": "neko113 <alstn113@gmail.com>",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "private": false,
+  "scripts": {},
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "emotion",
+    "framer-motion",
+    "ui",
+    "components",
+    "react-component-library",
+    "react-ui-kit",
+    "wap",
+    "design-system"
+  ]
 }
