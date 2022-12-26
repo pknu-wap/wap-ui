@@ -10,13 +10,14 @@
     "./packages/react"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build:wap-ui": "yarn workspace @wap-ui/react run build",
+    "storybook": "yarn workspace @wap-ui/react run storybook",
+    "build-storybook": "yarn workspace @wap-ui/react run build-storybook",
+    "publish:wap-ui": "yarn build:wap-ui && yarn workspace @wap-ui/react run publish:wap-ui",
     "prepare": "husky install",
     "format": "prettier --write . --config ./.prettierrc",
-    "lint": "eslint './packages/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix './packages/**/*.{ts,tsx}'"
+    "lint": "eslint './packages/react/src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix './packages/react/src/**/*.{ts,tsx}'"
   },
   "lint-staged": {
     "./packages/**/*.{ts,tsx}": [
@@ -25,9 +26,8 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
     "eslint": "^8.24.0",
+    "prettier": "^2.7.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
@@ -36,8 +36,9 @@
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "typescript": "^4.8.3",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "husky": "^8.0.0",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
+    "lint-staged": "^13.0.3"
   }
 }

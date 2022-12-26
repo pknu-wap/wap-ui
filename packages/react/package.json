@@ -9,7 +9,12 @@
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
   "private": false,
-  "scripts": {},
+  "scripts": {
+    "build": "rollup -c",
+    "publish:wap-ui": "yarn publish --access public",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
