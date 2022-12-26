@@ -30,10 +30,10 @@
   </tr>
   <tr>
     <td width="50%">
-      <img src="https://user-images.githubusercontent.com/75781414/209562230-7f3e9d0d-fa5f-452c-be92-dfeebb251e48.gif"  />
+      <img src="https://user-images.githubusercontent.com/75781414/209572114-dfa9b08a-052b-446e-afd5-388545d09c6b.gif"  />
     </td>
     <td width="50%">
-      <img src="https://user-images.githubusercontent.com/75781414/209560781-9994d09d-6768-4555-833d-35d6ebe16a11.gif" />
+      <img src="https://user-images.githubusercontent.com/75781414/209572876-2720e0ef-94bb-441d-b24e-b282fefc683d.gif" />
     </td>
   </tr>
   </tr>
