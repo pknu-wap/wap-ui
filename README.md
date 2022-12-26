@@ -141,7 +141,7 @@ export default Home;
 ## `Links`
 
 - #### [Documents](https://github.com/pknu-wap/wap-ui/tree/main/docs)
-- #### [NPM](https://www.npmjs.com/package/wap-ui)
+- #### [NPM](https://www.npmjs.com/package/@wap-ui/react)
 - #### [Playground](https://wap-ui.vercel.app/)
 - #### [Presentations](https://github.com/pknu-wap/wap-ui/tree/main/ppt)
 - #### [Example](https://github.com/pknu-wap/wap-ui/tree/main/example)
