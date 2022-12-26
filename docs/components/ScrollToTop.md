@@ -7,7 +7,7 @@ ScrollToTop이 사용된 컴포넌트가 렌더링될 때 스크롤이 최상단
 ## `example`
 
 ```tsx
-import { ScrollToTop } from 'wap-ui';
+import { ScrollToTop } from '@wap-ui/react';
 
 const App = () => {
   return (

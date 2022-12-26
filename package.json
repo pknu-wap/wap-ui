@@ -1,21 +1,23 @@
 {
-  "name": "wap-ui",
-  "version": "1.2.2",
+  "name": "root",
+  "version": "1.0.0",
+  "description": "WAP UI / React UI Components Library",
   "repository": "https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1.git",
   "author": "neko113 <alstn113@gmail.com>",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
-  "private": false,
+  "private": true,
+  "workspaces": [
+    "./packages/react"
+  ],
   "scripts": {
-    "build": "rollup -c",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build:wap-ui": "yarn workspace @wap-ui/react run build",
+    "storybook": "yarn workspace @wap-ui/react run storybook",
+    "build-storybook": "yarn workspace @wap-ui/react run build-storybook",
+    "publish:wap-ui": "yarn build:wap-ui && yarn workspace @wap-ui/react run publish:wap-ui",
     "prepare": "husky install",
     "format": "prettier --write . --config ./.prettierrc",
-    "lint": "eslint './packages/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix './packages/**/*.{ts,tsx}'"
+    "lint": "eslint './packages/react/src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix './packages/react/src/**/*.{ts,tsx}'"
   },
   "lint-staged": {
     "./packages/**/*.{ts,tsx}": [
@@ -24,66 +26,19 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.19.1",
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@emotion/babel-plugin": "^11.10.2",
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-node-resolve": "^14.1.0",
-    "@rollup/plugin-typescript": "^8.5.0",
-    "@storybook/addon-actions": "^6.5.13",
-    "@storybook/addon-essentials": "^6.5.13",
-    "@storybook/addon-interactions": "^6.5.13",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/builder-webpack5": "^6.5.13",
-    "@storybook/manager-webpack5": "^6.5.13",
-    "@storybook/react": "^6.5.13",
-    "@storybook/testing-library": "^0.0.13",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.39.0",
-    "@typescript-eslint/parser": "^5.39.0",
-    "babel-loader": "^8.2.5",
     "eslint": "^8.24.0",
+    "prettier": "^2.7.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.7",
-    "framer-motion": "^7.3.6",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "typescript": "^4.8.3",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "husky": "^8.0.0",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rollup": "^2.79.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.8.3"
-  },
-  "peerDependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "framer-motion": "^7.3.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "dependencies": {},
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "react",
-    "emotion",
-    "framer-motion",
-    "ui",
-    "components",
-    "react-component-library",
-    "react-ui-kit",
-    "wap",
-    "design-system"
-  ]
+    "lint-staged": "^13.0.3"
+  }
 }

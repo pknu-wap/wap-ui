@@ -43,7 +43,7 @@ type ModalFooterProps = React.DetailedHTMLProps<
 ## `example`
 
 ```tsx
-import { Modal, Button, useDisclosure } from 'wap-ui';
+import { Modal, Button, useDisclosure } from '@wap-ui/react';
 import styled from '@emotion/styled';
 
 const App = () => {

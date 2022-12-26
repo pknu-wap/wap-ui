@@ -12,7 +12,7 @@ interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 ## `example`
 
 ```tsx
-import { Checkbox } from 'wap-ui';
+import { Checkbox } from '@wap-ui/react';
 
 const App = () => {
   return (

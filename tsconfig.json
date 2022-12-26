@@ -13,9 +13,8 @@
     "outDir": "./dist", // 빌드 결과물이 저장될 경로
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
-    "removeComments": true
+    "emitDeclarationOnly": true
   },
-  "include": ["./packages"],
-  "exclude": ["./dist", "./node_modules"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules"]
 }
