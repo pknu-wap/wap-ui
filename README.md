@@ -109,11 +109,33 @@ export default Home;
 
 ## `Contributors`
 
-### [성준영](https://github.com/sjyoung428)<span style="font-size:50%">(소프트웨어·인공지능전공 16학번)</small>
-
-### [이예슬](https://github.com/mimpie)<span style="font-size:50%">(소프트웨어·인공지능전공 21학번)</small>
-
-### [김민수](https://github.com/neko113)<span style="font-size:50%">(컴퓨터공학전공 19학번)</small>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/sjyoung428">
+        <img src="https://avatars.githubusercontent.com/u/77968955?v=4" width="120px;"/>
+        <br />
+        <a href="https://github.com/pknu-wap/wap-ui/commits/main?author=sjyoung428" title="Code">sjyong428 💻</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/neko113">
+        <img src="https://avatars.githubusercontent.com/u/75781414?v=4" width="120px;"/>
+        <br />
+        <a href="https://github.com/pknu-wap/wap-ui/commits/main?author=neko113" title="Code">neko113 💻</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/mimpie">
+        <img src="https://avatars.githubusercontent.com/u/108365477?v=4" width="120px;"/>
+        <br />
+        <a href="https://github.com/pknu-wap/wap-ui/commits/main?author=mimpie" title="Code">mimpie 💻</a>
+    </td>
+  </tr>
+    <tr>
+    <td align="center">컴공16 성준영</td>
+    <td align="center">컴공19 김민수</td>
+    <td align="center">컴공21 이예슬</td>
+  </tr>
+</table>
 
 ## `Links`
 
