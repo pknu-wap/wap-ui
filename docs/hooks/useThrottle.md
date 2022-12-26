@@ -19,7 +19,7 @@ interface Props<T> {
 
 ```tsx
 import { useState } from 'react';
-import { useThrottle, TextInput } from 'wap-ui';
+import { useThrottle, TextInput } from '@wap-ui/react';
 
 const App = () => {
   const [searchText, setSearchText] = useState<string>('');

@@ -60,7 +60,7 @@ npm i wap-ui @emotion/react @emotion/styled framer-motion
 import React from 'react';
 
 // 1. import `WapUIProvider` component
-import { WapUIProvider } from 'wap-ui';
+import { WapUIProvider } from '@wap-ui/react';
 
 function App() {
   // 2. Wrap WapUIProvider at the root of your app
@@ -74,7 +74,7 @@ function App() {
 
 ```tsx
 import React from 'react';
-import { Button } from 'wap-ui';
+import { Button } from '@wap-ui/react';
 
 const Home = () => {
   return (

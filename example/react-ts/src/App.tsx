@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Button, Modal, useDisclosure } from 'wap-ui';
+import { Button, Modal, useDisclosure } from '@wap-ui/react';
 
 function App() {
   const { isOpen, onClose, onOpen } = useDisclosure();
