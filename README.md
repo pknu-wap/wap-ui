@@ -98,13 +98,12 @@ export default Home;
 3. You can refer to the components through Documents or Jsdocs like that.
 <table align="center">
   <tr>
-    <td>
-      <img src="https://user-images.githubusercontent.com/75781414/209553479-d030fe18-ace4-4d3d-9f66-a5c76af20e06.png" width=380 />
+    <td align="center" >
+      <img src="https://user-images.githubusercontent.com/75781414/209558772-f09ef039-e056-463e-b097-5bc3bca9e91f.png" width="100%" />
     </td>
-    <td>
-      <img src="https://user-images.githubusercontent.com/75781414/209556214-0146d9f0-e92e-461f-a3d7-d48351940cb3.png" width=380 />
+    <td align="center">
+      <img src="https://user-images.githubusercontent.com/75781414/209560523-74cb3b4e-f1e9-4a5d-a5e1-ae54c2aa4150.png" width="100%" />
     </td>
-  </tr>
 </table>
 
 ## `Contributors`
