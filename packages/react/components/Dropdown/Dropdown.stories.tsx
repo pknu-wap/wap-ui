@@ -3,7 +3,7 @@ import { ComponentMeta } from '@storybook/react';
 import { Dropdown } from './Dropdown';
 import React from 'react';
 import { Spacer } from '../../layouts';
-import { DropdownButton } from '../Dropdown/DropdownButton';
+import { DropdownButton } from './DropdownButton';
 
 export default {
   title: 'Components/Dropdown',
