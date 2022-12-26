@@ -11,4 +11,3 @@ export const mediaQuery = {
   xsmall: customMediaQuery(375),
   custom: customMediaQuery,
 };
-

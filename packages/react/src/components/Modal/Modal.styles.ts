@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { common, mediaQuery } from '../../theme';
 
-
 export const Overlay = styled(motion.div)<{ blur: string }>`
   position: fixed;
   top: 0;
