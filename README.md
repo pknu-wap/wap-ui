@@ -102,7 +102,7 @@ export default Home;
       <img src="https://user-images.githubusercontent.com/75781414/209553479-d030fe18-ace4-4d3d-9f66-a5c76af20e06.png" width=380 />
     </td>
     <td>
-      <img src="https://user-images.githubusercontent.com/75781414/209555781-57449b58-eea4-4d03-9f7d-ec777582abac.png" width=380 />
+      <img src="https://user-images.githubusercontent.com/75781414/209556214-0146d9f0-e92e-461f-a3d7-d48351940cb3.png" width=380 />
     </td>
   </tr>
 </table>
