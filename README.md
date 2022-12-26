@@ -8,7 +8,7 @@
     <img src="https://badgen.net/github/license/pknu-wap/wap-ui">
   </a>
   <a href="https://www.npmjs.com/package/@wap-ui/react">
-    <img src="https://img.shields.io/npm/dm/wap-ui.svg?style=flat-round" alt="npm downloads">
+    <img src="https://img.shields.io/npm/dm/@wap-ui/react.svg?style=flat-round" alt="npm downloads">
   </a>
   <img alt="Github Stars" src="https://badgen.net/github/stars/pknu-wap/wap-ui" />
   <img src="https://badgen.net/github/release/pknu-wap/wap-ui">
