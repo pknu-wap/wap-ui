@@ -1,7 +1,6 @@
 module.exports = {
   stories: [
-    '../packages/components/*/*.stories.tsx',
-    '../packages/layouts/*/*.stories.tsx',
+    "../src/**/*.stories.tsx"
   ],
   addons: [
     '@storybook/addon-links',
