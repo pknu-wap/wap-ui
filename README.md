@@ -25,7 +25,7 @@
 <table align="center">
   <tr align="center">
     <td colspan="2">
-      <a href="https://wap-ui.vercel.app/?path=/story/components-button--default">Demo Test</a>
+      <a href="https://wap-ui.vercel.app/?path=/story/components-button--default">Try using it in playground</a>
     </td>
   </tr>
   <tr>
@@ -48,6 +48,9 @@
 
 ## `Installing WAP-UI`
 
+To use WAP UI, Install the `@wap-ui/react` package and its peer dependencies.
+(`@emotion/react`, `@emotion/styled`, `framer-motion`)
+
 ```sh
 yarn add @wap-ui/react @emotion/react @emotion/styled framer-motion
 # or
@@ -55,6 +58,10 @@ npm i @wap-ui/react @emotion/react @emotion/styled framer-motion
 ```
 
 ## `Usage`
+
+To start using the components, follow these steps:
+
+1. For WAP UI to work correctly, Wrap `WapUIProvider` provided by `@wap-ui/react` at root of your application.
 
 ```tsx
 import React from 'react';
@@ -72,6 +79,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 );
 ```
 
+2. Bring components what you want and use them.
+
 ```tsx
 import { Button } from '@wap-ui/react';
 
@@ -86,6 +95,18 @@ const Home = () => {
 export default Home;
 ```
 
+3. You can refer to the components through Documents or Jsdocs like that.
+<table align="center">
+  <tr>
+    <td>
+      <img src="https://user-images.githubusercontent.com/75781414/209553479-d030fe18-ace4-4d3d-9f66-a5c76af20e06.png" width=380 />
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/75781414/209555781-57449b58-eea4-4d03-9f7d-ec777582abac.png" width=380 />
+    </td>
+  </tr>
+</table>
+
 ## `Contributors`
 
 ### [성준영](https://github.com/sjyoung428)<span style="font-size:50%">(소프트웨어·인공지능전공 16학번)</small>
@@ -96,4 +117,8 @@ export default Home;
 
 ## `Links`
 
-### [Docs](https://github.com/pknu-wap/wap-ui/tree/main/docs) / [NPM](https://www.npmjs.com/package/wap-ui) / [Storybook](https://wap-ui.vercel.app/) / [PPT](https://github.com/pknu-wap/wap-ui/tree/main/ppt) / [Example](https://github.com/pknu-wap/wap-ui/tree/main/example)
+- #### [Docometation](https://github.com/pknu-wap/wap-ui/tree/main/docs)
+- #### [NPM](https://www.npmjs.com/package/wap-ui)
+- #### [Playground](https://wap-ui.vercel.app/)
+- #### [Presentations](https://github.com/pknu-wap/wap-ui/tree/main/ppt)
+- #### [Example](https://github.com/pknu-wap/wap-ui/tree/main/example)
