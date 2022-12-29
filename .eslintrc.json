@@ -6,8 +6,10 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plgin:react-hooks/recommended",
+    "plugin:storybook/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -15,7 +17,6 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "camelcase": "error",
