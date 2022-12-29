@@ -24,7 +24,7 @@ const useDidMountEffect = (
   useEffect(() => {
     if (didMount.current) effect();
     else didMount.current = true;
-  }, deps);
+  }, [deps, effect]);
 };
 
 export default useDidMountEffect;

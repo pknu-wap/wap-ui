@@ -36,7 +36,7 @@ export const Default = () => (
   </Accordion>
 );
 
-export const allowMultiple = () => (
+export const AllowMultiple = () => (
   <Accordion allowMultiple>
     <Accordion.Item label="Item 1" description="description">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto et ad,

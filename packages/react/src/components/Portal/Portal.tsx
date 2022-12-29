@@ -73,7 +73,7 @@ export const Portal = ({ children, target }: PortalProps) => {
         document.body.removeChild(portalContainer.current);
       }
     };
-  }, []);
+  }, [target]);
 
   return ReactDOM.createPortal(
     children,

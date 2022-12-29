@@ -36,7 +36,7 @@ export const AccordionItem = ({
     if (!values.length) return;
     const isActive = !!values.find((v) => v === index);
     setVisible(isActive);
-  }, [values]);
+  }, [values, index]);
 
   /** 첫 마운트 이후부터 visible이 변경할 때 작동한다. */
   useDidMountEffect(() => {

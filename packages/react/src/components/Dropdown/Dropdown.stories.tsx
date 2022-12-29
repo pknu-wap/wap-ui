@@ -10,7 +10,7 @@ export default {
   component: DropdownButton,
 } as ComponentMeta<typeof DropdownButton>;
 
-export const Defulat = () => {
+export const Default = () => {
   return (
     <>
       <Dropdown>
@@ -34,7 +34,7 @@ export const Defulat = () => {
   );
 };
 
-export const variousLocation = () => {
+export const VariousLocation = () => {
   return (
     <Container>
       <FlexColumn>
