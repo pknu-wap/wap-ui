@@ -113,10 +113,10 @@ export default Home;
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/kms113">
+      <a href="https://github.com/neko113">
         <img src="https://avatars.githubusercontent.com/u/75781414?v=4" width="120px;"/>
         <br />
-        <a href="https://github.com/pknu-wap/wap-ui/commits/main?author=kms113" title="Code">kms113 💻</a>
+        <a href="https://github.com/pknu-wap/wap-ui/commits/main?author=neko113" title="Code">neko113 💻</a>
     </td>
     <td align="center">
       <a href="https://github.com/sjyoung428">
