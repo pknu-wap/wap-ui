@@ -1,10 +1,11 @@
 import { AnimatePresence, useWillChange, type Variants } from 'framer-motion';
 import React, { useLayoutEffect } from 'react';
-import { Portal } from '../Portal';
 import * as S from './Modal.styles';
 import { ModalBody } from './ModalBody/ModalBody';
 import { ModalFooter } from './ModalFooter/ModalFooter';
 import { ModalHeader } from './ModalHeader/ModalHeader';
+import { usePortal } from '../../hooks';
+import { createPortal } from 'react-dom';
 
 export interface ModalProps {
   /**
@@ -52,6 +53,7 @@ export const Modal = ({
   children,
 }: ModalProps) => {
   const willChange = useWillChange();
+  const el = usePortal('modal');
 
   useLayoutEffect(() => {
     if (isOpen) {
@@ -88,37 +90,38 @@ export const Modal = ({
     },
   };
 
-  return (
-    <Portal target="modal">
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <S.Overlay
-              variants={overlayVariants}
+  if (!el) return null;
+
+  return createPortal(
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <S.Overlay
+            variants={overlayVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.3 }}
+            blur={blur.toString()}
+            onClick={onClose}
+            style={{ willChange }}
+          />
+          <S.Positioner>
+            <S.ModalContainer
+              variants={modalVariants}
               initial="initial"
               animate="animate"
               exit="exit"
               transition={{ duration: 0.3 }}
-              blur={blur.toString()}
-              onClick={onClose}
               style={{ willChange }}
-            />
-            <S.Positioner>
-              <S.ModalContainer
-                variants={modalVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.3 }}
-                style={{ willChange }}
-              >
-                {children}
-              </S.ModalContainer>
-            </S.Positioner>
-          </>
-        )}
-      </AnimatePresence>
-    </Portal>
+            >
+              {children}
+            </S.ModalContainer>
+          </S.Positioner>
+        </>
+      )}
+    </AnimatePresence>,
+    el,
   );
 };
 
