@@ -30,10 +30,10 @@
   </tr>
   <tr>
     <td width="50%">
-      <img src="https://user-images.githubusercontent.com/75781414/209562230-7f3e9d0d-fa5f-452c-be92-dfeebb251e48.gif"  />
+      <img src="https://user-images.githubusercontent.com/75781414/209572114-dfa9b08a-052b-446e-afd5-388545d09c6b.gif"  />
     </td>
     <td width="50%">
-      <img src="https://user-images.githubusercontent.com/75781414/209560781-9994d09d-6768-4555-833d-35d6ebe16a11.gif" />
+      <img src="https://user-images.githubusercontent.com/75781414/209572876-2720e0ef-94bb-441d-b24e-b282fefc683d.gif" />
     </td>
   </tr>
   </tr>
@@ -45,6 +45,8 @@ To use WAP UI, Install the `@wap-ui/react` package and its peer dependencies.
 (`@emotion/react`, `@emotion/styled`, `framer-motion`)
 
 ```sh
+pnpm add @wap-ui/react @emotion/react @emotion/styled framer-motion
+# or
 yarn add @wap-ui/react @emotion/react @emotion/styled framer-motion
 # or
 npm i @wap-ui/react @emotion/react @emotion/styled framer-motion
@@ -141,7 +143,7 @@ export default Home;
 ## `Links`
 
 - #### [Documents](https://github.com/pknu-wap/wap-ui/tree/main/docs)
-- #### [NPM](https://www.npmjs.com/package/wap-ui)
+- #### [NPM](https://www.npmjs.com/package/@wap-ui/react)
 - #### [Playground](https://wap-ui.vercel.app/)
 - #### [Presentations](https://github.com/pknu-wap/wap-ui/tree/main/ppt)
 - #### [Example](https://github.com/pknu-wap/wap-ui/tree/main/example)
