@@ -1,9 +1,10 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { Portal } from '../../Portal';
 import { ToastBar } from '../ToastBar/ToastBar';
 import { getToastList } from '../useToast';
 import * as S from './Toaster.styles';
+import { usePortal } from '../../../hooks';
+import { createPortal } from 'react-dom';
 
 type ToastPosition =
   | 'top-left'
@@ -85,6 +86,7 @@ const getPositionStyles = (position: ToastPosition): React.CSSProperties => {
  */
 
 export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
+  const el = usePortal('toast');
   const positionStyles = getPositionStyles(position);
   const [isBottom, setIsBottom] = useState(true);
   const toastList = getToastList();
@@ -97,21 +99,20 @@ export const Toaster = ({ position = 'bottom-center' }: ToasterProps) => {
     }
   }, [position, setIsBottom]);
 
-  return (
-    <>
-      <AnimatePresence>
-        <Portal target="toast">
-          <S.Wrapper style={positionStyles}>
-            <S.ToastList isBottom={isBottom}>
-              {toastList.map((toast) => (
-                <ToastBar key={toast.id} type={toast.type}>
-                  {toast.message}
-                </ToastBar>
-              ))}
-            </S.ToastList>
-          </S.Wrapper>
-        </Portal>
-      </AnimatePresence>
-    </>
+  if (!el) return null;
+
+  return createPortal(
+    <AnimatePresence>
+      <S.Wrapper style={positionStyles}>
+        <S.ToastList isBottom={isBottom}>
+          {toastList.map((toast) => (
+            <ToastBar key={toast.id} type={toast.type}>
+              {toast.message}
+            </ToastBar>
+          ))}
+        </S.ToastList>
+      </S.Wrapper>
+    </AnimatePresence>,
+    el,
   );
 };

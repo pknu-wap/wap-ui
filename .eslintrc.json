@@ -6,7 +6,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plgin:react-hooks/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:storybook/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"

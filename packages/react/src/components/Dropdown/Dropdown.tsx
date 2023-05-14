@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import useOnClickOutside from '../../hooks/useOnClickOutside';
 import { DropdownMenu } from './DropdownMenu';
 import { DropdownMenuItem } from './DropdownMenuItem';
 import { DropdownButton } from './DropdownButton/DropdownButton';
 import { DropdownContext } from './DropdownContext';
-import { Portal } from '../Portal';
+import { usePortal, useOnClickOutside } from '../../hooks';
+import { createPortal } from 'react-dom';
 
 export interface DropdownProps {
   children: React.ReactNode[];
@@ -27,6 +27,7 @@ export interface DropdownProps {
  * ```
  */
 export const Dropdown = ({ children }: DropdownProps) => {
+  const el = usePortal('dropdown');
   /** triggerRef은 Context를 타고 DropdownButton으로 전달됨 */
   const triggerRef = useRef<HTMLButtonElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -42,6 +43,8 @@ export const Dropdown = ({ children }: DropdownProps) => {
     }
   });
 
+  if (!el) return null;
+
   return (
     <DropdownContext.Provider
       value={{
@@ -54,7 +57,7 @@ export const Dropdown = ({ children }: DropdownProps) => {
       {/* tirgger button <Dropdown.Button>Actions</Dropdown.Button> */}
       {trigger}
       {/* content menu <Dropdown.Menu>...</Dropdown.Menu> */}
-      <Portal>{content}</Portal>
+      {createPortal(content, el)}
     </DropdownContext.Provider>
   );
 };
