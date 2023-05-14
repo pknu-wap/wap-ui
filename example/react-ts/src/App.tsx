@@ -1,6 +1,6 @@
 import dancingCat from './assets/dancing-cat.gif';
 import styled from '@emotion/styled';
-import { Button, Modal, useDisclosure } from '@wap-ui/react';
+import { Button, Modal, Tooltip, useDisclosure } from '@wap-ui/react';
 
 function App() {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -10,13 +10,18 @@ function App() {
   return (
     <Container>
       <Button color="success" shadow onClick={onOpen}>
-        Please Open This
+        Click me
       </Button>
+      <Tooltip color="error" placement="bottom" content="Boom!~~~">
+        <Button color="error" shadow>
+          Hover me
+        </Button>
+      </Tooltip>
       <Modal isOpen={isOpen} onClose={onClose}>
         <Modal.Header onClose={onClose}>From WAP-UI</Modal.Header>
         <Modal.Body>
           <ContentWrapper>
-            <span>Thank you for using the library</span>
+            <span>Thank you for using this library</span>
             <ContentImage src={dancingCat} alt="dancingCat" />
             <span>If you like it, please give me a star!</span>
           </ContentWrapper>
@@ -40,6 +45,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  gap: 4rem;
 `;
 
 const ContentWrapper = styled.div`

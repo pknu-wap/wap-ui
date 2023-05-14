@@ -567,10 +567,10 @@
     magic-string "^0.26.7"
     react-refresh "^0.14.0"
 
-"@wap-ui/react@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@wap-ui/react/-/react-1.3.2.tgz#000708a4851ee01f6611c1f3b0e1c30a291d62c6"
-  integrity sha512-B9tvID8PuFepEy2z5+iQFpHykqmdneeRgRFKs9T4o3PjraB84lCTlbxqfnNeX+IA34+LLr6EtH2Sg9BAzlUOBA==
+"@wap-ui/react@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@wap-ui/react/-/react-2.0.0.tgz#0952a6f362f7bf9b4b79adc7df08bda77b70727a"
+  integrity sha512-kokxT7Jk5DgGxWIegLQiJYil7bRmhGsKxWSYjMOHWfSn+4kqQxF7S5zSLOWGdtUwLP1Zp9MJKs3HOb9oD3d4WA==
   dependencies:
     "@emotion/react" "^11.10.4"
     "@emotion/styled" "^11.10.4"
