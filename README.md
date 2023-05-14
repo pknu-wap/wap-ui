@@ -45,6 +45,8 @@ To use WAP UI, Install the `@wap-ui/react` package and its peer dependencies.
 (`@emotion/react`, `@emotion/styled`, `framer-motion`)
 
 ```sh
+pnpm add @wap-ui/react @emotion/react @emotion/styled framer-motion
+# or
 yarn add @wap-ui/react @emotion/react @emotion/styled framer-motion
 # or
 npm i @wap-ui/react @emotion/react @emotion/styled framer-motion
