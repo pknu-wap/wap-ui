@@ -2,7 +2,7 @@
   "name": "root",
   "version": "1.0.0",
   "description": "WAP UI / React UI Components Library",
-  "repository": "https://github.com/pknu-wap/2022_2_WAP_WEB_TEAM1.git",
+  "repository": "https://github.com/pknu-wap/wap-ui.git",
   "author": "neko113 <alstn113@gmail.com>",
   "license": "MIT",
   "private": true,
