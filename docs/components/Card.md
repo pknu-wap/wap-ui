@@ -13,7 +13,7 @@ interface CardProps {
 ## `example`
 
 ```tsx
-import { Card } from '@wap-ui/react';
+import { Card } from 'wap-ui';
 
 const App = () => {
   return (

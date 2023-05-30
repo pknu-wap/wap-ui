@@ -1,6 +1,6 @@
 import dancingCat from './assets/dancing-cat.gif';
 import styled from '@emotion/styled';
-import { Button, Modal, Tooltip, useDisclosure } from '@wap-ui/react';
+import { Button, Modal, Tooltip, useDisclosure } from 'wap-ui';
 
 function App() {
   const { isOpen, onClose, onOpen } = useDisclosure();

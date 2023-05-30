@@ -18,7 +18,7 @@ interface Props {
 
 ```tsx
 import { useRef } from 'react'
-import { useOnClickOutside } from '@wap-ui/react'
+import { useOnClickOutside } from 'wap-ui'
 
 const App = () => {
   const ref = useRef(null);

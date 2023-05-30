@@ -20,7 +20,7 @@ type NormalColorType =
 ## `example`
 
 ```tsx
-import { Toggle } from '@wap-ui/react';
+import { Toggle } from 'wap-ui';
 
 const App = () => {
   return (

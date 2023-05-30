@@ -14,7 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 ## `example`
 
 ```tsx
-import { Button } from '@wap-ui/react';
+import { Button } from 'wap-ui';
 
 const App = () => {
   return (

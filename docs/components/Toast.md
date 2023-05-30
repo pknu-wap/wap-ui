@@ -29,7 +29,7 @@ type ToastPosition =
 ## `example`
 
 ```tsx
-import { useToast, Toaster } from '@wap-ui/react';
+import { useToast, Toaster } from 'wap-ui';
 
 const App = () => {
   const { toast } = useToast();

@@ -10,11 +10,11 @@
     "./packages/react"
   ],
   "scripts": {
-    "@wap-ui/react": "yarn workspace @wap-ui/react",
-    "build:wap-ui": "yarn @wap-ui/react build",
-    "storybook": "yarn @wap-ui/react storybook",
-    "build-storybook": "yarn @wap-ui/react build-storybook",
-    "publish:wap-ui": "yarn build:wap-ui && yarn @wap-ui/react publish:wap-ui",
+    "wap-ui": "yarn workspace wap-ui",
+    "build:wap-ui": "yarn wap-ui build",
+    "storybook": "yarn wap-ui storybook",
+    "build-storybook": "yarn wap-ui build-storybook",
+    "publish:wap-ui": "yarn build:wap-ui && yarn wap-ui publish:wap-ui",
     "prepare": "husky install",
     "format": "prettier --write . --config ./.prettierrc",
     "lint": "eslint './packages/react/src/**/*.{ts,tsx}'",

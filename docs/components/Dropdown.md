@@ -26,7 +26,7 @@ interface DropdownButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 ## `example`
 
 ```tsx
-import { Dropdown } from '@wap-ui/react';
+import { Dropdown } from 'wap-ui';
 
 const App = () => {
   return (

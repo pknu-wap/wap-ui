@@ -12,7 +12,7 @@ interface Spacer {
 ## `example`
 
 ```tsx
-import { Spacer } from '@wap-ui/react'
+import { Spacer } from 'wap-ui'
 import { styled } from '@emotion/react'
 
 const App = () => {

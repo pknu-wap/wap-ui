@@ -15,7 +15,7 @@ interface Props {
 ## `example`
 
 ```tsx
-import { Modal, useDisclosure } from '@wap-ui/react';
+import { Modal, useDisclosure } from 'wap-ui';
 
 const App = () => {
   const { isOpen, onOpen, onClose, onToggle } = useDisclosure();

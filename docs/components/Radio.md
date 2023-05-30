@@ -13,7 +13,7 @@ interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
 ## `example`
 
 ```tsx
-import { Radio } from '@wap-ui/react';
+import { Radio } from 'wap-ui';
 
 const App = () => {
   return (

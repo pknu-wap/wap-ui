@@ -33,7 +33,7 @@ interface AccordionItemProps {
 ## `example`
 
 ```tsx
-import { Accordion } from '@wap-ui/react';
+import { Accordion } from 'wap-ui';
 
 const App = () => {
   return (

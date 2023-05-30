@@ -15,7 +15,7 @@ export interface TooltipProps {
 ## `example`
 
 ```tsx
-import { Tooltip } from '@wap-ui/react';
+import { Tooltip } from 'wap-ui';
 
 const App = () => {
   return (

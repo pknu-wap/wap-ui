@@ -18,7 +18,7 @@ interface Props {
 
 ```tsx
 import { useState } from 'react';
-import { useDidMountEffect } from '@wap-ui/react';
+import { useDidMountEffect } from 'wap-ui';
 
 const App = () => {
   const [count, setCount] = useState<number>(0);

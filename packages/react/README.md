@@ -7,8 +7,8 @@
   <a href="https://github.com/pknu-wap/wap-ui/blob/main/LICENSE">
     <img src="https://badgen.net/github/license/pknu-wap/wap-ui">
   </a>
-  <a href="https://www.npmjs.com/package/@wap-ui/react">
-    <img src="https://img.shields.io/npm/dm/@wap-ui/react.svg?style=flat-round" alt="npm downloads">
+  <a href="https://www.npmjs.com/package/wap-ui">
+    <img src="https://img.shields.io/npm/dm/wap-ui.svg?style=flat-round" alt="npm downloads">
   </a>
   <img alt="Github Stars" src="https://badgen.net/github/stars/pknu-wap/wap-ui" />
   <img src="https://badgen.net/github/release/pknu-wap/wap-ui">
@@ -41,22 +41,22 @@
 
 ## `Installing WAP-UI`
 
-To use WAP UI, Install the `@wap-ui/react` package and its peer dependencies.
+To use WAP UI, Install the `wap-ui` package and its peer dependencies.
 (`@emotion/react`, `@emotion/styled`, `framer-motion`)
 
 ```sh
-pnpm add @wap-ui/react @emotion/react @emotion/styled framer-motion
+pnpm add wap-ui @emotion/react @emotion/styled framer-motion
 # or
-yarn add @wap-ui/react @emotion/react @emotion/styled framer-motion
+yarn add wap-ui @emotion/react @emotion/styled framer-motion
 # or
-npm i @wap-ui/react @emotion/react @emotion/styled framer-motion
+npm i wap-ui @emotion/react @emotion/styled framer-motion
 ```
 
 ## `Usage`
 
 To start using the components, follow these steps:
 
-1. For WAP UI to work correctly, Wrap `WapUIProvider` provided by `@wap-ui/react` at root of your application.
+1. For WAP UI to work correctly, Wrap `WapUIProvider` provided by `wap-ui` at root of your application.
 
 ```tsx
 import React from 'react';
@@ -64,7 +64,7 @@ import React from 'react';
 // 1. import `WapUIProvider` component
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { WapUIProvider } from '@wap-ui/react';
+import { WapUIProvider } from 'wap-ui';
 
 // 2. Wrap WapUIProvider at the root of your app
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -77,7 +77,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 2. Bring components what you want and use them.
 
 ```tsx
-import { Button } from '@wap-ui/react';
+import { Button } from 'wap-ui';
 
 const Home = () => {
   return (
@@ -143,7 +143,7 @@ export default Home;
 ## `Links`
 
 - #### [Documents](https://github.com/pknu-wap/wap-ui/tree/main/docs)
-- #### [NPM](https://www.npmjs.com/package/@wap-ui/react)
+- #### [NPM](https://www.npmjs.com/package/wap-ui)
 - #### [Playground](https://wap-ui.vercel.app/)
 - #### [Presentations](https://github.com/pknu-wap/wap-ui/tree/main/ppt)
 - #### [Example](https://github.com/pknu-wap/wap-ui/tree/main/example)

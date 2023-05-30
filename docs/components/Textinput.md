@@ -13,7 +13,7 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
 ## `example`
 
 ```tsx
-import { TextInput } from '@wap-ui/react';
+import { TextInput } from 'wap-ui';
 
 const App = () => {
   return (
