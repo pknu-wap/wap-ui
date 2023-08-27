@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import React from 'react';
 import { createReactContext } from '../../hooks';
 
 export interface DropdownProviderProps {
