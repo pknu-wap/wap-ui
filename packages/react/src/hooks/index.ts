@@ -7,3 +7,4 @@ export { default as usePortal } from './usePortal';
 export { default as useOnClickOutside } from './useOnClickOutside';
 export { default as createReactContext } from './createReactContext';
 export { default as useControlled } from './useControlled';
+export { default as useTimeout } from './useTimeout';
