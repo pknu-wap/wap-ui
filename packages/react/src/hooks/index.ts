@@ -1,4 +1,4 @@
-export { default as useDidMountEffect } from './useDidMountEffect';
+export { default as useDidUpdateEffect } from './useDidUpdateEffect';
 export { default as useDisclosure } from './useDisclosure';
 export { default as useThrottle } from './useThrottle';
 export { default as useDebounce } from './useDebounce';
