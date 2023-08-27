@@ -12,3 +12,4 @@ export * from './Dropdown';
 export * from './ScrollToTop';
 export * from './Tooltip';
 export * from './NumberInputStepper';
+export * from './BottomSheet';
