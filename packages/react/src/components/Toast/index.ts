@@ -1,1 +1,4 @@
-export { Toaster } from './Toaster/Toaster';
+import useToast from './useToast';
+import ToastProvider from './ToastProvider';
+
+export { ToastProvider, useToast };
