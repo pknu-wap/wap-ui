@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { DropdownMenu } from './DropdownMenu';
 import { DropdownMenuItem } from './DropdownMenuItem';
 import { DropdownButton } from './DropdownButton/DropdownButton';
-import { DropdownContext } from './DropdownContext';
+import { DropdownProvider } from './DropdownContext';
 import { usePortal, useOnClickOutside } from '../../hooks';
 import { createPortal } from 'react-dom';
 
@@ -46,7 +46,7 @@ export const Dropdown = ({ children }: DropdownProps) => {
   if (!el) return null;
 
   return (
-    <DropdownContext.Provider
+    <DropdownProvider
       value={{
         triggerRef: triggerRef,
         contentRef: contentRef,
@@ -58,7 +58,7 @@ export const Dropdown = ({ children }: DropdownProps) => {
       {trigger}
       {/* content menu <Dropdown.Menu>...</Dropdown.Menu> */}
       {createPortal(content, el)}
-    </DropdownContext.Provider>
+    </DropdownProvider>
   );
 };
 

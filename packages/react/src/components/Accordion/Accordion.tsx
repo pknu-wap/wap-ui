@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import * as S from './Accordion.styles';
 import { AccordionItem } from './AccordionItem/AccordionItem';
-import { AccordionContext, AccordionProviderProps } from './AccordionContext';
+import { AccordionProviderProps, AccordionProvider } from './AccordionContext';
 import { setChildrenIndex } from '../../utils/setChildrenIndex';
 
 export interface AccordionProps extends AccordionProviderProps {
@@ -63,9 +63,9 @@ export const Accordion = ({
   );
 
   return (
-    <AccordionContext.Provider value={{ values: state, updateValues }}>
+    <AccordionProvider value={{ values: state, updateValues }}>
       <S.Root>{hasIndexChildren}</S.Root>
-    </AccordionContext.Provider>
+    </AccordionProvider>
   );
 };
 

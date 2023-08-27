@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import useDidMountEffect from '../../../hooks/useDidMountEffect';
+import useDidUpdateEffect from '../../../hooks/useDidUpdateEffect';
 import { useAccordionContext } from '../AccordionContext';
 import * as S from './AccordionItem.styles';
 
@@ -39,7 +39,7 @@ export const AccordionItem = ({
   }, [values, index]);
 
   /** 첫 마운트 이후부터 visible이 변경할 때 작동한다. */
-  useDidMountEffect(() => {
+  useDidUpdateEffect(() => {
     if (parentRef.current === null || childRef.current === null) return;
 
     if (!visible) {

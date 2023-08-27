@@ -1,4 +1,5 @@
-import React, { createContext, useContext } from 'react';
+import React from 'react';
+import { createReactContext } from '../../hooks';
 
 export interface DropdownProviderProps {
   children: React.ReactNode;
@@ -12,16 +13,10 @@ export interface DropdownContextValue {
   state: boolean;
 }
 
-export const DropdownContext = createContext<DropdownContextValue>({
-  state: false,
-});
+const [DropdownProvider, useDropdownContext] =
+  createReactContext<DropdownContextValue>({
+    name: 'DropdownContext',
+    errorMessage: 'useDropdownContext must be used within a DropdownProvider',
+  });
 
-export const useDropdownContext = () => {
-  const context = useContext(DropdownContext);
-  if (context === undefined) {
-    throw new Error(
-      'useDropdownContext should be used within a DropdownContext.Provider',
-    );
-  }
-  return context;
-};
+export { DropdownProvider, useDropdownContext };

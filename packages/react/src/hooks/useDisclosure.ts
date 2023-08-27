@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-interface Props {
+interface UseDisclosureProps {
   defaultIsOpen?: boolean;
 }
 
@@ -14,23 +14,16 @@ interface Props {
  * ```
  */
 
-const useDisclosure = ({ defaultIsOpen = false }: Props = {}) => {
-  const [isOpen, setIsOpen] = useState<boolean>(defaultIsOpen);
+const useDisclosure = ({ defaultIsOpen = false }: UseDisclosureProps = {}) => {
+  const [isOpen, setIsOpen] = useState(defaultIsOpen);
 
-  const onClose = useCallback(() => {
-    setIsOpen(false);
-  }, [setIsOpen]);
+  const onClose = useCallback(() => setIsOpen(false), []);
 
-  const onOpen = useCallback(() => {
-    setIsOpen(true);
-  }, [setIsOpen]);
+  const onOpen = useCallback(() => setIsOpen(true), []);
 
-  const onToggle = useCallback(() => {
-    const action = isOpen ? onClose : onOpen;
-    action();
-  }, [isOpen, onClose, onOpen]);
+  const onToggle = useCallback(() => setIsOpen((prev) => !prev), []);
 
-  return { isOpen, onOpen, onClose, onToggle };
+  return { isOpen, onClose, onOpen, onToggle };
 };
 
 export default useDisclosure;
