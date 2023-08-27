@@ -11,3 +11,4 @@ export * from './Toast';
 export * from './Dropdown';
 export * from './ScrollToTop';
 export * from './Tooltip';
+export * from './NumberInputStepper';
