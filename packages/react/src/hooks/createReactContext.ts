@@ -2,13 +2,13 @@ import React from 'react';
 
 type CreateContextReturn<T> = [React.Provider<T>, () => T, React.Context<T>];
 
-interface UseCreateContextProps<T> {
+interface CreateReactContextProps<T> {
   name?: string;
   errorMessage?: string;
   defaultValue?: T;
 }
 
-const useCreateContext = <T>(props: UseCreateContextProps<T> = {}) => {
+const createReactContext = <T>(props: CreateReactContextProps<T> = {}) => {
   const { name, errorMessage, defaultValue } = props;
 
   const Context = React.createContext<T | undefined>(defaultValue);
@@ -27,4 +27,4 @@ const useCreateContext = <T>(props: UseCreateContextProps<T> = {}) => {
   return [Context.Provider, useContext, Context] as CreateContextReturn<T>;
 };
 
-export default useCreateContext;
+export default createReactContext;

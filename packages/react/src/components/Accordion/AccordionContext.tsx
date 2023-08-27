@@ -1,4 +1,5 @@
-import React, { createContext, useContext } from 'react';
+import React from 'react';
+import { createReactContext } from '../../hooks';
 
 export interface AccordionProviderProps {
   children: React.ReactNode;
@@ -9,16 +10,10 @@ export interface AccordionContextValue {
   updateValues?: (index: number, nextState: boolean) => void;
 }
 
-export const AccordionContext = createContext<AccordionContextValue>({
-  values: [],
-});
+const [AccordionProvider, useAccordionContext] =
+  createReactContext<AccordionContextValue>({
+    name: 'AccordionContext',
+    errorMessage: 'useAccordionContext must be used within a AccordionProvider',
+  });
 
-export const useAccordionContext = () => {
-  const context = useContext(AccordionContext);
-  if (context === undefined) {
-    throw new Error(
-      'useAccordionContext should be used within a AccordionContext.Provider',
-    );
-  }
-  return context;
-};
+export { AccordionProvider, useAccordionContext };

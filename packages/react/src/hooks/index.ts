@@ -5,4 +5,4 @@ export { default as useDebounce } from './useDebounce';
 export { default as useIntersectionObserver } from './useIntersectionObserver';
 export { default as usePortal } from './usePortal';
 export { default as useOnClickOutside } from './useOnClickOutside';
-export { default as useCreateContext } from './useCreateContext';
+export { default as createReactContext } from './createReactContext';
