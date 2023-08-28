@@ -42,7 +42,9 @@ const usePortal = (selectId: string): HTMLElement | null => {
     setElSnapshot(el);
 
     return () => {
-      parentElement.removeChild(el);
+      if (el.parentElement) {
+        el.parentElement.removeChild(el);
+      }
     };
     // Id가 변경될 일이 없으므로 빈 배열을 넣어준다.
     // eslint-disable-next-line react-hooks/exhaustive-deps
